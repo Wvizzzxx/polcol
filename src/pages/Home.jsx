@@ -3,6 +3,7 @@ import { motion } from 'framer-motion';
 import { IconDeviceLaptop, IconGlobe, IconSettings, IconPrinter, IconSettings2, IconScale, IconHome } from '@tabler/icons-react';
 import { renderIcon } from '../utils/iconMap';
 import { img } from '../utils/imageUrl';
+import AdmissionTimer from '../components/AdmissionTimer';
 
 const navItems = [
   { slug: 'abiturientam', title: 'Абитуриентам', icon: 'hat.svg', desc: 'Поступление, специальности, документы', color: 'from-official to-official-600' },
@@ -73,6 +74,13 @@ const Home = () => {
             backgroundImage: 'linear-gradient(rgba(255,255,255,0.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.1) 1px, transparent 1px)',
             backgroundSize: '40px 40px',
           }} />
+        </div>
+      </section>
+
+      {/* Секция Таймера приёмной комиссии */}
+      <section className="py-12 md:py-16 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <AdmissionTimer />
         </div>
       </section>
 
