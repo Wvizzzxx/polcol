@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /search/
+Disallow: /sveden/
+Disallow: /design-showcase-vkp2024
+
+Sitemap: https://polcol.ru/sitemap.xml
