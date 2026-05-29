@@ -177,8 +177,82 @@ export default function SubPage() {
   const { title, subtitle, badge, hero, sections } = content
 
   const pathParts = path.split('/').filter(Boolean)
+  
+  const breadcrumbLabels = {
+    'sveden': 'Сведения об ОО',
+    'abiturientam': 'Абитуриентам',
+    'studentam': 'Студентам',
+    'roditelyam': 'Родителям',
+    'sotrudnikam': 'Сотрудникам',
+    'it-cube': 'IT-Куб',
+    'news': 'Новости',
+    'contacts': 'Контакты',
+    'about': 'О колледже',
+    'calculator': 'Калькулятор',
+    'specialties': 'Специальности',
+    'priemnaya-komissiya': 'Приёмная комиссия',
+    'den-otkrytykh-dverej': 'День открытых дверей',
+    'spetsialnosti': 'Специальности',
+    'obshhezhitie-dlya-inogorodnikh-studentov': 'Общежитие',
+    'proforientatsiya': 'Профориентация',
+    'test-na-professionalnoe-samoopredelenie': 'Тест на профсамоопределение',
+    'obyavleniya': 'Объявления',
+    'napravleniya-obucheniya': 'Направления обучения',
+    'spisok-postupleniya': 'Список поступления',
+    'o-kolledzhe': 'О колледже',
+    'raspisanie-zanyatij': 'Расписание занятий',
+    'raspisanie-zvonkov': 'Расписание звонков',
+    'dokumenty': 'Документы',
+    'promezhutochnaya-i-itogovaya-attestatsiya': 'Аттестация',
+    'praktika': 'Практика',
+    'studencheskaya-zhizn': 'Студенческая жизнь',
+    'studencheskiy-sovet': 'Студенческий совет',
+    'trudoustrojstvo-vypusknikov': 'Трудоустройство выпускников',
+    'metodicheskie-materialy': 'Методические материалы',
+    'olimpiady-i-konkursy': 'Олимпиады и конкурсы',
+    'volonterskoe-dvizhenie': 'Волонтёрское движение',
+    'tsentr-karery': 'Центр карьеры',
+    'zaochnoe-obuchenie': 'Заочное обучение',
+    'chempionatnoe-dvizhenie': 'Чемпионатное движение',
+    'pitanie-i-zdorovye': 'Питание и здоровье',
+    'vospitatelynaya-rabota': 'Воспитательная работа',
+    'klassnye-rukovoditeli': 'Классные руководители',
+    'meropriyatiya': 'Мероприятия',
+    'den-otkrytykh-dverey': 'День открытых дверей',
+    'attestatsii': 'Аттестации',
+    'konkurs-master-goda': 'Конкурс «Мастер года»',
+    'muzey': 'Музей',
+    'peredovye-pedagogicheskie-tekhnologii': 'Передовые технологии',
+    'obuchenie-sotrudnikov': 'Обучение сотрудников',
+    'vnutrennyaya-sistema-otsenki-kachestva-obrazovaniya': 'Внутренняя система оценки',
+    'o-tsentre': 'О центре',
+    'novosti': 'Новости',
+    'napravleniya-i-programmy': 'Направления и программы',
+    'pedagogi': 'Педагоги',
+    'raspisanie': 'Расписание',
+    'kontakty': 'Контакты',
+    'common': 'Общие сведения',
+    'struct': 'Структура',
+    'education': 'Образование',
+    'eduStandarts': 'ФГОС',
+    'managers': 'Руководство',
+    'employees': 'Сотрудники',
+    'dsreda': 'Образовательная среда',
+    'grants': 'Стипендии',
+    'paid_edu': 'Платные услуги',
+    'budget': 'Бюджет',
+    'vacant': 'Вакансии',
+    'cooperation': 'Сотрудничество',
+    'food': 'Питание',
+    'legMap': 'Карта',
+    'dostizheniya': 'Достижения',
+    'foto-i-videomaterialy': 'Фото и видео',
+    'sotrudnichestvo': 'Сотрудничество',
+    'document': 'Документы',
+  }
+
   const breadcrumbs = pathParts.map((part, i) => ({
-    label: part.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
+    label: breadcrumbLabels[part] || part.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase()),
     path: '/' + pathParts.slice(0, i + 1).join('/'),
   }))
 
@@ -226,9 +300,9 @@ export default function SubPage() {
                 <li key={i} className="flex items-center gap-1.5">
                   <span className="text-gray-300">/</span>
                   {i < breadcrumbs.length - 1 ? (
-                    <Link to={bc.path} className="text-gray-400 hover:text-gray-600 transition-colors capitalize">{bc.label}</Link>
+                    <Link to={bc.path} className="text-gray-400 hover:text-gray-600 transition-colors">{bc.label}</Link>
                   ) : (
-                    <span className="text-official font-medium capitalize">{bc.label}</span>
+                    <span className="text-official font-medium">{bc.label}</span>
                   )}
                 </li>
               ))}
