@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" fill="none">
+  <rect width="800" height="400" fill="#2D3748"/>
+  <rect x="250" y="120" width="300" height="180" rx="10" fill="#4A5568" stroke="#718096" stroke-width="2"/>
+  <polygon points="400,90 250,140 550,140" fill="#4A5568" stroke="#718096" stroke-width="2"/>
+  <rect x="300" y="200" width="80" height="100" rx="5" fill="#718096"/>
+  <rect x="420" y="180" width="60" height="120" rx="5" fill="#718096"/>
+  <rect x="320" y="215" width="40" height="30" rx="3" fill="#A0AEC0"/>
+  <text x="400" y="350" font-family="Arial" font-size="16" fill="#A0AEC0" text-anchor="middle">Видео о колледже</text>
+</svg>
