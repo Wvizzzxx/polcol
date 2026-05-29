@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Outlet, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import Header from './Header'
@@ -11,6 +12,11 @@ const pageVariants = {
 
 export default function Layout() {
   const location = useLocation()
+
+  // Скролл вверх при смене маршрута
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'instant' })
+  }, [location.pathname])
 
   return (
     <div className="min-h-screen flex flex-col">
