@@ -259,24 +259,24 @@ export default function Roditelyam() {
         </div>
       </section>
 
-      {/* ==================== CTA — КОНТАКТНЫЙ БЛОК ==================== */}
-      <section className="py-20 bg-gradient-to-br from-amber-800 via-orange-700 to-rose-800 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.3) 1px, transparent 0)', backgroundSize: '20px 20px' }} />
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl sm:text-4xl font-extrabold mb-4">Есть вопросы?</h2>
-            <p className="text-amber-200/60 text-lg mb-8 max-w-xl mx-auto">
-              Свяжитесь с классным руководителем или отделом воспитательной работы — мы всегда готовы помочь
-            </p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/roditelyam/klassnye-rukovoditeli" className="inline-flex items-center gap-2 px-8 py-4 bg-white text-amber-800 font-bold rounded-xl hover:bg-amber-50 transition-all hover:-translate-y-0.5 hover:shadow-xl text-lg">
-                Классные руководители
-              </Link>
-              <Link to="/contacts" className="inline-flex items-center gap-2 px-8 py-4 border-2 border-white/30 text-white font-semibold rounded-xl hover:bg-white/10 transition-all">
-                Контакты колледжа
-              </Link>
-            </div>
+      {/* ==================== CTA — КОНТАКТНЫЕ КАРТОЧКИ ==================== */}
+      <section className="py-12 bg-amber-50 border-t border-amber-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="text-center mb-8">
+            <h2 className="text-2xl font-extrabold text-official">Контакты для родителей</h2>
           </motion.div>
+          <div className="grid md:grid-cols-3 gap-4">
+            {contacts.map((c, i) => (
+              <div key={i} className="bg-white rounded-xl border border-amber-100 p-5 text-center hover:shadow-md transition-shadow">
+                <c.Icon className="w-8 h-8 text-amber-500 mx-auto mb-3" />
+                <p className="font-bold text-official text-sm">{c.label}</p>
+                <p className="text-gray-500 text-sm">{c.value}</p>
+              </div>
+            ))}
+          </div>
+          <div className="text-center mt-8">
+            <Link to="/" className="text-sm font-semibold text-amber-700 hover:text-amber-900 transition-colors">← На главную</Link>
+          </div>
         </div>
       </section>
     </div>

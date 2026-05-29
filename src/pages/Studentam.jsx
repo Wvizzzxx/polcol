@@ -241,18 +241,25 @@ export default function Studentam() {
         </div>
       </section>
 
-      {/* ==================== CTA ==================== */}
-      <section className="py-16 bg-gradient-to-br from-teal-900 via-emerald-800 to-green-900 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-extrabold mb-3">Не нашёл нужное?</h2>
-            <p className="text-emerald-200/60 mb-8">Свяжитесь с администрацией — мы поможем найти ответ</p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/contacts" className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-emerald-800 font-bold rounded-xl hover:bg-emerald-50 transition-all">
-                Контакты колледжа
+      {/* ==================== CTA — ПОЛОСА С ФОНОВЫМ ИЗОБРАЖЕНИЕМ ==================== */}
+      <section className="relative py-20 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={img('/images/polcol/066_2116_vladimirskiy_politehnicheskiy_kolledzh_5a265b9f0b05.jpg')} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-gradient-to-r from-teal-900/95 via-emerald-900/85 to-green-900/95" />
+        </div>
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="flex flex-col md:flex-row items-center justify-between gap-8">
+            <div className="text-left">
+              <h2 className="text-3xl font-extrabold text-white mb-2">Есть вопросы?</h2>
+              <p className="text-emerald-200/60 text-lg">Напиши в чат или приходи в деканат — ответим за 5 минут</p>
+            </div>
+            <div className="flex gap-4 flex-shrink-0">
+              <Link to="/contacts" className="inline-flex items-center gap-2 px-6 py-3 bg-white/10 border border-white/20 text-white font-semibold rounded-xl hover:bg-white/20 transition-all backdrop-blur-sm">
+                Написать
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" /></svg>
               </Link>
-              <Link to="/" className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-white/25 text-white font-semibold rounded-xl hover:bg-white/10 transition-all">
-                На главную
+              <Link to="/studentam/studencheskaya-zhizn" className="inline-flex items-center gap-2 px-6 py-3 bg-white text-emerald-800 font-bold rounded-xl hover:bg-emerald-50 transition-all">
+                Студжизнь
               </Link>
             </div>
           </motion.div>

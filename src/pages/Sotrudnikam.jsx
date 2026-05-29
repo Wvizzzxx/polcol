@@ -204,18 +204,37 @@ export default function Sotrudnikam() {
         </div>
       </section>
 
-      {/* ==================== CTA ==================== */}
-      <section className="py-16 bg-gradient-to-br from-slate-900 via-indigo-900 to-violet-950 text-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      {/* ==================== CTA — ПАНЕЛЬ ССЫЛОК ==================== */}
+      <section className="py-14 bg-indigo-50 border-t border-indigo-100">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }}>
-            <h2 className="text-3xl font-extrabold mb-3">Нужна помощь?</h2>
-            <p className="text-indigo-200/50 mb-8">Обратитесь в учебную часть или методический отдел</p>
-            <div className="flex flex-wrap justify-center gap-4">
-              <Link to="/contacts" className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-indigo-900 font-bold rounded-xl hover:bg-indigo-50 transition-all">
-                Контакты
+            <div className="grid md:grid-cols-3 gap-4">
+              <Link to="/contacts" className="flex items-center gap-4 bg-white border border-indigo-100 rounded-xl p-5 hover:border-indigo-300 hover:shadow-lg transition-all group">
+                <div className="w-12 h-12 rounded-xl bg-indigo-500 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <IconClipboardText className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-official text-sm group-hover:text-indigo-700 transition-colors">Связаться с нами</h3>
+                  <p className="text-gray-400 text-xs">Учебная часть и методический отдел</p>
+                </div>
               </Link>
-              <Link to="/" className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-white/20 text-white font-semibold rounded-xl hover:bg-white/10 transition-all">
-                На главную
+              <Link to="/sotrudnikam/attestatsii" className="flex items-center gap-4 bg-white border border-indigo-100 rounded-xl p-5 hover:border-indigo-300 hover:shadow-lg transition-all group">
+                <div className="w-12 h-12 rounded-xl bg-violet-500 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <IconSchool className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-official text-sm group-hover:text-indigo-700 transition-colors">Аттестация</h3>
+                  <p className="text-gray-400 text-xs">График и документы</p>
+                </div>
+              </Link>
+              <Link to="/" className="flex items-center gap-4 bg-white border border-indigo-100 rounded-xl p-5 hover:border-indigo-300 hover:shadow-lg transition-all group">
+                <div className="w-12 h-12 rounded-xl bg-indigo-800 flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  <IconBook2 className="w-6 h-6 text-white" />
+                </div>
+                <div>
+                  <h3 className="font-bold text-official text-sm group-hover:text-indigo-700 transition-colors">Методматериалы</h3>
+                  <p className="text-gray-400 text-xs">УМК и разработки уроков</p>
+                </div>
               </Link>
             </div>
           </motion.div>
