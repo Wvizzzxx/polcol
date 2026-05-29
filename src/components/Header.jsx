@@ -3,13 +3,11 @@ import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { img } from '../utils/imageUrl'
 import { mainNav as fallbackNav, additionalLinks as fallbackLinks } from '../data/navigation'
-import { IconMenu2, IconX, IconEye, IconChevronDown, IconRobot, IconCalculator, IconSun, IconMoon } from '@tabler/icons-react'
+import { IconMenu2, IconX, IconEye, IconChevronDown, IconRobot, IconCalculator } from '@tabler/icons-react'
 import { stringToIcon, nameToIcon } from '../utils/iconMap'
-import { useTheme } from '../context/ThemeContext'
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
-  const { theme, toggleTheme } = useTheme()
   const [mobileOpen, setMobileOpen] = useState(false)
   const [activeSubmenu, setActiveSubmenu] = useState(null)
   const [mainNav, setMainNav] = useState(fallbackNav)
@@ -132,13 +130,6 @@ export default function Header() {
             </div>
 
             <div className="flex items-center gap-2">
-              <button
-                onClick={toggleTheme}
-                className="hidden sm:inline-flex items-center justify-center w-9 h-9 rounded-lg bg-official-50 text-official hover:bg-official-100 transition-all"
-                aria-label={theme === 'dark' ? 'Переключить на светлую тему' : 'Переключить на тёмную тему'}
-              >
-                {theme === 'dark' ? <IconSun className="w-4 h-4" /> : <IconMoon className="w-4 h-4" />}
-              </button>
               <Link to="/calculator"
                 className="hidden sm:inline-flex items-center gap-1.5 px-3 py-2 rounded-lg bg-accent-50 text-accent-dark text-sm font-semibold transition-all hover:bg-accent-100 border border-accent-200"
               >
@@ -282,13 +273,6 @@ export default function Header() {
                 </div>
                 
                 <div className="mt-3 pt-3 border-t border-gray-100 flex gap-2">
-                  <button
-                    onClick={() => { toggleTheme(); }}
-                    className="flex items-center justify-center w-10 h-10 rounded-lg bg-official-50 text-official hover:bg-official-100 transition-all"
-                    aria-label={theme === 'dark' ? 'Светлая тема' : 'Тёмная тема'}
-                  >
-                    {theme === 'dark' ? <IconSun className="w-4 h-4" /> : <IconMoon className="w-4 h-4" />}
-                  </button>
                   <Link
                     to="/calculator"
                     onClick={() => setMobileOpen(false)}
