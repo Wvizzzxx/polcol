@@ -45,17 +45,16 @@ function getCurrentStage(now) {
   for (let i = 0; i < ADMISSION_STAGES.length; i++) {
     const stage = ADMISSION_STAGES[i];
     if (stage.end === null) {
-      // Последний этап (без даты окончания)
       if (now >= stage.start) return stage;
     } else if (now >= stage.start && now <= stage.end) {
       return stage;
     }
   }
-  return ADMISSION_STAGES[0]; // По умолчанию — до начала
+  return ADMISSION_STAGES[0];
 }
 
 /**
- * Форматирует оставшееся время в объект { days, hours, minutes, seconds }
+ * Форматирует оставшееся время
  */
 function getTimeRemaining(targetDate) {
   const now = new Date();
@@ -75,20 +74,60 @@ function getTimeRemaining(targetDate) {
 }
 
 /**
- * Блок времени (дни, часы и т.д.)
+ * Блок времени — идеально адаптивный
+ * mobile: 60x60px, tablet: 76x76px, desktop: 90x90px, fullscreen: 110x110px
  */
-function TimeBlock({ value, label }) {
+function TimeBlock({ value, label, isFullscreen = false }) {
   const strValue = String(value).padStart(2, '0');
+
+  const sizeClasses = isFullscreen
+    ? 'w-[90px] h-[90px] sm:w-[100px] sm:h-[100px] md:w-[110px] md:h-[110px]'
+    : 'w-[58px] h-[58px] sm:w-[68px] sm:h-[68px] md:w-[82px] md:h-[82px] lg:w-[90px] lg:h-[90px]';
+
+  const fontClasses = isFullscreen
+    ? 'text-3xl sm:text-4xl md:text-[2.75rem]'
+    : 'text-xl sm:text-2xl md:text-3xl lg:text-[2rem]';
+
+  const labelClasses = isFullscreen
+    ? 'text-xs sm:text-sm mt-3'
+    : 'text-[0.6rem] sm:text-xs md:text-sm mt-1.5 md:mt-2';
+
   return (
     <div className="flex flex-col items-center">
-      <div className="relative">
-        <div className="bg-white/10 backdrop-blur-sm rounded-xl w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex items-center justify-center border border-white/20 shadow-lg">
-          <span className="text-3xl sm:text-4xl md:text-5xl font-bold text-white font-mono tracking-wider">
-            {strValue}
-          </span>
+      <div
+        className={`
+          relative rounded-2xl ${sizeClasses}
+          bg-gradient-to-b from-white/[0.12] to-white/[0.06]
+          backdrop-blur-md
+          flex items-center justify-center
+          border border-white/[0.15]
+          shadow-[0_4px_24px_rgba(0,0,0,0.2),inset_0_1px_0_rgba(255,255,255,0.08)]
+          transition-all duration-500
+        `}
+      >
+        {/* Внутренний глянцевый блик */}
+        <div className="absolute inset-0 rounded-2xl overflow-hidden">
+          <div className="absolute top-0 left-0 right-0 h-1/2 bg-gradient-to-b from-white/[0.06] to-transparent rounded-t-2xl" />
         </div>
+        <span
+          className={`
+            relative z-10 ${fontClasses}
+            font-extrabold text-white
+            tabular-nums tracking-tight
+            drop-shadow-[0_2px_4px_rgba(0,0,0,0.3)]
+          `}
+          style={{ fontVariantNumeric: 'tabular-nums' }}
+        >
+          {strValue}
+        </span>
       </div>
-      <span className="text-white/60 text-xs sm:text-sm mt-2 uppercase tracking-widest font-medium">
+      <span
+        className={`
+          ${labelClasses}
+          text-white/50 uppercase tracking-[0.2em] font-semibold
+          transition-all duration-500
+        `}
+      >
         {label}
       </span>
     </div>
@@ -96,13 +135,68 @@ function TimeBlock({ value, label }) {
 }
 
 /**
- * Разделитель между блоками времени
+ * Разделитель — пульсирующие точки
  */
-function TimeSeparator() {
+function TimeSeparator({ isFullscreen = false }) {
+  const dotSize = isFullscreen ? 'w-2.5 h-2.5' : 'w-1.5 h-1.5 md:w-2 md:h-2';
+  const gap = isFullscreen ? 'gap-3' : 'gap-1.5 md:gap-2';
+
   return (
-    <div className="flex flex-col items-center justify-center gap-2 px-1 sm:px-2 pb-6">
-      <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-      <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
+    <div className={`flex flex-col items-center justify-center ${gap} px-1 sm:px-1.5 md:px-2`}>
+      <motion.div
+        animate={{ opacity: [0.4, 1, 0.4] }}
+        transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut' }}
+        className={`${dotSize} rounded-full bg-accent`}
+      />
+      <motion.div
+        animate={{ opacity: [0.4, 1, 0.4] }}
+        transition={{ duration: 1.2, repeat: Infinity, ease: 'easeInOut', delay: 0.3 }}
+        className={`${dotSize} rounded-full bg-accent`}
+      />
+    </div>
+  );
+}
+
+/**
+ * Шкала прогресса этапа
+ */
+function StageProgress({ currentStage }) {
+  const stages = ['pre', 'docs', 'exams', 'enrollment', 'post'];
+  const stageIndex = stages.indexOf(currentStage.id);
+  const progress = Math.min(((stageIndex + 1) / stages.length) * 100, 100);
+
+  return (
+    <div className="w-full max-w-md mx-auto mt-6 md:mt-8">
+      {/* Прогресс-бар */}
+      <div className="relative h-1.5 bg-white/10 rounded-full overflow-hidden">
+        <motion.div
+          className="absolute inset-y-0 left-0 bg-gradient-to-r from-accent/60 to-accent rounded-full"
+          initial={{ width: 0 }}
+          animate={{ width: `${progress}%` }}
+          transition={{ duration: 1, ease: 'easeOut' }}
+        />
+      </div>
+      {/* Точки этапов */}
+      <div className="relative flex justify-between mt-1">
+        {stages.map((stage, idx) => (
+          <div
+            key={stage}
+            className="flex flex-col items-center"
+            style={{ width: 0 }}
+          >
+            <div
+              className={`
+                w-2 h-2 md:w-2.5 md:h-2.5 rounded-full -mt-[9px] md:-mt-[11px]
+                transition-all duration-500
+                ${idx <= stageIndex
+                  ? 'bg-accent shadow-[0_0_8px_rgba(197,165,90,0.5)]'
+                  : 'bg-white/20'
+                }
+              `}
+            />
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
@@ -121,32 +215,46 @@ const AdmissionTimer = () => {
     return () => clearInterval(timer);
   }, []);
 
-  // Скрыть подсказку через 5 секунд
   useEffect(() => {
-    const timeout = setTimeout(() => setShowHint(false), 5000);
+    const timeout = setTimeout(() => setShowHint(false), 6000);
     return () => clearTimeout(timeout);
   }, []);
 
+  // Закрытие по Escape
+  useEffect(() => {
+    if (!isFullscreen) return;
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') setIsFullscreen(false);
+    };
+    window.addEventListener('keydown', handleKeyDown);
+    return () => window.removeEventListener('keydown', handleKeyDown);
+  }, [isFullscreen]);
+
+  // Блокируем скролл в полноэкранном режиме
+  useEffect(() => {
+    if (isFullscreen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = '';
+    }
+    return () => { document.body.style.overflow = ''; };
+  }, [isFullscreen]);
+
   const currentStage = getCurrentStage(now);
 
-  // Определяем, до какого момента считать обратный отсчёт
   let targetDate = null;
   let countdownLabel = '';
 
   if (currentStage.id === 'pre') {
-    // До начала — считаем до начала приёма документов
     targetDate = ADMISSION_STAGES[1].start;
     countdownLabel = 'до начала приёма документов';
   } else if (currentStage.id === 'docs') {
-    // Во время приёма документов — считаем до конца приёма
     targetDate = currentStage.end;
     countdownLabel = 'до окончания приёма документов';
   } else if (currentStage.id === 'exams') {
-    // Вступительные испытания — считаем до конца испытаний
     targetDate = currentStage.end;
     countdownLabel = 'до окончания испытаний';
   } else if (currentStage.id === 'enrollment') {
-    // Зачисление — считаем до конца зачисления
     targetDate = currentStage.end;
     countdownLabel = 'до окончания зачисления';
   }
@@ -169,48 +277,95 @@ const AdmissionTimer = () => {
   const startMonth = startDate.toLocaleString('ru-RU', { month: 'long' });
   const startYear = startDate.getFullYear();
 
-  // Таймер-контент
-  const timerContent = (
-    <div className="flex flex-col items-center">
-      {/* Заголовок */}
-      <div className="text-center mb-6">
-        <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/20 border border-accent/30 mb-3">
-          <div className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-          <span className="text-accent text-xs sm:text-sm font-semibold uppercase tracking-wider">
-            {currentStage.label}
-          </span>
-        </div>
-        <h3 className="text-white text-lg sm:text-xl font-bold">
-          {currentStage.id === 'post'
-            ? 'Приёмная комиссия завершилась'
-            : countdownLabel}
-        </h3>
-      </div>
+  // Генерируем контент таймера (переиспользуется в компактном и полноэкранном режиме)
+  const renderTimerContent = (isFullscreenMode = false) => (
+    <div className="flex flex-col items-center w-full">
+      {/* Бейдж этапа */}
+      <motion.div
+        initial={{ opacity: 0, scale: 0.9 }}
+        animate={{ opacity: 1, scale: 1 }}
+        transition={{ duration: 0.4 }}
+        className={`
+          inline-flex items-center gap-2
+          px-3 py-1 sm:px-4 sm:py-1.5 md:px-5 md:py-2
+          rounded-full
+          bg-gradient-to-r from-accent/20 to-accent/10
+          border border-accent/30
+          mb-3 md:mb-4
+          ${isFullscreenMode ? 'shadow-[0_0_20px_rgba(197,165,90,0.15)]' : ''}
+        `}
+      >
+        <motion.div
+          animate={{ scale: [1, 1.3, 1] }}
+          transition={{ duration: 2, repeat: Infinity }}
+          className="w-2 h-2 rounded-full bg-accent shadow-[0_0_6px_rgba(197,165,90,0.6)]"
+        />
+        <span className={`
+          text-accent uppercase font-bold tracking-wider
+          ${isFullscreenMode
+            ? 'text-xs sm:text-sm md:text-base'
+            : 'text-[0.65rem] sm:text-xs md:text-sm'
+          }
+        `}>
+          {currentStage.label}
+        </span>
+      </motion.div>
 
-      {/* Блоки времени */}
+      {/* Заголовок */}
+      <h3 className={`
+        text-white font-bold text-center leading-snug
+        ${isFullscreenMode
+          ? 'text-lg sm:text-xl md:text-2xl lg:text-3xl mb-6 md:mb-8'
+          : 'text-base sm:text-lg md:text-xl lg:text-[1.35rem] mb-5 md:mb-6'
+        }
+      `}>
+        {currentStage.id === 'post'
+          ? 'Приёмная комиссия завершилась'
+          : countdownLabel}
+      </h3>
+
+      {/* Блоки обратного отсчёта */}
       {timeRemaining && timeRemaining.total > 0 && (
-        <div className="flex items-center justify-center gap-0 sm:gap-1">
-          <TimeBlock value={timeRemaining.days} label="дней" />
-          <TimeSeparator />
-          <TimeBlock value={timeRemaining.hours} label="часов" />
-          <TimeSeparator />
-          <TimeBlock value={timeRemaining.minutes} label="минут" />
-          <TimeSeparator />
-          <TimeBlock value={timeRemaining.seconds} label="секунд" />
+        <div className={`
+          flex items-center justify-center
+          ${isFullscreenMode ? 'gap-0 sm:gap-1' : 'gap-0'}
+        `}>
+          <TimeBlock value={timeRemaining.days} label="дней" isFullscreen={isFullscreenMode} />
+          <TimeSeparator isFullscreen={isFullscreenMode} />
+          <TimeBlock value={timeRemaining.hours} label="часов" isFullscreen={isFullscreenMode} />
+          <TimeSeparator isFullscreen={isFullscreenMode} />
+          <TimeBlock value={timeRemaining.minutes} label="минут" isFullscreen={isFullscreenMode} />
+          <TimeSeparator isFullscreen={isFullscreenMode} />
+          <TimeBlock value={timeRemaining.seconds} label="секунд" isFullscreen={isFullscreenMode} />
         </div>
       )}
 
       {timeRemaining && timeRemaining.total <= 0 && currentStage.id !== 'post' && (
-        <div className="text-white/80 text-lg font-medium">
+        <div className={`
+          text-white/80 font-medium text-center
+          ${isFullscreenMode ? 'text-xl md:text-2xl' : 'text-base md:text-lg'}
+        `}>
           Этап завершается в данный момент
         </div>
       )}
 
-      {/* Дата начала приёма документов внизу */}
-      <div className="mt-6 pt-4 border-t border-white/10 text-center">
-        <p className="text-white/50 text-xs sm:text-sm">
+      {/* Шкала прогресса */}
+      <StageProgress currentStage={currentStage} />
+
+      {/* Дата начала приёмной комиссии */}
+      <div className={`
+        mt-5 md:mt-6 pt-4 border-t border-white/10 text-center w-full
+        max-w-md mx-auto
+      `}>
+        <p className={`
+          text-white/40
+          ${isFullscreenMode
+            ? 'text-xs sm:text-sm md:text-base'
+            : 'text-[0.65rem] sm:text-xs md:text-sm'
+          }
+        `}>
           Дата начала приёмной комиссии:{' '}
-          <span className="text-accent font-semibold">
+          <span className="text-accent font-bold">
             {startDay} {startMonth} {startYear} г.
           </span>
         </p>
@@ -220,20 +375,36 @@ const AdmissionTimer = () => {
 
   return (
     <>
-      {/* Компактный таймер на странице */}
+      {/* ===== Компактный таймер на странице ===== */}
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.5 }}
+        viewport={{ once: true, margin: '-50px' }}
+        transition={{ duration: 0.6, ease: 'easeOut' }}
         className="relative"
       >
         <div
           onClick={handleFullscreenToggle}
-          className="cursor-pointer group relative overflow-hidden rounded-2xl bg-gradient-to-br from-official-900 via-official-800 to-official-900 p-6 sm:p-8 md:p-10 border border-white/10 shadow-2xl hover:shadow-3xl transition-all duration-300 hover:border-accent/30"
+          role="button"
+          tabIndex={0}
+          onKeyDown={(e) => { if (e.key === 'Enter' || e.key === ' ') handleFullscreenToggle(); }}
+          className="
+            cursor-pointer group
+            relative overflow-hidden
+            rounded-2xl md:rounded-3xl
+            bg-gradient-to-br from-official-900 via-official-800 to-official-900
+            p-5 sm:p-7 md:p-9 lg:p-10
+            border border-white/10
+            shadow-[0_8px_40px_rgba(0,0,0,0.3)]
+            hover:shadow-[0_12px_60px_rgba(0,0,0,0.4)]
+            hover:border-accent/20
+            transition-all duration-500 ease-out
+            focus:outline-none focus:ring-2 focus:ring-accent/40 focus:ring-offset-2 focus:ring-offset-official-900
+            select-none
+          "
         >
-          {/* Фоновые декорации */}
-          <div className="absolute inset-0 opacity-20">
+          {/* Фоновая текстура */}
+          <div className="absolute inset-0 opacity-20 pointer-events-none">
             <div
               className="w-full h-full"
               style={{
@@ -243,24 +414,48 @@ const AdmissionTimer = () => {
               }}
             />
           </div>
+
+          {/* Плавающий световой акцент */}
           <motion.div
-            animate={{ scale: [1, 1.1, 1], opacity: [0.05, 0.12, 0.05] }}
-            transition={{ duration: 8, repeat: Infinity }}
-            className="absolute -top-10 -right-10 w-60 h-60 rounded-full bg-accent/10 blur-3xl"
+            animate={{
+              scale: [1, 1.15, 1],
+              opacity: [0.06, 0.14, 0.06],
+              x: [0, 10, 0],
+              y: [0, -5, 0],
+            }}
+            transition={{ duration: 10, repeat: Infinity, ease: 'easeInOut' }}
+            className="absolute -top-12 -right-12 w-56 h-56 md:w-72 md:h-72 rounded-full bg-accent/10 blur-3xl pointer-events-none"
+          />
+          <motion.div
+            animate={{
+              y: [0, -12, 0],
+              opacity: [0.04, 0.1, 0.04],
+            }}
+            transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut' }}
+            className="absolute -bottom-8 -left-8 w-40 h-40 md:w-56 md:h-56 rounded-full bg-official-500/15 blur-3xl pointer-events-none"
           />
 
-          <div className="relative z-10">{timerContent}</div>
+          {/* Контент */}
+          <div className="relative z-10">
+            {renderTimerContent(false)}
+          </div>
 
           {/* Подсказка "нажмите для полноэкранного режима" */}
           <AnimatePresence>
             {showHint && (
               <motion.div
-                initial={{ opacity: 0, y: 10 }}
+                initial={{ opacity: 0, y: 8 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: 10 }}
-                className="absolute bottom-2 right-4 text-white/30 text-xs flex items-center gap-1"
+                exit={{ opacity: 0, y: 8 }}
+                transition={{ duration: 0.4 }}
+                className="
+                  absolute bottom-2.5 right-3 sm:bottom-3 sm:right-4 md:bottom-4 md:right-5
+                  text-white/25 text-[0.6rem] sm:text-xs
+                  flex items-center gap-1.5
+                  pointer-events-none
+                "
               >
-                <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-3 h-3 sm:w-3.5 sm:h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
                 </svg>
                 Нажмите для полноэкранного режима
@@ -268,10 +463,15 @@ const AdmissionTimer = () => {
             )}
           </AnimatePresence>
 
-          {/* Hover-эффект иконки полноэкранного режима */}
-          <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-            <div className="w-8 h-8 rounded-lg bg-white/10 flex items-center justify-center">
-              <svg className="w-4 h-4 text-white/70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          {/* Hover-иконка полноэкранного режима */}
+          <div className="
+            absolute top-3 right-3 sm:top-4 sm:right-4 md:top-5 md:right-5
+            opacity-0 group-hover:opacity-100
+            group-active:scale-95
+            transition-all duration-300
+          ">
+            <div className="w-8 h-8 md:w-9 md:h-9 rounded-xl bg-white/[0.08] hover:bg-white/[0.14] flex items-center justify-center transition-colors backdrop-blur-sm">
+              <svg className="w-3.5 h-3.5 md:w-4 md:h-4 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4" />
               </svg>
             </div>
@@ -279,7 +479,7 @@ const AdmissionTimer = () => {
         </div>
       </motion.div>
 
-      {/* Полноэкранное модальное окно */}
+      {/* ===== Полноэкранное модальное окно ===== */}
       <AnimatePresence>
         {isFullscreen && (
           <motion.div
@@ -289,30 +489,57 @@ const AdmissionTimer = () => {
             exit={{ opacity: 0 }}
             transition={{ duration: 0.3 }}
             onClick={handleOverlayClick}
-            className="fixed inset-0 z-50 flex items-center justify-center bg-black/80 backdrop-blur-sm p-4"
+            className="
+              fixed inset-0 z-50
+              flex items-center justify-center
+              bg-black/85 backdrop-blur-md
+              p-4 sm:p-6 md:p-8
+            "
           >
             <motion.div
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.9, opacity: 0 }}
-              transition={{ duration: 0.3, type: 'spring', damping: 20 }}
-              className="relative w-full max-w-2xl mx-auto"
+              initial={{ scale: 0.92, opacity: 0, y: 20 }}
+              animate={{ scale: 1, opacity: 1, y: 0 }}
+              exit={{ scale: 0.92, opacity: 0, y: 20 }}
+              transition={{ duration: 0.4, type: 'spring', damping: 25, stiffness: 300 }}
+              className="relative w-full max-w-lg sm:max-w-xl md:max-w-2xl lg:max-w-3xl mx-auto"
             >
               {/* Кнопка закрытия */}
-              <button
+              <motion.button
+                initial={{ opacity: 0, scale: 0.8 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ delay: 0.2 }}
                 onClick={() => setIsFullscreen(false)}
-                className="absolute -top-12 right-0 w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center transition-colors z-10"
+                className="
+                  absolute -top-11 sm:-top-12 right-0
+                  w-9 h-9 sm:w-10 sm:h-10
+                  rounded-full
+                  bg-white/[0.08] hover:bg-white/[0.18]
+                  active:bg-white/[0.25]
+                  flex items-center justify-center
+                  transition-all duration-200
+                  backdrop-blur-sm border border-white/10
+                  z-10
+                "
+                aria-label="Закрыть"
               >
-                <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-white/80" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
                 </svg>
-              </button>
+              </motion.button>
 
-              <div className="bg-gradient-to-br from-official-900 via-official-800 to-official-900 rounded-3xl p-8 sm:p-10 md:p-12 border border-white/10 shadow-2xl">
+              {/* Карточка таймера */}
+              <div className="
+                relative overflow-hidden
+                bg-gradient-to-br from-official-900 via-official-800 to-official-900
+                rounded-2xl sm:rounded-3xl
+                p-6 sm:p-8 md:p-10 lg:p-12
+                border border-white/10
+                shadow-[0_20px_80px_rgba(0,0,0,0.6)]
+              ">
                 {/* Фоновые декорации */}
-                <div className="absolute inset-0 rounded-3xl overflow-hidden">
+                <div className="absolute inset-0 rounded-2xl sm:rounded-3xl overflow-hidden pointer-events-none">
                   <div
-                    className="w-full h-full opacity-20"
+                    className="w-full h-full opacity-15"
                     style={{
                       backgroundImage:
                         'linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)',
@@ -320,18 +547,23 @@ const AdmissionTimer = () => {
                     }}
                   />
                   <motion.div
-                    animate={{ scale: [1, 1.2, 1], opacity: [0.05, 0.15, 0.05] }}
+                    animate={{ scale: [1, 1.25, 1], opacity: [0.04, 0.12, 0.04] }}
                     transition={{ duration: 10, repeat: Infinity }}
-                    className="absolute -top-20 -right-20 w-80 h-80 rounded-full bg-accent/10 blur-3xl"
+                    className="absolute -top-24 -right-24 w-72 h-72 md:w-96 md:h-96 rounded-full bg-accent/10 blur-3xl"
                   />
                   <motion.div
-                    animate={{ y: [0, -15, 0] }}
-                    transition={{ duration: 7, repeat: Infinity }}
-                    className="absolute bottom-10 left-10 w-60 h-60 rounded-full bg-official-600/20 blur-3xl"
+                    animate={{ y: [0, -15, 0], opacity: [0.03, 0.08, 0.03] }}
+                    transition={{ duration: 8, repeat: Infinity }}
+                    className="absolute bottom-10 left-10 w-52 h-52 md:w-72 md:h-72 rounded-full bg-official-600/20 blur-3xl"
                   />
+                  {/* Тонкая декоративная линия сверху */}
+                  <div className="absolute top-0 left-0 right-0 h-[2px] bg-gradient-to-r from-transparent via-accent/30 to-transparent" />
                 </div>
 
-                <div className="relative z-10">{timerContent}</div>
+                {/* Контент */}
+                <div className="relative z-10">
+                  {renderTimerContent(true)}
+                </div>
               </div>
             </motion.div>
           </motion.div>
