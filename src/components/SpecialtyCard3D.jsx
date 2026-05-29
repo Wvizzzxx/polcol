@@ -1,8 +1,11 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
 import { 
-  IconBook, IconUsers, IconCoin, IconClock, IconTrophy, 
-  IconCheck, IconArrowLeft, IconBuilding, IconSchool
+  IconUsers, IconCoin, IconClock, IconTrophy, 
+  IconCheck, IconBuilding, IconSchool,
+  IconDeviceLaptop, IconWorld, IconChartBar, IconSettings,
+  IconRobot, IconDeviceDesktop, IconBolt, IconTool,
+  IconBuildingHotel, IconClipboardText
 } from '@tabler/icons-react'
 
 const SPECIALTY_DETAILS = {
@@ -14,7 +17,7 @@ const SPECIALTY_DETAILS = {
     form: 'Очная',
     qual: 'Техник-программист',
     color: 'from-blue-500 to-indigo-600',
-    icon: '💻',
+    icon: IconDeviceLaptop,
   },
   '09.02.06': {
     description: 'Настройка и администрирование компьютерных сетей, серверов, систем безопасности и облачных инфраструктур.',
@@ -24,7 +27,7 @@ const SPECIALTY_DETAILS = {
     form: 'Очная',
     qual: 'Техник-администратор',
     color: 'from-cyan-500 to-blue-600',
-    icon: '🌐',
+    icon: IconWorld,
   },
   '09.02.05': {
     description: 'Применение информационных технологий для решения задач бизнеса: автоматизация процессов, анализ данных, разработка ИТ-решений.',
@@ -34,7 +37,7 @@ const SPECIALTY_DETAILS = {
     form: 'Очная / Заочная',
     qual: 'Техник-программист',
     color: 'from-violet-500 to-purple-600',
-    icon: '📊',
+    icon: IconChartBar,
   },
   '15.02.08': {
     description: 'Проектирование и изготовление деталей и узлов машин на современном металлорежущем оборудовании с ЧПУ.',
@@ -44,7 +47,7 @@ const SPECIALTY_DETAILS = {
     form: 'Очная',
     qual: 'Техник-технолог',
     color: 'from-orange-500 to-red-600',
-    icon: '⚙️',
+    icon: IconSettings,
   },
   '15.02.10': {
     description: 'Проектирование, сборка и программирование промышленных роботов и мехатронных систем.',
@@ -54,7 +57,7 @@ const SPECIALTY_DETAILS = {
     form: 'Очная',
     qual: 'Техник-мехатроник',
     color: 'from-emerald-500 to-teal-600',
-    icon: '🤖',
+    icon: IconRobot,
   },
   '38.02.01': {
     description: 'Ведение бухгалтерского учёта, формирование отчётности, работа с ERP-системами и налоговое планирование.',
@@ -64,7 +67,7 @@ const SPECIALTY_DETAILS = {
     form: 'Очная / Заочная',
     qual: 'Техник-бухгалтер',
     color: 'from-amber-500 to-orange-600',
-    icon: '💰',
+    icon: IconCoin,
   },
   '09.02.02': {
     description: 'Монтаж, настройка, ремонт и техническое обслуживание компьютерных систем и сетей.',
@@ -74,7 +77,7 @@ const SPECIALTY_DETAILS = {
     form: 'Очная',
     qual: 'Техник по вычислительной технике',
     color: 'from-slate-500 to-gray-600',
-    icon: '🖥️',
+    icon: IconDeviceDesktop,
   },
   '08.02.01': {
     description: 'Строительство, реконструкция и эксплуатация зданий и сооружений. Работа с проектной документацией.',
@@ -84,7 +87,7 @@ const SPECIALTY_DETAILS = {
     form: 'Очная',
     qual: 'Техник-строитель',
     color: 'from-yellow-500 to-amber-600',
-    icon: '🏗️',
+    icon: IconBuilding,
   },
   '10.02.04': {
     description: 'Проектирование, монтаж и обслуживание электрооборудования промышленных и гражданских объектов.',
@@ -94,7 +97,7 @@ const SPECIALTY_DETAILS = {
     form: 'Очная',
     qual: 'Техник-электрик',
     color: 'from-yellow-400 to-orange-500',
-    icon: '⚡',
+    icon: IconBolt,
   },
   '23.02.03': {
     description: 'Монтаж и обслуживание систем отопления, водоснабжения, канализации, вентиляции и кондиционирования.',
@@ -104,7 +107,7 @@ const SPECIALTY_DETAILS = {
     form: 'Очная',
     qual: 'Техник-монтажник',
     color: 'from-teal-400 to-cyan-500',
-    icon: '🔧',
+    icon: IconTool,
   },
   '19.02.09': {
     description: 'Управление гостиничным бизнесом: бронирование, сервис, маркетинг и управление персоналом в сфере гостеприимства.',
@@ -114,7 +117,7 @@ const SPECIALTY_DETAILS = {
     form: 'Очная',
     qual: 'Менеджер (гостиничный бизнес)',
     color: 'from-pink-500 to-rose-600',
-    icon: '🏨',
+    icon: IconBuildingHotel,
   },
   '43.02.10': {
     description: 'Организация обслуживания в ресторанах, отелях и на транспорте. Культура гостеприимства и сервисные стандарты.',
@@ -124,7 +127,7 @@ const SPECIALTY_DETAILS = {
     form: 'Очная',
     qual: 'Специалист по гостеприимству',
     color: 'from-rose-400 to-pink-500',
-    icon: '🍽️',
+    icon: IconClipboardText,
   },
 }
 
@@ -138,7 +141,7 @@ export default function SpecialtyCard3D({ specialty, avgScore, index }) {
     form: 'Очная',
     qual: 'Техник',
     color: 'from-gray-500 to-gray-600',
-    icon: '📋',
+    icon: IconClipboardText,
   }
 
   const chanceStyles = {
@@ -196,7 +199,9 @@ export default function SpecialtyCard3D({ specialty, avgScore, index }) {
               </div>
 
               {/* Иконка и название */}
-              <div className="text-4xl mb-3">{details.icon}</div>
+              <div className="mb-3">
+                {typeof details.icon === 'function' ? <details.icon className="w-10 h-10 text-white" strokeWidth={1.5} /> : <span className="text-4xl">{details.icon}</span>}
+              </div>
               <h3 className="text-xl font-extrabold mb-3 leading-tight">{specialty.name}</h3>
               <p className="text-white/80 text-sm leading-relaxed line-clamp-3">{details.description}</p>
             </div>
@@ -247,7 +252,7 @@ export default function SpecialtyCard3D({ specialty, avgScore, index }) {
               {/* Заголовок */}
               <div className="flex items-center justify-between mb-5">
                 <div className="flex items-center gap-2">
-                  <span className="text-2xl">{details.icon}</span>
+                  {typeof details.icon === 'function' ? <details.icon className="w-6 h-6 text-official" strokeWidth={1.5} /> : <span className="text-2xl">{details.icon}</span>}
                   <div>
                     <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">{specialty.code}</span>
                     <h4 className="font-extrabold text-official text-sm leading-tight">{specialty.name}</h4>
