@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { IconBook2, IconBuilding, IconBulb, IconChartBar, IconClipboardText, IconFileText, IconSchool, IconSpeakerphone, IconTent, IconTrendingUp, IconTrophy, IconUsers } from '@tabler/icons-react';
 import { renderIcon } from '../utils/iconMap'
+import { img } from '../utils/imageUrl'
 
 const sections = [
   { title: 'Аттестация', path: '/sotrudnikam/attestatsii', Icon: IconClipboardText, desc: 'График и порядок проведения аттестации', featured: true },
@@ -193,7 +194,7 @@ export default function Sotrudnikam() {
                 className="rounded-xl overflow-hidden shadow-lg group"
               >
                 <div className="relative h-40">
-                  <img src={item.src} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={img(item.src)} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-indigo-900/70 to-transparent" />
                   <p className="absolute bottom-2 left-3 text-white font-bold text-xs">{item.title}</p>
                 </div>

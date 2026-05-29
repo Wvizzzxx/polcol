@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { IconBell, IconBook2, IconBriefcase, IconBuilding, IconCalendar, IconConfetti, IconFileText, IconHeartHandshake, IconMedal, IconPencil, IconRocket, IconSchool, IconTool, IconTrophy, IconUsers } from '@tabler/icons-react';
 import { renderIcon } from '../utils/iconMap'
+import { img } from '../utils/imageUrl'
 
 const quickAccess = [
   { Icon: IconCalendar, title: 'Расписание занятий', path: '/studentam/raspisanie-zanyatij', desc: 'Актуальное расписание по группам' },
@@ -184,7 +185,7 @@ export default function Studentam() {
                 className="flex-shrink-0 w-72 rounded-2xl overflow-hidden shadow-lg group"
               >
                 <div className="relative h-48">
-                  <img src={item.src} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={img(item.src)} alt={item.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className={`absolute inset-0 bg-gradient-to-t ${item.color} to-transparent opacity-60`} />
                   <p className="absolute bottom-3 left-4 text-white font-bold text-sm">{item.title}</p>
                 </div>

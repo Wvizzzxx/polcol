@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
+import { img } from '../utils/imageUrl'
 import { mainNav as fallbackNav, additionalLinks as fallbackLinks } from '../data/navigation'
 import { IconMenu2, IconX, IconEye, IconChevronDown, IconRobot, IconCalculator } from '@tabler/icons-react'
 import { stringToIcon, nameToIcon } from '../utils/iconMap'
@@ -119,7 +120,7 @@ export default function Header() {
               </button>
               <Link to="/" className="flex items-center gap-3 group">
                 <div className="w-11 h-11 rounded-lg overflow-hidden shadow-sm group-hover:shadow-md transition-shadow flex-shrink-0">
-                  <img src="/images/logo.png" alt="Логотип ВПК" className="w-full h-full object-contain bg-white" />
+                  <img src={img('/images/logo.png')} alt="Логотип ВПК" className="w-full h-full object-contain bg-white" />
                 </div>
                 <div>
                   <p className="text-official text-sm font-bold leading-tight">Владимирский</p>

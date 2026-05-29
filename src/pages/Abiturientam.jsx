@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { IconClipboardText, IconCoin, IconCompass, IconConfetti, IconDeviceLaptop, IconDoor, IconFileText, IconHeartHandshake, IconHome, IconReport, IconSchool, IconSpeakerphone, IconTrophy } from '@tabler/icons-react';
 import { renderIcon } from '../utils/iconMap'
+import { img } from '../utils/imageUrl'
 
 const sections = [
   { 
@@ -368,7 +369,7 @@ export default function Abiturientam() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="col-span-2 rounded-2xl overflow-hidden shadow-xl group">
               <div className="relative h-64 md:h-80">
-                <img src="/images/polcol/035_AVG_9304.jpg" alt="Учебный процесс" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={img('/images/polcol/035_AVG_9304.jpg')} alt="Учебный процесс" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/80 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
                   <p className="text-white font-bold text-xl">Практические занятия</p>
@@ -379,7 +380,7 @@ export default function Abiturientam() {
             
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="rounded-2xl overflow-hidden shadow-xl group">
               <div className="relative h-64 md:h-80">
-                <img src="/images/polcol/040_AVG_9601.jpg" alt="Лабораторная работа" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={img('/images/polcol/040_AVG_9601.jpg')} alt="Лабораторная работа" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-teal-900/80 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                   <p className="text-white font-bold text-sm">Лабораторные</p>
@@ -389,7 +390,7 @@ export default function Abiturientam() {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="rounded-2xl overflow-hidden shadow-xl group">
               <div className="relative h-48">
-                <img src="/images/polcol/074_j4S9Qv_USrQ.jpg" alt="Кампус" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={img('/images/polcol/074_j4S9Qv_USrQ.jpg')} alt="Кампус" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-cyan-900/80 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                   <p className="text-white font-bold text-sm">Наш кампус</p>
@@ -398,7 +399,7 @@ export default function Abiturientam() {
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="rounded-2xl overflow-hidden shadow-xl group">
               <div className="relative h-48">
-                <img src="/images/polcol/066_2116_vladimirskiy_politehnicheskiy_kolledzh_5a265b9f0b05.jpg" alt="Главный вход" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={img('/images/polcol/066_2116_vladimirskiy_politehnicheskiy_kolledzh_5a265b9f0b05.jpg')} alt="Главный вход" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/80 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                   <p className="text-white font-bold text-sm">Главный вход</p>
@@ -408,7 +409,7 @@ export default function Abiturientam() {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="col-span-2 rounded-2xl overflow-hidden shadow-xl group">
               <div className="relative h-64 md:h-80">
-                <img src="/images/polcol/027_Molodezh.jpg" alt="Добрые дела" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={img('/images/polcol/027_Molodezh.jpg')} alt="Добрые дела" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-rose-900/80 via-transparent to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
                   <p className="text-white font-bold text-xl">Добрые дела</p>

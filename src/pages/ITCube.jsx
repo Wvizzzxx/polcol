@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { IconBook2, IconBrain, IconCalendar, IconClipboardText, IconCode, IconDeviceDesktop, IconDeviceLaptop, IconDeviceMobile, IconFileText, IconGlobe, IconLock, IconMapPin, IconNews, IconPalette, IconReport, IconRobot, IconRocket, IconSchool, IconTent, IconTrophy } from '@tabler/icons-react';
 import { renderIcon } from '../utils/iconMap'
+import { img } from '../utils/imageUrl'
 
 const directions = [
   { title: 'Программирование на Python', Icon: IconCode, desc: 'Основы и продвинутое программирование, приложения и игры' },
@@ -117,12 +118,12 @@ export default function ITCube() {
               {/* Мини-карточки с фото */}
               <div className="grid grid-cols-2 gap-3 mt-4">
                 <div className="rounded-xl overflow-hidden h-32 relative group">
-                  <img src="/images/polcol/043_AVG_9421.jpg" alt="IT-Куб" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={img('/images/polcol/043_AVG_9421.jpg')} alt="IT-Куб" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <p className="absolute bottom-2 left-3 text-white text-xs font-bold">IT-Куб</p>
                 </div>
                 <div className="rounded-xl overflow-hidden h-32 relative group">
-                  <img src="/images/polcol/044_AVG_9406-_1_.jpg" alt="Занятия" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                  <img src={img('/images/polcol/044_AVG_9406-_1_.jpg')} alt="Занятия" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent" />
                   <p className="absolute bottom-2 left-3 text-white text-xs font-bold">Занятия</p>
                 </div>
@@ -199,10 +200,10 @@ export default function ITCube() {
             <motion.div initial={{ opacity: 0, x: 30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <div className="grid grid-cols-2 gap-4">
                 <div className="rounded-2xl overflow-hidden shadow-xl h-48">
-                  <img src="/images/polcol/045_AVG_9386-_1_.jpg" alt="IT-Куб" className="w-full h-full object-cover" />
+                  <img src={img('/images/polcol/045_AVG_9386-_1_.jpg')} alt="IT-Куб" className="w-full h-full object-cover" />
                 </div>
                 <div className="rounded-2xl overflow-hidden shadow-xl h-48">
-                  <img src="/images/polcol/046_AVG_9372-_1_.jpg" alt="Занятия IT-Куб" className="w-full h-full object-cover" />
+                  <img src={img('/images/polcol/046_AVG_9372-_1_.jpg')} alt="Занятия IT-Куб" className="w-full h-full object-cover" />
                 </div>
                 <div className="col-span-2 bg-gradient-to-br from-emerald-600 to-cyan-600 rounded-2xl p-6 text-white text-center">
                   <p className="text-3xl font-extrabold mb-1">100%</p>

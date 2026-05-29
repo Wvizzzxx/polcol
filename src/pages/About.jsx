@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { IconBook2, IconBriefcase, IconBuilding, IconBulb, IconCamera, IconCheck, IconDeviceLaptop, IconGlobe, IconHeartHandshake, IconRocket, IconSchool, IconStar, IconTarget, IconTool, IconTrophy, IconUser, IconUsers } from '@tabler/icons-react'
 import { renderIcon } from '../utils/iconMap'
+import { img } from '../utils/imageUrl'
 const achievements = [
   { year: '1944', title: 'Основание Владимирского ремесленного училища №1', desc: 'В разгар Великой Отечественной войны было открыто ремесленное училище для подготовки квалифицированных рабочих кадров, необходимых для восстановления народного хозяйства.', Icon: IconBuilding },
   { year: '1960', title: 'Преобразование в машиностроительный техникум', desc: 'Училище реорганизовано в машиностроительный техникум. Расширен перечень специальностей, укреплена материально-техническая база, открыты новые лаборатории.', Icon: IconTool },
@@ -182,21 +183,21 @@ export default function About() {
           </motion.div>
           <div className="grid md:grid-cols-3 gap-6">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="rounded-2xl overflow-hidden shadow-xl">
-              <img src="/images/polcol/036_AVG_9268.jpg" alt="Учебный кабинет колледжа" className="w-full h-56 object-cover" />
+              <img src={img('/images/polcol/036_AVG_9268.jpg')} alt="Учебный кабинет колледжа" className="w-full h-56 object-cover" />
               <div className="p-4 bg-white">
                 <p className="font-bold text-official text-sm">Современный учебный кабинет</p>
                 <p className="text-gray-400 text-xs">Оснащён новейшим оборудованием и компьютерной техникой</p>
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="rounded-2xl overflow-hidden shadow-xl">
-              <img src="/images/polcol/037_AVG_9253.jpg" alt="Лаборатория колледжа" className="w-full h-56 object-cover" />
+              <img src={img('/images/polcol/037_AVG_9253.jpg')} alt="Лаборатория колледжа" className="w-full h-56 object-cover" />
               <div className="p-4 bg-white">
                 <p className="font-bold text-official text-sm">Лаборатория робототехники</p>
                 <p className="text-gray-400 text-xs">Современное оборудование для изучения мехатроники</p>
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="rounded-2xl overflow-hidden shadow-xl">
-              <img src="/images/polcol/038_AVG_9247.jpg" alt="Здание колледжа" className="w-full h-56 object-cover" />
+              <img src={img('/images/polcol/038_AVG_9247.jpg')} alt="Здание колледжа" className="w-full h-56 object-cover" />
               <div className="p-4 bg-white">
                 <p className="font-bold text-official text-sm">Учебный корпус</p>
                 <p className="text-gray-400 text-xs">Историческое здание колледжа, оснащённое по современным стандартам</p>
@@ -205,14 +206,14 @@ export default function About() {
           </div>
           <div className="grid md:grid-cols-2 gap-6 mt-6">
             <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="rounded-2xl overflow-hidden shadow-xl">
-              <img src="/images/polcol/039_AVG_9202.jpg" alt="Учебный процесс" className="w-full h-56 object-cover" />
+              <img src={img('/images/polcol/039_AVG_9202.jpg')} alt="Учебный процесс" className="w-full h-56 object-cover" />
               <div className="p-4 bg-white">
                 <p className="font-bold text-official text-sm">Учебный процесс</p>
                 <p className="text-gray-400 text-xs">Практические занятия на современном оборудовании</p>
               </div>
             </motion.div>
             <motion.div initial={{ opacity: 0, x: 20 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }} className="rounded-2xl overflow-hidden shadow-xl">
-              <img src="/images/polcol/066_2116_vladimirskiy_politehnicheskiy_kolledzh_5a265b9f0b05.jpg" alt="Главный вход колледжа" className="w-full h-56 object-cover" />
+              <img src={img('/images/polcol/066_2116_vladimirskiy_politehnicheskiy_kolledzh_5a265b9f0b05.jpg')} alt="Главный вход колледжа" className="w-full h-56 object-cover" />
               <div className="p-4 bg-white">
                 <p className="font-bold text-official text-sm">Главный вход колледжа</p>
                 <p className="text-gray-400 text-xs">Октябрьский проспект, 11 — г. Владимир</p>

@@ -2,6 +2,7 @@ import { motion } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { IconBook2, IconBuildingHospital, IconChefHat, IconClipboardText, IconClock, IconDoor, IconFileText, IconHome, IconMail, IconPhone, IconSchool, IconSpeakerphone, IconTent } from '@tabler/icons-react';
 import { renderIcon } from '../utils/iconMap'
+import { img } from '../utils/imageUrl'
 
 const sections = [
   { title: 'Питание и здоровье', path: '/roditelyam/pitanie-i-zdorovye', Icon: IconChefHat, desc: 'Организация горячего питания, медицинский кабинет', featured: true },
@@ -215,7 +216,7 @@ export default function Roditelyam() {
           <div className="grid md:grid-cols-3 gap-5">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="md:row-span-2 rounded-2xl overflow-hidden shadow-xl group">
               <div className="relative h-full min-h-[320px]">
-                <img src="/images/polcol/041_AVG_9475.jpg" alt="Учебный процесс" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={img('/images/polcol/041_AVG_9475.jpg')} alt="Учебный процесс" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-amber-900/80 via-amber-900/20 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
                   <p className="text-white font-bold text-lg">Учебный процесс</p>
@@ -226,7 +227,7 @@ export default function Roditelyam() {
             
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.1 }} className="rounded-2xl overflow-hidden shadow-xl group">
               <div className="relative h-48">
-                <img src="/images/polcol/042_AVG_9472.jpg" alt="Волонтёрство" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={img('/images/polcol/042_AVG_9472.jpg')} alt="Волонтёрство" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-rose-900/80 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                   <p className="text-white font-bold text-sm">Социальная активность</p>
@@ -236,7 +237,7 @@ export default function Roditelyam() {
             
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.15 }} className="rounded-2xl overflow-hidden shadow-xl group">
               <div className="relative h-48">
-                <img src="/images/polcol/034_college2.jpg" alt="Кампус" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={img('/images/polcol/034_college2.jpg')} alt="Кампус" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-orange-900/80 via-transparent to-transparent" />
                 <div className="absolute bottom-4 left-4 right-4">
                   <p className="text-white font-bold text-sm">Безопасная среда</p>
@@ -246,7 +247,7 @@ export default function Roditelyam() {
 
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: 0.2 }} className="md:col-span-2 rounded-2xl overflow-hidden shadow-xl group">
               <div className="relative h-56">
-                <img src="/images/polcol/074_j4S9Qv_USrQ.jpg" alt="Здание колледжа" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={img('/images/polcol/074_j4S9Qv_USrQ.jpg')} alt="Здание колледжа" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-amber-900/80 via-amber-900/20 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
                   <p className="text-white font-bold text-lg">Наш дом</p>
