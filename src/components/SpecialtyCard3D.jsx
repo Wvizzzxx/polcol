@@ -5,7 +5,7 @@ import {
   IconCheck, IconBuilding, IconSchool,
   IconDeviceLaptop, IconWorld, IconChartBar, IconSettings,
   IconRobot, IconDeviceDesktop, IconBolt, IconTool,
-  IconBuildingHotel, IconClipboardText
+  IconClipboardText
 } from '@tabler/icons-react'
 
 const SPECIALTY_DETAILS = {
@@ -117,7 +117,7 @@ const SPECIALTY_DETAILS = {
     form: 'Очная',
     qual: 'Менеджер (гостиничный бизнес)',
     color: 'from-pink-500 to-rose-600',
-    icon: IconBuildingHotel,
+    icon: IconBuilding,
   },
   '43.02.10': {
     description: 'Организация обслуживания в ресторанах, отелях и на транспорте. Культура гостеприимства и сервисные стандарты.',
