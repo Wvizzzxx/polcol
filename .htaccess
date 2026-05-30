@@ -1,8 +1,10 @@
 RewriteEngine On
-RewriteBase /
+RewriteBase /polcol/
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ 404.html [L]
+RewriteCond %{REQUEST_URI} !^/api/
+RewriteCond %{REQUEST_URI} !^/uploads/
+RewriteRule ^(.*)$ /polcol/index.html [L]
 
 # Кэширование статических файлов
 <FilesMatch "\.(css|js|jpg|jpeg|png|gif|svg|ico|webp)$">

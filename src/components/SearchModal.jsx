@@ -3,9 +3,10 @@ import { useNavigate } from 'react-router-dom'
 import { motion, AnimatePresence } from 'framer-motion'
 import { IconSearch, IconX, IconChevronRight } from '@tabler/icons-react'
 import { mainNav as fallbackNav, additionalLinks } from '../data/navigation'
+import { useCms } from '../context/CmsContext'
 
 // Flatten all pages for search
-function buildPagesIndex() {
+function buildPagesIndex(cmsData) {
   const pages = []
   const seen = new Set()
 
@@ -15,15 +16,45 @@ function buildPagesIndex() {
     pages.push({ title, path, section })
   }
 
-  fallbackNav.forEach(item => {
-    if (item.path) addPage(item.title, item.path, item.title)
+  // Статические страницы из навигации
+  const nav = cmsData?.navigation?.length > 0 ? cmsData.navigation : fallbackNav
+  nav.forEach(item => {
+    if (item.path) addPage(item.title || item.label, item.path, item.title || item.label)
     if (item.submenu) {
-      item.submenu.forEach(sub => addPage(sub.title, sub.path, item.title))
+      item.submenu.forEach(sub => addPage(sub.title || sub.label, sub.path, item.title || item.label))
     }
   })
 
   additionalLinks.forEach(link => addPage(link.title, link.path, 'Дополнительно'))
 
+  // Новости из CMS
+  if (cmsData?.news?.length > 0) {
+    cmsData.news.forEach(item => {
+      if (item._id && item.title) {
+        addPage(item.title, `/news/${item._id}`, 'Новости')
+      }
+    })
+  }
+
+  // Сотрудники из CMS
+  if (cmsData?.employees?.length > 0) {
+    cmsData.employees.forEach(item => {
+      if (item.name) {
+        addPage(item.name, '/sveden/employees', 'Сотрудники')
+      }
+    })
+  }
+
+  // Специальности из CMS
+  if (cmsData?.specialties?.length > 0) {
+    cmsData.specialties.forEach(item => {
+      if (item.name && item.code) {
+        addPage(`${item.code} — ${item.name}`, '/abiturientam/spetsialnosti', 'Специальности')
+      }
+    })
+  }
+
+  // Дополнительные статические страницы
   addPage('Главная', '/')
   addPage('О колледже', '/about')
   addPage('Калькулятор', '/calculator')
@@ -40,8 +71,6 @@ function buildPagesIndex() {
 
   return pages
 }
-
-const ALL_PAGES = buildPagesIndex()
 
 function HighlightText({ text, query }) {
   if (!query.trim()) return <>{text}</>
@@ -66,14 +95,16 @@ export default function SearchModal({ isOpen, onClose }) {
   const inputRef = useRef(null)
   const listRef = useRef(null)
   const navigate = useNavigate()
+  const { data: cmsData } = useCms()
 
   const openTimeRef = useRef(0)
+  const allPages = useMemo(() => buildPagesIndex(cmsData), [cmsData])
 
   useEffect(() => {
     if (isOpen) {
       openTimeRef.current = Date.now()
-      setQuery('')
-      setSelectedIndex(0)
+      setQuery('') // eslint-disable-line react-hooks/set-state-in-effect
+      setSelectedIndex(0) // eslint-disable-line react-hooks/set-state-in-effect
       setTimeout(() => inputRef.current?.focus(), 100)
     }
   }, [isOpen])
@@ -81,12 +112,12 @@ export default function SearchModal({ isOpen, onClose }) {
   const results = useMemo(() => {
     if (!query.trim()) return []
     const q = query.toLowerCase().trim()
-    return ALL_PAGES.filter(p => {
+    return allPages.filter(p => {
       return p.title.toLowerCase().includes(q) || 
              p.section.toLowerCase().includes(q) ||
              p.path.toLowerCase().includes(q)
     }).slice(0, 8)
-  }, [query])
+  }, [query, allPages])
 
   const handleSelect = useCallback((path) => {
     navigate(path)
@@ -114,9 +145,11 @@ export default function SearchModal({ isOpen, onClose }) {
     return () => window.removeEventListener('keydown', handler)
   }, [isOpen, handleKeyDown])
 
-  useEffect(() => {
+  // Сбрасываем 선택 при изменении запроса через refs callback
+  const handleQueryChange = useCallback((e) => {
+    setQuery(e.target.value)
     setSelectedIndex(0)
-  }, [query])
+  }, [])
 
   return (
     <AnimatePresence>
@@ -137,7 +170,7 @@ export default function SearchModal({ isOpen, onClose }) {
                 ref={inputRef}
                 type="text"
                 value={query}
-                onChange={(e) => setQuery(e.target.value)}
+                onChange={handleQueryChange}
                 placeholder="Поиск по сайту..."
                 className="w-full pl-12 pr-20 py-4 bg-white/10 border border-white/15 rounded-xl text-white text-lg placeholder-white/30 outline-none focus:border-accent/50 focus:bg-white/15 transition-all font-medium"
               />

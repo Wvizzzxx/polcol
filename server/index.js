@@ -1,11 +1,11 @@
 const express = require('express');
-const mongoose = require('mongoose');
 const cors = require('cors');
 const morgan = require('morgan');
 const path = require('path');
 require('dotenv').config();
 
 const connectDB = require('./config/db');
+const initializeData = require('./seedData');
 
 // Импорт роутов
 const authRoutes = require('./routes/auth');
@@ -20,6 +20,8 @@ const documentRoutes = require('./routes/documents');
 const settingsRoutes = require('./routes/settings');
 const eventRoutes = require('./routes/events');
 const dashboardRoutes = require('./routes/dashboard');
+const heroRoutes = require('./routes/hero');
+const publicRoutes = require('./routes/public');
 
 const app = express();
 
@@ -45,6 +47,8 @@ app.use('/api/documents', documentRoutes);
 app.use('/api/settings', settingsRoutes);
 app.use('/api/events', eventRoutes);
 app.use('/api/dashboard', dashboardRoutes);
+app.use('/api/heroes', heroRoutes);
+app.use('/api/public', publicRoutes);
 
 // Health check
 app.get('/api/health', (req, res) => {
@@ -60,10 +64,18 @@ app.use((err, req, res, next) => {
 const PORT = process.env.PORT || 5000;
 
 // Подключение к БД и запуск сервера
-connectDB().then(() => {
-  app.listen(PORT, () => {
-    console.log(`🚀 Сервер запущен на порту ${PORT}`);
-    console.log(`📦 API: http://localhost:${PORT}/api`);
-    console.log(`📁 Uploads: http://localhost:${PORT}/uploads`);
+connectDB()
+  .then(async () => {
+    // Автоматическая инициализация данных при первом запуске
+    await initializeData();
+
+    app.listen(PORT, () => {
+      console.log(`🚀 Сервер запущен на порту ${PORT}`);
+      console.log(`📦 API: http://localhost:${PORT}/api`);
+      console.log(`📁 Uploads: http://localhost:${PORT}/uploads`);
+    });
+  })
+  .catch((err) => {
+    console.error('❌ Критическая ошибка:', err.message);
+    process.exit(1);
   });
-});

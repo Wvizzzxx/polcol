@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const documentSchema = new mongoose.Schema({
   title: { type: String, required: true },
   category: { type: String, default: '' },
-  file: { type: String, required: true },
+  file: { type: String, default: '' },
   fileSize: { type: Number, default: 0 },
   version: { type: String, default: '1.0' },
   description: { type: String, default: '' },

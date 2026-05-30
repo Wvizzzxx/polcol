@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import {
@@ -14,6 +14,7 @@ import {
   IconWorld,
 } from "@tabler/icons-react";
 import { img } from "../utils/imageUrl";
+import { useCms } from "../context/CmsContext";
 
 const footerLinks = {
   about: [
@@ -82,52 +83,38 @@ const fallbackSocial = {
 };
 
 export default function Footer() {
-  const [contacts, setContacts] = useState(fallbackContacts);
-  const [social, setSocial] = useState(fallbackSocial);
-  const [settings, setSettings] = useState(null);
+  const { data: cmsData } = useCms();
 
-  useEffect(() => {
-    // Загружаем контакты
-    fetch("/api/contacts")
-      .then((res) => res.json())
-      .then((data) => {
-        const items = Array.isArray(data)
-          ? data
-          : data.contacts || data.items || [];
-        if (items.length > 0) {
-          const contactMap = {};
-          items.forEach((c) => {
-            contactMap[c.type || c.key] = c.value;
-          });
-          setContacts((prev) => ({ ...prev, ...contactMap }));
-        }
-      })
-      .catch(() => {
-        /* используем fallback */
+  // Мемоизируем контакты из CMS-контекста (без дублирующих fetch)
+  const contacts = useMemo(() => {
+    const result = { ...fallbackContacts };
+    // Из contacts в CMS
+    if (cmsData?.contacts?.length > 0) {
+      const items = Array.isArray(cmsData.contacts) ? cmsData.contacts : [];
+      items.forEach((c) => {
+        const key = c.type || c.key;
+        if (key && c.value) result[key] = c.value;
       });
+    }
+    // Из settings в CMS
+    const s = cmsData?.settings;
+    if (s) {
+      if (s.contacts) Object.assign(result, s.contacts);
+      if (s.workHours) result.workHours = s.workHours;
+      if (s.workHoursSaturday) result.workHoursSaturday = s.workHoursSaturday;
+    }
+    return result;
+  }, [cmsData]);
 
-    // Загружаем настройки (соцсети, режим работы)
-    fetch("/api/settings")
-      .then((res) => res.json())
-      .then((data) => {
-        const s = data.settings || data.data || data;
-        if (s) {
-          setSettings(s);
-          if (s.social) setSocial((prev) => ({ ...prev, ...s.social }));
-          if (s.contacts) setContacts((prev) => ({ ...prev, ...s.contacts }));
-          if (s.workHours)
-            setContacts((prev) => ({ ...prev, workHours: s.workHours }));
-          if (s.workHoursSaturday)
-            setContacts((prev) => ({
-              ...prev,
-              workHoursSaturday: s.workHoursSaturday,
-            }));
-        }
-      })
-      .catch(() => {
-        /* используем fallback */
-      });
-  }, []);
+  // Мемоизируем соцсети из CMS-контекста
+  const social = useMemo(() => {
+    const s = cmsData?.settings;
+    if (s?.social) return { ...fallbackSocial, ...s.social };
+    return fallbackSocial;
+  }, [cmsData]);
+
+  // Мемоизируем настройки
+  const settings = useMemo(() => cmsData?.settings || null, [cmsData]);
 
   return (
     <footer className="bg-official-800 text-white relative">

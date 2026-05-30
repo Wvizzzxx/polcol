@@ -20,6 +20,8 @@ import DocumentsList from './pages/DocumentsList'
 import DocumentForm from './pages/DocumentForm'
 import EventsList from './pages/EventsList'
 import EventForm from './pages/EventForm'
+import HeroList from './pages/HeroList'
+import HeroForm from './pages/HeroForm'
 import SettingsPage from './pages/SettingsPage'
 import UsersList from './pages/UsersList'
 import UserForm from './pages/UserForm'
@@ -69,6 +71,10 @@ export default function App() {
         {/* Мероприятия */}
         <Route path="events" element={<EventsList />} />
         <Route path="events/:id" element={<EventForm />} />
+        
+        {/* Hero-секции */}
+        <Route path="heroes" element={<HeroList />} />
+        <Route path="heroes/:id" element={<HeroForm />} />
         
         {/* Настройки */}
         <Route path="settings" element={<SettingsPage />} />

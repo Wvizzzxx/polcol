@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 import toast from 'react-hot-toast'
+import { IconSchool, IconLock } from '@tabler/icons-react'
 
 export default function Login() {
   const [email, setEmail] = useState('admin@vpk.ru')
@@ -25,38 +26,44 @@ export default function Login() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-900 to-indigo-800 flex items-center justify-center p-4">
-      <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md">
+    <div className="min-h-screen bg-gradient-to-br from-[#0f172a] via-[#1e293b] to-[#0f172a] flex items-center justify-center p-4 relative overflow-hidden">
+      {/* Декоративные элементы */}
+      <div className="absolute top-20 right-20 w-72 h-72 rounded-full bg-accent/5 blur-3xl" />
+      <div className="absolute bottom-20 left-20 w-80 h-80 rounded-full bg-blue-500/5 blur-3xl" />
+      <div className="absolute inset-0 opacity-5" style={{
+        backgroundImage: 'radial-gradient(circle at 1px 1px, rgba(255,255,255,0.3) 1px, transparent 0)',
+        backgroundSize: '32px 32px'
+      }} />
+
+      <div className="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md relative z-10 border border-gray-100">
         <div className="text-center mb-8">
-          <div className="w-20 h-20 bg-blue-900 rounded-full flex items-center justify-center mx-auto mb-4">
-            <svg className="w-10 h-10 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
-            </svg>
+          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-[#0f172a] to-[#1e293b] flex items-center justify-center mx-auto mb-4 shadow-lg">
+            <IconSchool className="w-8 h-8 text-white" />
           </div>
-          <h1 className="text-2xl font-bold text-gray-800">Вход в панель управления</h1>
-          <p className="text-gray-500 mt-2">ГАПОУ ВО «Владимирский политехнический колледж»</p>
+          <h1 className="text-2xl font-bold text-gray-800">Панель управления</h1>
+          <p className="text-gray-500 mt-2 text-sm">ГАПОУ ВО «Владимирский политехнический колледж»</p>
         </div>
 
         <form onSubmit={handleSubmit} className="space-y-5">
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Email</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1.5">Email</label>
             <input
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all text-sm"
               placeholder="admin@vpk.ru"
               required
             />
           </div>
 
           <div>
-            <label className="block text-sm font-medium text-gray-700 mb-1">Пароль</label>
+            <label className="block text-sm font-medium text-gray-700 mb-1.5">Пароль</label>
             <input
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 outline-none transition"
+              className="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:border-blue-500 focus:ring-4 focus:ring-blue-500/10 outline-none transition-all text-sm"
               placeholder="Введите пароль"
               required
             />
@@ -65,11 +72,16 @@ export default function Login() {
           <button
             type="submit"
             disabled={loading}
-            className="w-full py-3 bg-blue-900 hover:bg-blue-800 text-white font-semibold rounded-lg transition duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full py-3.5 bg-gradient-to-r from-[#0f172a] to-[#1e293b] hover:from-[#1e293b] hover:to-[#0f172a] text-white font-semibold rounded-xl transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed hover:-translate-y-0.5 hover:shadow-xl flex items-center justify-center gap-2"
           >
+            <IconLock className="w-4 h-4" />
             {loading ? 'Вход...' : 'Войти'}
           </button>
         </form>
+
+        <p className="text-center text-xs text-gray-400 mt-6">
+          © {new Date().getFullYear()} ВПК — Владимирский политехнический колледж
+        </p>
       </div>
     </div>
   )

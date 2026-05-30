@@ -22,12 +22,12 @@ export default function Contacts() {
       .then((data) => {
         const items = Array.isArray(data) ? data : data.contacts || []
         if (items.length > 0) {
-          const c = items[0]
+          const find = (type) => items.find((c) => c.type === type)?.value
           setContacts({
-            address: c.address || fallbackContacts.address,
-            phone: c.phone || fallbackContacts.phone,
-            email: c.email || fallbackContacts.email,
-            schedule: c.schedule || fallbackContacts.schedule,
+            address: find('address') || fallbackContacts.address,
+            phone: find('phone') || fallbackContacts.phone,
+            email: find('email') || fallbackContacts.email,
+            schedule: find('schedule') || fallbackContacts.schedule,
           })
         }
       })
@@ -38,7 +38,7 @@ export default function Contacts() {
     e.preventDefault()
     setSending(true)
     try {
-      const res = await fetch('/api/contacts/messages', {
+      const res = await fetch('/api/public/contact-message', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(form),

@@ -1,8 +1,8 @@
 import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
-import { AnimatePresence } from 'framer-motion'
 import Layout from './components/Layout'
 import PageLoader from './components/PageLoader'
+import ErrorBoundary from './components/ErrorBoundary'
 
 // Lazy load pages for code splitting
 const Showcase = lazy(() => import('./pages/Showcase'))
@@ -21,10 +21,11 @@ const Calculator = lazy(() => import('./pages/Calculator'))
 const Specialties = lazy(() => import('./pages/Specialties'))
 const NewsDetail = lazy(() => import('./pages/NewsDetail'))
 const Sitemap = lazy(() => import('./pages/Sitemap'))
+const NotFound = lazy(() => import('./pages/NotFound'))
 
 function App() {
   return (
-    <AnimatePresence mode="wait">
+    <ErrorBoundary>
       <Routes>
         {/* Основной сайт */}
         <Route path="/" element={<Layout />}>
@@ -208,13 +209,13 @@ function App() {
           <Route path="edinoe-okno-dlya-molodykh-semey" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
           <Route path="news-departament" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
           
-          {/* Catch-all для любых других путей */}
-          <Route path="*" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          {/* 404 — Catch-all для любых других путей */}
+          <Route path="*" element={<Suspense fallback={<PageLoader />}><NotFound /></Suspense>} />
         </Route>
         {/* Скрытая страница демонстрации дизайна — не в основном Layout */}
         <Route path="/design-showcase-vkp2024" element={<Suspense fallback={<PageLoader />}><Showcase /></Suspense>} />
       </Routes>
-    </AnimatePresence>
+    </ErrorBoundary>
   )
 }
 

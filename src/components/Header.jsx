@@ -9,7 +9,6 @@ import {
 import {
   IconMenu2,
   IconX,
-  IconEye,
   IconChevronDown,
   IconRobot,
   IconCalculator,
@@ -17,12 +16,14 @@ import {
 } from "@tabler/icons-react";
 import { stringToIcon, nameToIcon } from "../utils/iconMap";
 import SearchModal from "./SearchModal";
+import { useMemo } from "react";
+import { useCms } from "../context/CmsContext";
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSubmenu, setActiveSubmenu] = useState(null);
-  const [mainNav, setMainNav] = useState(fallbackNav);
+  const { data: cmsData } = useCms();
   const [additionalLinks] = useState(fallbackLinks);
   const [searchOpen, setSearchOpen] = useState(false);
   const location = useLocation();
@@ -70,33 +71,13 @@ export default function Header() {
     setActiveSubmenu(null); // eslint-disable-line react-hooks/set-state-in-effect
   }, [location.pathname]);
 
-  // Загружаем навигацию из API
-  useEffect(() => {
-    fetch("/api/navigation")
-      .then((res) => res.json())
-      .then((data) => {
-        const items = Array.isArray(data)
-          ? data
-          : data.navigation || data.items || [];
-        if (items.length > 0) {
-          // Преобразуем плоский список в иерархию
-          const topLevel = items.filter((i) => !i.parent);
-          const withSubmenus = topLevel.map((item) => {
-            const children = items.filter(
-              (i) => i.parent === item._id || i.parent === item.path,
-            );
-            if (children.length > 0) {
-              return { ...item, submenu: children };
-            }
-            return item;
-          });
-          if (withSubmenus.length > 0) setMainNav(withSubmenus);
-        }
-      })
-      .catch(() => {
-        /* используем fallback */
-      });
-  }, []);
+  // Используем навигацию из CMS-контекста (без дублирующих fetch)
+  const mainNav = useMemo(() => {
+    if (cmsData?.navigation?.length > 0) {
+      return cmsData.navigation;
+    }
+    return fallbackNav;
+  }, [cmsData?.navigation]);
 
   // Рендер иконки: если компонент — рендерим, если строка — маппим (emoji или имя)
   const renderIcon = (icon, className = "w-4 h-4") => {
@@ -205,7 +186,7 @@ export default function Header() {
           </div>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center gap-0.5 py-2">
+          <nav className="hidden lg:flex items-center justify-center gap-2 py-2">
             {filteredNav.map((item) => (
               <div
                 key={item.path || item._id}

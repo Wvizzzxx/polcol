@@ -91,11 +91,6 @@ export const mainNav = [
     path: '/news',
     icon: IconNews,
   },
-  {
-    title: 'Контакты',
-    path: '/contacts',
-    icon: IconMapPin,
-  }
 ]
 
 export const additionalLinks = [

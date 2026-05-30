@@ -34,8 +34,11 @@ export default function Layout() {
 
   return (
     <div className="min-h-screen flex flex-col">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[200] focus:px-4 focus:py-2 focus:bg-official focus:text-white focus:rounded-lg focus:outline-none focus:ring-2 focus:ring-accent">
+        Перейти к основному содержимому
+      </a>
       <Header />
-      <main className="flex-1">
+      <main id="main-content" className="flex-1">
         <AnimatePresence mode="wait">
           <motion.div
             key={location.pathname}

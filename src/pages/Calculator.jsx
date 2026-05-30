@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react'
+import { useState, useMemo, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { 
@@ -37,10 +37,30 @@ const SPECIALTIES = [
   { code: '43.02.10', name: 'Гостеприимство', minScore: 3.5, avgPass: 3.6, budget: 10, paid: 10, places: 20 },
 ]
 
+const STORAGE_KEY = 'vpc-calculator-scores'
+
+function loadScores() {
+  try {
+    const saved = localStorage.getItem(STORAGE_KEY)
+    if (saved) {
+      const parsed = JSON.parse(saved)
+      if (Array.isArray(parsed) && parsed.length > 0) return parsed
+    }
+  } catch { /* ignore */ }
+  return [{ subject: '', score: '' }]
+}
+
 export default function Calculator() {
-  const [scores, setScores] = useState([{ subject: '', score: '' }])
+  const [scores, setScores] = useState(loadScores)
   const [results, setResults] = useState(null)
   const [showResults, setShowResults] = useState(false)
+
+  // Сохраняем оценки в localStorage при изменении
+  useEffect(() => {
+    try {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify(scores))
+    } catch { /* ignore */ }
+  }, [scores])
 
   const addExam = () => {
     setScores([...scores, { subject: '', score: '' }])
