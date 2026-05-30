@@ -3,7 +3,7 @@ import { motion } from 'framer-motion'
 import { 
   IconUsers, IconCoin, IconClock, IconTrophy, 
   IconCheck, IconBuilding, IconSchool,
-  IconDeviceLaptop, IconWorld, IconChartBar, IconSettings,
+  IconDeviceLaptop, IconGlobe, IconChartBar, IconSettings,
   IconRobot, IconDeviceDesktop, IconBolt, IconTool,
   IconClipboardText
 } from '@tabler/icons-react'
@@ -27,7 +27,7 @@ const SPECIALTY_DETAILS = {
     form: 'Очная',
     qual: 'Техник-администратор',
     color: 'from-cyan-500 to-blue-600',
-    icon: IconWorld,
+    icon: IconGlobe,
   },
   '09.02.05': {
     description: 'Применение информационных технологий для решения задач бизнеса: автоматизация процессов, анализ данных, разработка ИТ-решений.',
