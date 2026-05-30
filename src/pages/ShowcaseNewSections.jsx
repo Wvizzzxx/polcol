@@ -6,7 +6,10 @@ import {
   IconUsers, IconCoin, IconTrophy, IconBuilding, IconSchool,
   IconPhone, IconMapPin, IconMail, IconEye, IconFilter, IconCalendar,
   IconPhoto, IconDeviceLaptop, IconSettings, IconRocket,
-  IconUser, IconCheck, IconUpload, IconPlus, IconTrash
+  IconUser, IconCheck, IconUpload, IconPlus, IconTrash,
+  IconGlobe, IconBook2, IconScale, IconClipboardText,
+  IconFileText, IconTarget, IconTool, IconCreditCard,
+  IconPin, IconChartBar
 } from '@tabler/icons-react'
 
 const S = ({ id, title, num, children }) => (
@@ -202,7 +205,7 @@ export function HeroMobileSection() {
             <div className="grid grid-cols-2 gap-3">
               {['Абитуриентам', 'Студентам', 'Родителям', 'Сотрудникам'].map((t) => (
                 <div key={t} className="bg-white border border-gray-100 rounded-xl p-4 text-center hover:shadow-lg transition-all">
-                  <div className="w-12 h-12 mx-auto mb-2 rounded-xl bg-gradient-to-br from-[var(--color-official)] to-[var(--color-official-600)] flex items-center justify-center text-white text-lg">🎓</div>
+                  <div className="w-12 h-12 mx-auto mb-2 rounded-xl bg-gradient-to-br from-[var(--color-official)] to-[var(--color-official-600)] flex items-center justify-center"><IconSchool className="w-6 h-6 text-white" /></div>
                   <p className="text-xs font-bold text-[var(--color-official)]">{t}</p>
                 </div>
               ))}
@@ -239,17 +242,17 @@ export function HeroMobileSection() {
 /* ──── Рисунок 21 — Карточки навигации ────────────────────────── */
 export function NavCardsSection() {
   const navItems = [
-    { title: 'Абитуриентам', icon: '🎓', desc: 'Поступление, специальности, документы', color: 'from-[var(--color-official)] to-[var(--color-official-600)]' },
-    { title: 'Студентам', icon: '📚', desc: 'Расписание, обучение, мероприятия', color: 'from-[var(--color-official-500)] to-[var(--color-official-700)]' },
-    { title: 'Родителям', icon: '👥', desc: 'Питание, здоровье, воспитание', color: 'from-[var(--color-accent-dark)] to-[var(--color-accent)]' },
-    { title: 'Сотрудникам', icon: '🏛️', desc: 'Документы, методика, аттестация', color: 'from-[var(--color-official-light)] to-[var(--color-official)]' },
+    { title: 'Абитуриентам', Icon: IconSchool, desc: 'Поступление, специальности, документы', color: 'from-[var(--color-official)] to-[var(--color-official-600)]' },
+    { title: 'Студентам', Icon: IconBook2, desc: 'Расписание, обучение, мероприятия', color: 'from-[var(--color-official-500)] to-[var(--color-official-700)]' },
+    { title: 'Родителям', Icon: IconUsers, desc: 'Питание, здоровье, воспитание', color: 'from-[var(--color-accent-dark)] to-[var(--color-accent)]' },
+    { title: 'Сотрудникам', Icon: IconBuilding, desc: 'Документы, методика, аттестация', color: 'from-[var(--color-official-light)] to-[var(--color-official)]' },
   ]
   return (
     <S id="nav-cards" title="Карточки навигации по аудиториям" num={21}>
       <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
         {navItems.map((item) => (
           <div key={item.title} className="bg-white border border-gray-100 rounded-xl p-6 text-center hover:shadow-xl hover:border-transparent hover:-translate-y-1 transition-all cursor-default">
-            <div className={`w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-2xl bg-gradient-to-br ${item.color} text-white text-2xl`}>{item.icon}</div>
+            <div className={`w-16 h-16 mx-auto mb-4 flex items-center justify-center rounded-2xl bg-gradient-to-br ${item.color} text-white`}><item.Icon className="w-7 h-7" /></div>
             <h3 className="text-sm font-bold text-[var(--color-official)] mb-1">{item.title}</h3>
             <p className="text-gray-400 text-xs">{item.desc}</p>
           </div>
@@ -289,8 +292,8 @@ export function SpecialtyFrontSection() {
     <S id="spec-front" title="3D-карточки специальностей (фронтальная сторона)" num={23}>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         {[
-          { code: '09.02.07', name: 'Информационные системы и программирование', color: 'from-blue-500 to-indigo-600', icon: '💻', budget: 30, paid: 10, min: 4.5, chance: 'Высокий шанс', cc: 'bg-emerald-500 text-emerald-50' },
-          { code: '09.02.06', name: 'Сетевое и системное администрирование', color: 'from-cyan-500 to-blue-600', icon: '🌐', budget: 25, paid: 10, min: 4.3, chance: 'Высокий шанс', cc: 'bg-emerald-500 text-emerald-50' },
+          { code: '09.02.07', name: 'Информационные системы и программирование', color: 'from-blue-500 to-indigo-600', Icon: IconDeviceLaptop, budget: 30, paid: 10, min: 4.5, chance: 'Высокий шанс', cc: 'bg-emerald-500 text-emerald-50' },
+          { code: '09.02.06', name: 'Сетевое и системное администрирование', color: 'from-cyan-500 to-blue-600', Icon: IconGlobe, budget: 25, paid: 10, min: 4.3, chance: 'Высокий шанс', cc: 'bg-emerald-500 text-emerald-50' },
         ].map((spec) => (
           <div key={spec.code} className={`bg-gradient-to-br ${spec.color} rounded-3xl p-6 text-white relative overflow-hidden min-h-[300px] flex flex-col justify-between`}>
             <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
@@ -300,7 +303,7 @@ export function SpecialtyFrontSection() {
                 <span className={`px-2.5 py-0.5 rounded-full text-[10px] font-bold ${spec.cc}`}>{spec.chance}</span>
                 <span className="px-2.5 py-0.5 rounded-full bg-white/20 text-[10px] font-bold">{spec.code}</span>
               </div>
-              <div className="text-3xl mb-2">{spec.icon}</div>
+              <spec.Icon className="w-9 h-9 text-white mb-2" strokeWidth={1.5} />
               <h3 className="text-lg font-extrabold mb-2 leading-tight">{spec.name}</h3>
             </div>
             <div className="relative z-10">
@@ -336,7 +339,7 @@ export function SpecialtyBackSection() {
       <div className="bg-white border border-gray-200 rounded-3xl p-6 max-w-md shadow-xl">
         <div className="flex items-center justify-between mb-4">
           <div className="flex items-center gap-2">
-            <span className="text-xl">💻</span>
+            <IconDeviceLaptop className="w-6 h-6 text-[var(--color-official)]" strokeWidth={1.5} />
             <div>
               <span className="text-[9px] text-gray-400 font-bold uppercase tracking-wider">09.02.07</span>
               <h4 className="font-extrabold text-[var(--color-official)] text-xs leading-tight">Информационные системы и программирование</h4>
@@ -718,7 +721,7 @@ export function TabletViewSection() {
             <div className="grid grid-cols-2 gap-3">
               {['Абитуриентам', 'Студентам', 'Родителям', 'Сотрудникам'].map((t) => (
                 <div key={t} className="bg-white border border-gray-100 rounded-xl p-4 text-center">
-                  <div className="w-12 h-12 mx-auto mb-2 rounded-xl bg-gradient-to-br from-[var(--color-official)] to-[var(--color-official-600)] flex items-center justify-center text-white text-lg">🎓</div>
+                  <div className="w-12 h-12 mx-auto mb-2 rounded-xl bg-gradient-to-br from-[var(--color-official)] to-[var(--color-official-600)] flex items-center justify-center"><IconSchool className="w-6 h-6 text-white" /></div>
                   <p className="text-[10px] font-bold text-[var(--color-official)]">{t}</p>
                 </div>
               ))}
