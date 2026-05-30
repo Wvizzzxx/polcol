@@ -216,7 +216,7 @@ export default function Roditelyam() {
           <div className="grid md:grid-cols-3 gap-5">
             <motion.div initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} className="md:row-span-2 rounded-2xl overflow-hidden shadow-xl group">
               <div className="relative h-full min-h-[320px]">
-                <img src={img('/images/polcol/041_AVG_9475.jpg')} alt="Учебный процесс" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
+                <img src={img('/images/polcol/036_AVG_9268.jpg')} alt="Учебный процесс" className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" />
                 <div className="absolute inset-0 bg-gradient-to-t from-amber-900/80 via-amber-900/20 to-transparent" />
                 <div className="absolute bottom-6 left-6 right-6">
                   <p className="text-white font-bold text-lg">Учебный процесс</p>

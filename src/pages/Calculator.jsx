@@ -1,12 +1,10 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Link } from 'react-router-dom'
 import { 
-  IconCalculator, IconCheck, IconPlus, 
-  IconTrash, IconCamera, IconArrowRight, IconStar, IconInfoCircle,
-  IconChevronDown, IconX, IconUpload
+  IconCalculator, IconPlus, 
+  IconTrash, IconArrowRight, IconStar, IconInfoCircle
 } from '@tabler/icons-react'
-import SpecialtyCard3D from '../components/SpecialtyCard3D'
 
 const EXAM_NAMES = [
   'Математика',
@@ -25,25 +23,22 @@ const EXAM_NAMES = [
 ]
 
 const SPECIALTIES = [
-  { code: '09.02.07', name: 'Информационные системы и программирование', minScore: 4.5, budget: 30, paid: 10 },
-  { code: '09.02.06', name: 'Сетевое и системное администрирование', minScore: 4.3, budget: 25, paid: 10 },
-  { code: '09.02.05', name: 'Прикладная информатика', minScore: 4.3, budget: 25, paid: 10 },
-  { code: '15.02.08', name: 'Технология машиностроения', minScore: 4.0, budget: 20, paid: 10 },
-  { code: '15.02.10', name: 'Мехатроника и мобильная робототехника', minScore: 4.2, budget: 20, paid: 10 },
-  { code: '38.02.01', name: 'Экономика и бухгалтерский учёт', minScore: 4.0, budget: 25, paid: 10 },
-  { code: '09.02.02', name: 'Компьютерные системы и комплексы', minScore: 4.0, budget: 20, paid: 10 },
-  { code: '08.02.01', name: 'Строительство и эксплуатация зданий и сооружений', minScore: 3.7, budget: 15, paid: 5 },
-  { code: '10.02.04', name: 'Электрооборудование', minScore: 3.7, budget: 15, paid: 5 },
-  { code: '23.02.03', name: 'Монтаж и эксплуатация внутренних систем', minScore: 3.7, budget: 15, paid: 5 },
-  { code: '19.02.09', name: 'Гостиничный бизнес', minScore: 3.5, budget: 15, paid: 10 },
-  { code: '43.02.10', name: 'Гостеприимство', minScore: 3.5, budget: 10, paid: 10 },
+  { code: '09.02.07', name: 'Информационные системы и программирование', minScore: 4.5, avgPass: 4.7, budget: 30, paid: 10, places: 40 },
+  { code: '09.02.06', name: 'Сетевое и системное администрирование', minScore: 4.3, avgPass: 4.5, budget: 25, paid: 10, places: 35 },
+  { code: '09.02.05', name: 'Прикладная информатика', minScore: 4.3, avgPass: 4.4, budget: 25, paid: 10, places: 35 },
+  { code: '15.02.08', name: 'Технология машиностроения', minScore: 4.0, avgPass: 4.2, budget: 20, paid: 10, places: 30 },
+  { code: '15.02.10', name: 'Мехатроника и мобильная робототехника', minScore: 4.2, avgPass: 4.4, budget: 20, paid: 10, places: 30 },
+  { code: '38.02.01', name: 'Экономика и бухгалтерский учёт', minScore: 4.0, avgPass: 4.1, budget: 25, paid: 10, places: 35 },
+  { code: '09.02.02', name: 'Компьютерные системы и комплексы', minScore: 4.0, avgPass: 4.2, budget: 20, paid: 10, places: 30 },
+  { code: '08.02.01', name: 'Строительство и эксплуатация зданий и сооружений', minScore: 3.7, avgPass: 3.9, budget: 15, paid: 5, places: 20 },
+  { code: '10.02.04', name: 'Электрооборудование', minScore: 3.7, avgPass: 3.8, budget: 15, paid: 5, places: 20 },
+  { code: '23.02.03', name: 'Монтаж и эксплуатация внутренних систем', minScore: 3.7, avgPass: 3.8, budget: 15, paid: 5, places: 20 },
+  { code: '19.02.09', name: 'Гостиничный бизнес', minScore: 3.5, avgPass: 3.7, budget: 15, paid: 10, places: 25 },
+  { code: '43.02.10', name: 'Гостеприимство', minScore: 3.5, avgPass: 3.6, budget: 10, paid: 10, places: 20 },
 ]
 
 export default function Calculator() {
   const [scores, setScores] = useState([{ subject: '', score: '' }])
-  const [avgScore, setAvgScore] = useState(null)
-  const [attestatFile, setAttestatFile] = useState(null)
-  const [attestatPreview, setAttestatPreview] = useState(null)
   const [results, setResults] = useState(null)
   const [showResults, setShowResults] = useState(false)
 
@@ -74,18 +69,29 @@ export default function Calculator() {
     return EXAM_NAMES.filter(name => !used.includes(name))
   }
 
-  const calculate = () => {
-    const validScores = scores
-      .filter(s => s.subject && s.score !== '' && !isNaN(Number(s.score)))
-      .map(s => ({ ...s, score: Number(s.score) }))
+  const validScores = useMemo(() =>
+    scores.filter(s => s.subject && s.score !== '' && !isNaN(Number(s.score))).map(s => ({ ...s, score: Number(s.score) })),
+    [scores]
+  )
 
+  const liveAvg = useMemo(() => {
+    if (validScores.length === 0) return null
+    const avg = validScores.reduce((sum, s) => sum + s.score, 0) / validScores.length
+    return Math.round(avg * 100) / 100
+  }, [validScores])
+
+  const liveMatchCount = useMemo(() => {
+    if (liveAvg === null) return 0
+    return SPECIALTIES.filter(s => liveAvg >= s.minScore - 0.5).length
+  }, [liveAvg])
+
+  const calculate = () => {
     if (validScores.length === 0) {
       alert('Добавьте хотя бы один экзамен с оценкой')
       return
     }
 
-    const avg = validScores.reduce((sum, s) => sum + s.score, 0) / validScores.length
-    setAvgScore(Math.round(avg * 100) / 100)
+    const avg = liveAvg
 
     const matchingSpecialties = SPECIALTIES.map(spec => {
       const passChance = avg >= spec.minScore ? 'high' 
@@ -122,22 +128,9 @@ export default function Calculator() {
       specialties: matchingSpecialties,
     })
     setShowResults(true)
-  }
-
-  const handleFileUpload = (e) => {
-    const file = e.target.files[0]
-    if (!file) return
-    setAttestatFile(file)
-    const reader = new FileReader()
-    reader.onload = (ev) => {
-      setAttestatPreview(ev.target.result)
-    }
-    reader.readAsDataURL(file)
-  }
-
-  const removeFile = () => {
-    setAttestatFile(null)
-    setAttestatPreview(null)
+    setTimeout(() => {
+      document.getElementById('results-section')?.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 100)
   }
 
   return (
@@ -166,9 +159,32 @@ export default function Calculator() {
       </section>
 
       {/* CALCULATOR FORM */}
-      <section className="py-16 bg-white">
+      <section className="py-10 sm:py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
+          {/* Live summary bar */}
+          {validScores.length > 0 && (
+            <div className="sticky top-20 z-30 bg-white/95 backdrop-blur border border-gray-200 rounded-2xl p-3 sm:p-4 shadow-lg mb-6 sm:mb-8 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4">
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center">
+                  <IconStar className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
+                </div>
+                <div>
+                  <p className="text-gray-400 text-[10px] sm:text-xs font-semibold uppercase tracking-wider">Средний балл</p>
+                  <p className="text-xl sm:text-2xl font-extrabold text-official">{liveAvg}</p>
+                </div>
+              </div>
+              <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm">
+                <span className="text-gray-400">{validScores.length} {validScores.length === 1 ? 'предмет' : 'предметов'}</span>
+                {liveMatchCount > 0 && (
+                  <span className="px-2 sm:px-3 py-1 bg-emerald-50 text-emerald-700 font-semibold rounded-lg text-[10px] sm:text-xs">
+                    Подходит {liveMatchCount} {liveMatchCount === 1 ? 'специальность' : liveMatchCount < 5 ? 'специальности' : 'специальностей'}
+                  </span>
+                )}
+              </div>
+            </div>
+          )}
+
           {/* Step 1: Exam Scores */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mb-10">
             <div className="flex items-center gap-3 mb-6">
@@ -190,36 +206,41 @@ export default function Calculator() {
                     >
                       <span className="text-sm font-bold text-gray-400 w-6">{idx + 1}</span>
                       
-                      {/* Subject dropdown */}
+                      {/* Subject input with datalist */}
                       <div className="flex-1 relative">
-                        <select
+                        <input
+                          type="text"
                           value={exam.subject}
                           onChange={(e) => updateExam(idx, 'subject', e.target.value)}
-                          className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 outline-none transition-all text-sm appearance-none bg-white"
-                        >
-                          <option value="">Выберите предмет</option>
+                          list={`subjects-${idx}`}
+                          placeholder="Введите или выберите предмет"
+                          className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 outline-none transition-all text-sm bg-white"
+                        />
+                        <datalist id={`subjects-${idx}`}>
                           {available.map(name => (
-                            <option key={name} value={name}>{name}</option>
+                            <option key={name} value={name} />
                           ))}
-                          {exam.subject && !available.includes(exam.subject) && (
-                            <option value={exam.subject}>{exam.subject}</option>
-                          )}
-                        </select>
-                        <IconChevronDown className="w-4 h-4 text-gray-400 absolute right-3 top-1/2 -translate-y-1/2 pointer-events-none" />
+                        </datalist>
                       </div>
 
-                      {/* Score input */}
-                      <div className="w-24 relative">
-                        <input
-                          type="number"
-                          min="1"
-                          max="5"
-                          step="1"
-                          value={exam.score}
-                          onChange={(e) => updateExam(idx, 'score', e.target.value)}
-                          placeholder="1-5"
-                          className="w-full px-4 py-3 rounded-lg border-2 border-gray-200 focus:border-blue-500 focus:ring-2 focus:ring-blue-500/10 outline-none transition-all text-sm text-center font-bold"
-                        />
+                      {/* Score buttons */}
+                      <div className="flex items-center gap-1">
+                        {[2, 3, 4, 5].map(val => (
+                          <button
+                            key={val}
+                            onClick={() => updateExam(idx, 'score', String(val))}
+                            className={`w-9 h-9 sm:w-10 sm:h-10 rounded-lg font-bold text-sm transition-all ${
+                              exam.score === String(val)
+                                ? val === 5 ? 'bg-emerald-500 text-white shadow-md'
+                                : val === 4 ? 'bg-blue-500 text-white shadow-md'
+                                : val === 3 ? 'bg-amber-500 text-white shadow-md'
+                                : 'bg-red-400 text-white shadow-md'
+                                : 'bg-white border-2 border-gray-200 text-gray-500 hover:border-gray-300'
+                            }`}
+                          >
+                            {val}
+                          </button>
+                        ))}
                       </div>
 
                       {/* Remove button */}
@@ -248,56 +269,10 @@ export default function Calculator() {
             </motion.button>
           </motion.div>
 
-          {/* Step 2: Upload Attestat */}
+          {/* Step 2: Calculate */}
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }} className="mb-10">
             <div className="flex items-center gap-3 mb-6">
               <span className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center text-white font-bold text-sm">2</span>
-              <h2 className="text-2xl font-bold text-official">Фото аттестата</h2>
-            </div>
-
-            {!attestatPreview ? (
-              <label className="block cursor-pointer">
-                <div className="border-2 border-dashed border-gray-300 hover:border-accent rounded-2xl p-10 text-center transition-all hover:bg-accent-50/30">
-                  <div className="w-16 h-16 rounded-2xl bg-accent-50 flex items-center justify-center mx-auto mb-4">
-                    <IconCamera className="w-8 h-8 text-accent" />
-                  </div>
-                  <p className="font-bold text-official mb-1">Загрузите фото аттестата</p>
-<p className="text-gray-400 text-sm mb-4">Сторона с оценками</p>
-                  <span className="inline-flex items-center gap-2 px-5 py-2.5 bg-accent text-white font-semibold text-sm rounded-xl hover:bg-accent-dark transition-all">
-                    <IconUpload className="w-4 h-4" />
-                    Выбрать файл
-                  </span>
-                  <input type="file" accept="image/*" onChange={handleFileUpload} className="hidden" />
-                </div>
-              </label>
-            ) : (
-              <div className="relative bg-gray-50 rounded-2xl border border-gray-100 p-4">
-                <div className="flex items-start gap-4">
-                  <div className="relative w-32 h-24 rounded-xl overflow-hidden border border-gray-200 shadow-sm flex-shrink-0">
-                    <img src={attestatPreview} alt="Аттестат" className="w-full h-full object-cover" />
-                  </div>
-                  <div className="flex-1">
-                    <p className="font-bold text-official text-sm mb-1">{attestatFile?.name}</p>
-                    <p className="text-gray-400 text-xs mb-3">
-                      {attestatFile && (attestatFile.size / 1024 / 1024).toFixed(2)} MB
-                    </p>
-                    <p className="text-emerald-600 text-sm font-semibold flex items-center gap-1.5">
-                      <IconCheck className="w-4 h-4" />
-                      Файл загружен
-                    </p>
-                  </div>
-                  <button onClick={removeFile} className="p-2 text-red-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-all">
-                    <IconX className="w-4 h-4" />
-                  </button>
-                </div>
-              </div>
-            )}
-          </motion.div>
-
-          {/* Step 3: Calculate */}
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className="mb-10">
-            <div className="flex items-center gap-3 mb-6">
-              <span className="w-10 h-10 rounded-xl bg-accent flex items-center justify-center text-white font-bold text-sm">3</span>
               <h2 className="text-2xl font-bold text-official">Результат</h2>
             </div>
 
@@ -340,16 +315,77 @@ export default function Calculator() {
                 {/* Matching Specialties */}
                 <div>
                   <h3 className="text-xl font-bold text-official mb-2">Подходящие специальности</h3>
-                  <p className="text-gray-400 text-sm mb-6">Нажмите на карточку, чтобы увидеть подробную информацию</p>
-                  <div className="grid md:grid-cols-2 gap-6">
-                    {results.specialties.map((spec, idx) => (
-                      <SpecialtyCard3D 
-                        key={spec.code} 
-                        specialty={spec} 
-                        avgScore={results.avg}
-                        index={idx} 
-                      />
-                    ))}
+                  <p className="text-gray-400 text-sm mb-6">Сравните ваш балл со средним проходным</p>
+                  <div className="space-y-4">
+                    {results.specialties.map((spec, idx) => {
+                      const diff = results.avg - spec.avgPass
+                      const diffLabel = diff >= 0 ? `+${diff.toFixed(1)}` : diff.toFixed(1)
+                      const diffColor = diff >= 0.3 ? 'text-emerald-600' : diff >= 0 ? 'text-blue-600' : diff >= -0.3 ? 'text-amber-600' : 'text-red-500'
+                      const barWidth = Math.min(100, Math.max(5, (results.avg / 5) * 100))
+                      const passBarWidth = Math.min(100, Math.max(5, (spec.avgPass / 5) * 100))
+                      
+                      return (
+                        <motion.div
+                          key={spec.code}
+                          initial={{ opacity: 0, y: 15 }}
+                          animate={{ opacity: 1, y: 0 }}
+                          transition={{ delay: idx * 0.05 }}
+                          className="bg-white border border-gray-100 rounded-2xl p-5 hover:shadow-lg hover:border-gray-200 transition-all"
+                        >
+                          <div className="flex items-start justify-between gap-4 mb-3">
+                            <div className="flex-1 min-w-0">
+                              <div className="flex items-center gap-2 mb-1">
+                                <span className="text-xs font-bold text-accent-dark bg-accent-50 px-2 py-0.5 rounded-full">{spec.code}</span>
+                                <span className={`text-xs font-bold px-2 py-0.5 rounded-full border ${spec.chanceColor}`}>{spec.chanceLabel}</span>
+                              </div>
+                              <h4 className="font-bold text-official text-sm leading-snug">{spec.name}</h4>
+                            </div>
+                            <div className={`text-right flex-shrink-0`}>
+                              <p className={`text-lg font-extrabold ${diffColor}`}>{diffLabel}</p>
+                              <p className="text-[10px] text-gray-400 font-medium">к проходному</p>
+                            </div>
+                          </div>
+
+                          {/* Comparison bars */}
+                          <div className="space-y-2">
+                            <div>
+                              <div className="flex items-center justify-between text-[11px] mb-1">
+                                <span className="text-gray-500 font-medium">Ваш балл</span>
+                                <span className="font-bold text-official">{results.avg}</span>
+                              </div>
+                              <div className="h-3 bg-gray-100 rounded-full overflow-hidden">
+                                <motion.div
+                                  initial={{ width: 0 }}
+                                  animate={{ width: `${barWidth}%` }}
+                                  transition={{ duration: 0.6, delay: idx * 0.05 + 0.2, ease: 'easeOut' }}
+                                  className="h-full rounded-full bg-gradient-to-r from-accent to-accent-light"
+                                />
+                              </div>
+                            </div>
+                            <div>
+                              <div className="flex items-center justify-between text-[11px] mb-1">
+                                <span className="text-gray-500 font-medium">Средний проходной</span>
+                                <span className="font-bold text-gray-400">{spec.avgPass}</span>
+                              </div>
+                              <div className="h-3 bg-gray-100 rounded-full overflow-hidden">
+                                <motion.div
+                                  initial={{ width: 0 }}
+                                  animate={{ width: `${passBarWidth}%` }}
+                                  transition={{ duration: 0.6, delay: idx * 0.05 + 0.3, ease: 'easeOut' }}
+                                  className="h-full rounded-full bg-gradient-to-r from-gray-300 to-gray-400"
+                                />
+                              </div>
+                            </div>
+                          </div>
+
+                          {/* Info row */}
+                          <div className="flex items-center justify-between mt-3 pt-3 border-t border-gray-100 text-xs text-gray-400">
+                            <span>Бюджет: {spec.budget} мест</span>
+                            <span>Платное: {spec.paid} мест</span>
+                          </div>
+                        </motion.div>
+                      )
+                    })}
                   </div>
                 </div>
 

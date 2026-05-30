@@ -1,20 +1,26 @@
+import { lazy, Suspense } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { AnimatePresence } from 'framer-motion'
 import Layout from './components/Layout'
-import Showcase from './pages/Showcase'
-import Home from './pages/Home'
-import About from './pages/About'
-import Abiturientam from './pages/Abiturientam'
-import Studentam from './pages/Studentam'
-import Roditelyam from './pages/Roditelyam'
-import Sotrudnikam from './pages/Sotrudnikam'
-import News from './pages/News'
-import Contacts from './pages/Contacts'
-import Sveden from './pages/Sveden'
-import ITCube from './pages/ITCube'
-import SubPage from './pages/SubPage'
-import Calculator from './pages/Calculator'
-import Specialties from './pages/Specialties'
+import PageLoader from './components/PageLoader'
+
+// Lazy load pages for code splitting
+const Showcase = lazy(() => import('./pages/Showcase'))
+const Home = lazy(() => import('./pages/Home'))
+const About = lazy(() => import('./pages/About'))
+const Abiturientam = lazy(() => import('./pages/Abiturientam'))
+const Studentam = lazy(() => import('./pages/Studentam'))
+const Roditelyam = lazy(() => import('./pages/Roditelyam'))
+const Sotrudnikam = lazy(() => import('./pages/Sotrudnikam'))
+const News = lazy(() => import('./pages/News'))
+const Contacts = lazy(() => import('./pages/Contacts'))
+const Sveden = lazy(() => import('./pages/Sveden'))
+const ITCube = lazy(() => import('./pages/ITCube'))
+const SubPage = lazy(() => import('./pages/SubPage'))
+const Calculator = lazy(() => import('./pages/Calculator'))
+const Specialties = lazy(() => import('./pages/Specialties'))
+const NewsDetail = lazy(() => import('./pages/NewsDetail'))
+const Sitemap = lazy(() => import('./pages/Sitemap'))
 
 function App() {
   return (
@@ -22,141 +28,191 @@ function App() {
       <Routes>
         {/* Основной сайт */}
         <Route path="/" element={<Layout />}>
-          <Route index element={<Home />} />
-          <Route path="about" element={<About />} />
+          <Route index element={
+            <Suspense fallback={<PageLoader />}>
+              <Home />
+            </Suspense>
+          } />
+          <Route path="about" element={
+            <Suspense fallback={<PageLoader />}>
+              <About />
+            </Suspense>
+          } />
           
           {/* Основные разделы */}
-          <Route path="abiturientam" element={<Abiturientam />} />
-          <Route path="studentam" element={<Studentam />} />
-          <Route path="roditelyam" element={<Roditelyam />} />
-          <Route path="sotrudnikam" element={<Sotrudnikam />} />
-          <Route path="sveden" element={<Sveden />} />
-          <Route path="it-cube" element={<ITCube />} />
-          <Route path="news" element={<News />} />
-          <Route path="contacts" element={<Contacts />} />
+          <Route path="abiturientam" element={
+            <Suspense fallback={<PageLoader />}>
+              <Abiturientam />
+            </Suspense>
+          } />
+          <Route path="studentam" element={
+            <Suspense fallback={<PageLoader />}>
+              <Studentam />
+            </Suspense>
+          } />
+          <Route path="roditelyam" element={
+            <Suspense fallback={<PageLoader />}>
+              <Roditelyam />
+            </Suspense>
+          } />
+          <Route path="sotrudnikam" element={
+            <Suspense fallback={<PageLoader />}>
+              <Sotrudnikam />
+            </Suspense>
+          } />
+          <Route path="sveden" element={
+            <Suspense fallback={<PageLoader />}>
+              <Sveden />
+            </Suspense>
+          } />
+          <Route path="it-cube" element={
+            <Suspense fallback={<PageLoader />}>
+              <ITCube />
+            </Suspense>
+          } />
+          <Route path="news" element={
+            <Suspense fallback={<PageLoader />}>
+              <News />
+            </Suspense>
+          } />
+          <Route path="news/:id" element={
+            <Suspense fallback={<PageLoader />}>
+              <NewsDetail />
+            </Suspense>
+          } />
+          <Route path="sitemap" element={
+            <Suspense fallback={<PageLoader />}>
+              <Sitemap />
+            </Suspense>
+          } />
+          <Route path="contacts" element={
+            <Suspense fallback={<PageLoader />}>
+              <Contacts />
+            </Suspense>
+          } />
           
           {/* Сведения об ОО - подстраницы */}
-          <Route path="sveden/common" element={<SubPage />} />
-          <Route path="sveden/struct" element={<SubPage />} />
-          <Route path="sveden/document" element={<SubPage />} />
-          <Route path="sveden/education" element={<SubPage />} />
-          <Route path="sveden/eduStandarts" element={<SubPage />} />
-          <Route path="sveden/managers" element={<SubPage />} />
-          <Route path="sveden/employees" element={<SubPage />} />
-          <Route path="sveden/dsreda" element={<SubPage />} />
-          <Route path="sveden/grants" element={<SubPage />} />
-          <Route path="sveden/paid_edu" element={<SubPage />} />
-          <Route path="sveden/budget" element={<SubPage />} />
-          <Route path="sveden/vacant" element={<SubPage />} />
-          <Route path="sveden/cooperation" element={<SubPage />} />
-          <Route path="sveden/food" element={<SubPage />} />
-          <Route path="sveden/legMap" element={<SubPage />} />
+          <Route path="sveden/common" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sveden/struct" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sveden/document" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sveden/education" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sveden/eduStandarts" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sveden/managers" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sveden/employees" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sveden/dsreda" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sveden/grants" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sveden/paid_edu" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sveden/budget" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sveden/vacant" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sveden/cooperation" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sveden/food" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sveden/legMap" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
           
           {/* Абитуриентам - подстраницы */}
-          <Route path="abiturientam/priemnaya-komissiya" element={<SubPage />} />
-          <Route path="abiturientam/den-otkrytykh-dverej" element={<SubPage />} />
-          <Route path="abiturientam/spetsialnosti" element={<Specialties />} />
-          <Route path="abiturientam/obshhezhitie-dlya-inogorodnikh-studentov" element={<SubPage />} />
-          <Route path="abiturientam/proforientatsiya" element={<SubPage />} />
-          <Route path="abiturientam/test-na-professionalnoe-samoopredelenie" element={<SubPage />} />
-          <Route path="abiturientam/obyavleniya" element={<SubPage />} />
-          <Route path="abiturientam/napravleniya-obucheniya" element={<SubPage />} />
-          <Route path="abiturientam/spisok-postupleniya" element={<SubPage />} />
-          <Route path="abiturientam/o-kolledzhe" element={<SubPage />} />
+          <Route path="abiturientam/priemnaya-komissiya" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="abiturientam/den-otkrytykh-dverej" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="abiturientam/spetsialnosti" element={<Suspense fallback={<PageLoader />}><Specialties /></Suspense>} />
+          <Route path="abiturientam/obshhezhitie-dlya-inogorodnikh-studentov" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="abiturientam/proforientatsiya" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="abiturientam/test-na-professionalnoe-samoopredelenie" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="abiturientam/obyavleniya" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="abiturientam/napravleniya-obucheniya" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="abiturientam/spisok-postupleniya" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="abiturientam/o-kolledzhe" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
           
           {/* Студентам - подстраницы */}
-          <Route path="studentam/raspisanie-zanyatij" element={<SubPage />} />
-          <Route path="studentam/raspisanie-zvonkov" element={<SubPage />} />
-          <Route path="studentam/dokumenty" element={<SubPage />} />
-          <Route path="studentam/promezhutochnaya-i-itogovaya-attestatsiya" element={<SubPage />} />
-          <Route path="studentam/praktika" element={<SubPage />} />
-          <Route path="studentam/studencheskaya-zhizn" element={<SubPage />} />
-          <Route path="studentam/studencheskiy-sovet" element={<SubPage />} />
-          <Route path="studentam/trudoustrojstvo-vypusknikov" element={<SubPage />} />
-          <Route path="studentam/metodicheskie-materialy" element={<SubPage />} />
-          <Route path="studentam/olimpiady-i-konkursy" element={<SubPage />} />
-          <Route path="studentam/volonterskoe-dvizhenie" element={<SubPage />} />
-          <Route path="studentam/tsentr-karery" element={<SubPage />} />
-          <Route path="studentam/zaochnoe-obuchenie" element={<SubPage />} />
-          <Route path="studentam/chempionatnoe-dvizhenie" element={<SubPage />} />
+          <Route path="studentam/raspisanie-zanyatij" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="studentam/raspisanie-zvonkov" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="studentam/dokumenty" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="studentam/promezhutochnaya-i-itogovaya-attestatsiya" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="studentam/praktika" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="studentam/studencheskaya-zhizn" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="studentam/studencheskiy-sovet" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="studentam/trudoustrojstvo-vypusknikov" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="studentam/metodicheskie-materialy" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="studentam/olimpiady-i-konkursy" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="studentam/volonterskoe-dvizhenie" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="studentam/tsentr-karery" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="studentam/zaochnoe-obuchenie" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="studentam/chempionatnoe-dvizhenie" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
           
           {/* Родителям - подстраницы */}
-          <Route path="roditelyam/pitanie-i-zdorovye" element={<SubPage />} />
-          <Route path="roditelyam/vospitatelynaya-rabota" element={<SubPage />} />
-          <Route path="roditelyam/klassnye-rukovoditeli" element={<SubPage />} />
-          <Route path="roditelyam/obyavleniya" element={<SubPage />} />
-          <Route path="roditelyam/dokumenty" element={<SubPage />} />
-          <Route path="roditelyam/meropriyatiya" element={<SubPage />} />
-          <Route path="roditelyam/den-otkrytykh-dverey" element={<SubPage />} />
+          <Route path="roditelyam/pitanie-i-zdorovye" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="roditelyam/vospitatelynaya-rabota" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="roditelyam/klassnye-rukovoditeli" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="roditelyam/obyavleniya" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="roditelyam/dokumenty" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="roditelyam/meropriyatiya" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="roditelyam/den-otkrytykh-dverey" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
           
           {/* Сотрудникам - подстраницы */}
-          <Route path="sotrudnikam/attestatsii" element={<SubPage />} />
-          <Route path="sotrudnikam/dokumenty" element={<SubPage />} />
-          <Route path="sotrudnikam/metodicheskie-materialy" element={<SubPage />} />
-          <Route path="sotrudnikam/obyavleniya" element={<SubPage />} />
-          <Route path="sotrudnikam/meropriyatiya" element={<SubPage />} />
-          <Route path="sotrudnikam/konkurs-master-goda" element={<SubPage />} />
-          <Route path="sotrudnikam/muzey" element={<SubPage />} />
-          <Route path="sotrudnikam/peredovye-pedagogicheskie-tekhnologii" element={<SubPage />} />
-          <Route path="sotrudnikam/obuchenie-sotrudnikov" element={<SubPage />} />
-          <Route path="sotrudnikam/vnutrennyaya-sistema-otsenki-kachestva-obrazovaniya" element={<SubPage />} />
+          <Route path="sotrudnikam/attestatsii" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sotrudnikam/dokumenty" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sotrudnikam/metodicheskie-materialy" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sotrudnikam/obyavleniya" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sotrudnikam/meropriyatiya" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sotrudnikam/konkurs-master-goda" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sotrudnikam/muzey" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sotrudnikam/peredovye-pedagogicheskie-tekhnologii" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sotrudnikam/obuchenie-sotrudnikov" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sotrudnikam/vnutrennyaya-sistema-otsenki-kachestva-obrazovaniya" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
           
           {/* IT-Куб - подстраницы */}
-          <Route path="it-cube/o-tsentre" element={<SubPage />} />
-          <Route path="it-cube/novosti" element={<SubPage />} />
-          <Route path="it-cube/napravleniya-i-programmy" element={<SubPage />} />
-          <Route path="it-cube/dokumenty" element={<SubPage />} />
-          <Route path="it-cube/pedagogi" element={<SubPage />} />
-          <Route path="it-cube/raspisanie" element={<SubPage />} />
-          <Route path="it-cube/meropriyatiya" element={<SubPage />} />
-          <Route path="it-cube/kontakty" element={<SubPage />} />
+          <Route path="it-cube/o-tsentre" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="it-cube/novosti" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="it-cube/napravleniya-i-programmy" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="it-cube/dokumenty" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="it-cube/pedagogi" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="it-cube/raspisanie" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="it-cube/meropriyatiya" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="it-cube/kontakty" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
           
           {/* Отдельные страницы */}
-          <Route path="obrazovatelnoe-kreditovanie" element={<SubPage />} />
-          <Route path="informatsiya-dlya-invalidov-i-lits-s-ovz" element={<SubPage />} />
-          <Route path="worldskills-russia" element={<SubPage />} />
-          <Route path="abilimpiks" element={<SubPage />} />
-          <Route path="mnogofunktsionalnyy-tsentr-prikladnykh-kvalifikatsiy" element={<SubPage />} />
-          <Route path="it-masterskie" element={<SubPage />} />
-          <Route path="proekt-uspekh-kazhdogo-rebenka" element={<SubPage />} />
-          <Route path="sedo-obrazovanie-33" element={<SubPage />} />
-          <Route path="elektronnoe-obuchenie" element={<SubPage />} />
-          <Route path="vospitatelnaya-rabota" element={<SubPage />} />
-          <Route path="demonstratsionnyy-ekzamen" element={<SubPage />} />
-          <Route path="akkreditatsiya" element={<SubPage />} />
-          <Route path="pro-corrup" element={<SubPage />} />
-          <Route path="vakansii-kolledzha" element={<SubPage />} />
-          <Route path="postuplenie" element={<SubPage />} />
-          <Route path="prochie-dokumenty" element={<SubPage />} />
-          <Route path="otzyvy" element={<SubPage />} />
-          <Route path="faq" element={<SubPage />} />
-          <Route path="nauchno-issledovatelyskaya-deyatelynost" element={<SubPage />} />
-          <Route path="politika-obrabotki-personalnykh-dannykh" element={<SubPage />} />
-          <Route path="o-kolledzhe/dostizheniya" element={<SubPage />} />
-          <Route path="o-kolledzhe/foto-i-videomaterialy" element={<SubPage />} />
-          <Route path="o-kolledzhe/sotrudnichestvo" element={<SubPage />} />
-          <Route path="elektronnaya-informatsionno-obrazovatelnaya-sreda" element={<SubPage />} />
-          <Route path="virtualnyy-kabinet-proforientatsii" element={<SubPage />} />
-          <Route path="virtualnyy-kabinet-po-proforientatsii" element={<SubPage />} />
-          <Route path="anons" element={<SubPage />} />
-          <Route path="promo" element={<SubPage />} />
-          <Route path="search" element={<SubPage />} />
-          <Route path="calculator" element={<Calculator />} />
-          <Route path="specialties" element={<Specialties />} />
-          <Route path="torgi-po-223-fz" element={<SubPage />} />
-          <Route path="obrabotka-pdn" element={<SubPage />} />
-          <Route path="vnutrennyaya-sistema-otsenki-kachestva-obrazovaniya" element={<SubPage />} />
-          <Route path="obuchenie-grazhdan-predpensionnogo-vozrasta" element={<SubPage />} />
-          <Route path="novye-vozmozhnosti-dlya-kazhdogo" element={<SubPage />} />
-          <Route path="partnery" element={<SubPage />} />
-          <Route path="edinoe-okno-dlya-molodykh-semey" element={<SubPage />} />
-          <Route path="news-departament" element={<SubPage />} />
+          <Route path="obrazovatelnoe-kreditovanie" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="informatsiya-dlya-invalidov-i-lits-s-ovz" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="worldskills-russia" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="abilimpiks" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="mnogofunktsionalnyy-tsentr-prikladnykh-kvalifikatsiy" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="it-masterskie" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="proekt-uspekh-kazhdogo-rebenka" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="sedo-obrazovanie-33" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="elektronnoe-obuchenie" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="vospitatelnaya-rabota" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="demonstratsionnyy-ekzamen" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="akkreditatsiya" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="pro-corrup" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="vakansii-kolledzha" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="postuplenie" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="prochie-dokumenty" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="otzyvy" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="faq" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="nauchno-issledovatelyskaya-deyatelynost" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="politika-obrabotki-personalnykh-dannykh" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="o-kolledzhe/dostizheniya" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="o-kolledzhe/foto-i-videomaterialy" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="o-kolledzhe/sotrudnichestvo" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="elektronnaya-informatsionno-obrazovatelnaya-sreda" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="virtualnyy-kabinet-proforientatsii" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="virtualnyy-kabinet-po-proforientatsii" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="anons" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="promo" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="search" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="calculator" element={<Suspense fallback={<PageLoader />}><Calculator /></Suspense>} />
+          <Route path="specialties" element={<Suspense fallback={<PageLoader />}><Specialties /></Suspense>} />
+          <Route path="torgi-po-223-fz" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="obrabotka-pdn" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="vnutrennyaya-sistema-otsenki-kachestva-obrazovaniya" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="obuchenie-grazhdan-predpensionnogo-vozrasta" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="novye-vozmozhnosti-dlya-kazhdogo" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="partnery" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="edinoe-okno-dlya-molodykh-semey" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
+          <Route path="news-departament" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
           
           {/* Catch-all для любых других путей */}
-          <Route path="*" element={<SubPage />} />
+          <Route path="*" element={<Suspense fallback={<PageLoader />}><SubPage /></Suspense>} />
         </Route>
         {/* Скрытая страница демонстрации дизайна — не в основном Layout */}
-        <Route path="/design-showcase-vkp2024" element={<Showcase />} />
+        <Route path="/design-showcase-vkp2024" element={<Suspense fallback={<PageLoader />}><Showcase /></Suspense>} />
       </Routes>
     </AnimatePresence>
   )

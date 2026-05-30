@@ -4,7 +4,7 @@ import {
   IconUsers, IconCoin, IconClock, IconTrophy, 
   IconCheck, IconBuilding, IconSchool,
   IconDeviceLaptop, IconGlobe, IconChartBar, IconSettings,
-  IconRobot, IconDeviceDesktop, IconBolt, IconTool,
+  IconRobot, IconDeviceDesktop, IconTool, IconBolt,
   IconClipboardText
 } from '@tabler/icons-react'
 
@@ -179,7 +179,7 @@ export default function SpecialtyCard3D({ specialty, avgScore, index }) {
           className="w-full rounded-3xl overflow-hidden"
           style={{ backfaceVisibility: 'hidden', position: isFlipped ? 'absolute' : 'relative', top: 0, left: 0, right: 0 }}
         >
-          <div className={`bg-gradient-to-br ${details.color} p-8 text-white relative overflow-hidden min-h-[340px] flex flex-col justify-between`}>
+          <div className={`bg-gradient-to-br ${details.color} p-5 sm:p-8 text-white relative overflow-hidden min-h-[280px] sm:min-h-[340px] flex flex-col justify-between`}>
             {/* Декор */}
             <div className="absolute top-0 right-0 w-40 h-40 bg-white/10 rounded-full -translate-y-1/2 translate-x-1/2" />
             <div className="absolute bottom-0 left-0 w-32 h-32 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
@@ -200,29 +200,29 @@ export default function SpecialtyCard3D({ specialty, avgScore, index }) {
 
               {/* Иконка и название */}
               <div className="mb-3">
-                {typeof details.icon === 'function' ? <details.icon className="w-10 h-10 text-white" strokeWidth={1.5} /> : <span className="text-4xl">{details.icon}</span>}
+                <details.icon className="w-10 h-10 text-white" strokeWidth={1.5} />
               </div>
-              <h3 className="text-xl font-extrabold mb-3 leading-tight">{specialty.name}</h3>
-              <p className="text-white/80 text-sm leading-relaxed line-clamp-3">{details.description}</p>
+              <h3 className="text-base sm:text-xl font-extrabold mb-2 sm:mb-3 leading-tight">{specialty.name}</h3>
+              <p className="text-white/80 text-xs sm:text-sm leading-relaxed line-clamp-3">{details.description}</p>
             </div>
 
             <div className="relative z-10 mt-6">
               {/* Статистика */}
-              <div className="grid grid-cols-3 gap-3">
-                <div className="bg-white/15 backdrop-blur-sm rounded-xl p-3 text-center">
-                  <IconUsers className="w-4 h-4 text-white/70 mx-auto mb-1" />
-                  <p className="font-extrabold text-lg">{specialty.budget}</p>
-                  <p className="text-white/60 text-[10px]">Бюджет</p>
+              <div className="grid grid-cols-3 gap-2 sm:gap-3">
+                <div className="bg-white/15 backdrop-blur-sm rounded-xl p-2 sm:p-3 text-center">
+                  <IconUsers className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white/70 mx-auto mb-0.5 sm:mb-1" />
+                  <p className="font-extrabold text-base sm:text-lg">{specialty.budget}</p>
+                  <p className="text-white/60 text-[9px] sm:text-[10px]">Бюджет</p>
                 </div>
-                <div className="bg-white/15 backdrop-blur-sm rounded-xl p-3 text-center">
-                  <IconCoin className="w-4 h-4 text-white/70 mx-auto mb-1" />
-                  <p className="font-extrabold text-lg">{specialty.paid}</p>
-                  <p className="text-white/60 text-[10px]">Платное</p>
+                <div className="bg-white/15 backdrop-blur-sm rounded-xl p-2 sm:p-3 text-center">
+                  <IconCoin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white/70 mx-auto mb-0.5 sm:mb-1" />
+                  <p className="font-extrabold text-base sm:text-lg">{specialty.paid}</p>
+                  <p className="text-white/60 text-[9px] sm:text-[10px]">Платное</p>
                 </div>
-                <div className="bg-white/15 backdrop-blur-sm rounded-xl p-3 text-center">
-                  <IconTrophy className="w-4 h-4 text-white/70 mx-auto mb-1" />
-                  <p className="font-extrabold text-lg">{specialty.minScore.toFixed(1)}</p>
-                  <p className="text-white/60 text-[10px]">Проходной</p>
+                <div className="bg-white/15 backdrop-blur-sm rounded-xl p-2 sm:p-3 text-center">
+                  <IconTrophy className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white/70 mx-auto mb-0.5 sm:mb-1" />
+                  <p className="font-extrabold text-base sm:text-lg">{specialty.minScore.toFixed(1)}</p>
+                  <p className="text-white/60 text-[9px] sm:text-[10px]">Проходной</p>
                 </div>
               </div>
 
@@ -247,12 +247,12 @@ export default function SpecialtyCard3D({ specialty, avgScore, index }) {
           className="w-full rounded-3xl overflow-hidden"
           style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)', position: isFlipped ? 'relative' : 'absolute', top: 0, left: 0, right: 0 }}
         >
-          <div className="bg-white border border-gray-200 rounded-3xl p-8 min-h-[340px] flex flex-col justify-between shadow-xl">
+          <div className="bg-white border border-gray-200 rounded-3xl p-5 sm:p-8 min-h-[280px] sm:min-h-[340px] flex flex-col justify-between shadow-xl">
             <div>
               {/* Заголовок */}
               <div className="flex items-center justify-between mb-5">
                 <div className="flex items-center gap-2">
-                  {typeof details.icon === 'function' ? <details.icon className="w-6 h-6 text-official" strokeWidth={1.5} /> : <span className="text-2xl">{details.icon}</span>}
+                  <details.icon className="w-6 h-6 text-official" strokeWidth={1.5} />
                   <div>
                     <span className="text-[10px] text-gray-400 font-bold uppercase tracking-wider">{specialty.code}</span>
                     <h4 className="font-extrabold text-official text-sm leading-tight">{specialty.name}</h4>

@@ -1,17 +1,18 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { IconNews } from '@tabler/icons-react'
 import { renderIcon } from '../utils/iconMap'
 
 const fallbackNews = [
-  { date: '15 мая 2026', title: 'День открытых дверей 2026: программа и нововведения', tag: 'Мероприятие', desc: '20 апреля во Владимирском политехническом колледже пройдёт День открытых дверей. Абитуриентов и родителей ждут экскурсии по ИТ-мастерским, мастер-классы по робототехнике и программированию, встреча с директором.' },
-  { date: '10 мая 2026', title: 'Победа студентов в региональном чемпионате «Профессионалы»', tag: 'Достижение', desc: 'Команда ВПК заняла 8 призовых мест в региональном этапе чемпионата «Профессионалы».' },
-  { date: '5 мая 2026', title: 'IT-Куб: летние интенсивные программы для школьников', tag: 'Анонс', desc: 'Центр цифрового образования «IT-Куб» открывает набор на летние интенсивы.' },
-  { date: '28 апреля 2026', title: 'Хакатон по веб-разработке: итоги и проекты', tag: 'Событие', desc: 'Ежегодный хакатон собрал 12 команд студентов колледжа.' },
-  { date: '20 апреля 2026', title: 'Встреча с представителями IT-компаний', tag: 'Мероприятие', desc: 'Студенты выпускных курсов встретились с представителями 15 IT-компаний.' },
-  { date: '15 апреля 2026', title: 'Экскурсия на Владимирский тракторный завод', tag: 'Практика', desc: 'Студенты специальности «Технология машиностроения» посетили ВТЗ.' },
-  { date: '10 апреля 2026', title: 'Студенческая научно-практическая конференция', tag: 'Наука', desc: 'В колледже прошла ежегодная конференция.' },
-  { date: '5 апреля 2026', title: 'Волонтёрская акция «Весенняя неделя добра»', tag: 'Волонтёрство', desc: 'Студенты-волонтёры ВПК провели уборку территории парка.' },
+  { _id: '1', date: '15 мая 2026', title: 'День открытых дверей 2026: программа и нововведения', tag: 'Мероприятие', desc: '20 апреля во Владимирском политехническом колледже пройдёт День открытых дверей. Абитуриентов и родителей ждут экскурсии по ИТ-мастерским, мастер-классы по робототехнике и программированию, встреча с директором.' },
+  { _id: '2', date: '10 мая 2026', title: 'Победа студентов в региональном чемпионате «Профессионалы»', tag: 'Достижение', desc: 'Команда ВПК заняла 8 призовых мест в региональном этапе чемпионата «Профессионалы».' },
+  { _id: '3', date: '5 мая 2026', title: 'IT-Куб: летние интенсивные программы для школьников', tag: 'Анонс', desc: 'Центр цифрового образования «IT-Куб» открывает набор на летние интенсивы.' },
+  { _id: '4', date: '28 апреля 2026', title: 'Хакатон по веб-разработке: итоги и проекты', tag: 'Событие', desc: 'Ежегодный хакатон собрал 12 команд студентов колледжа.' },
+  { _id: '5', date: '20 апреля 2026', title: 'Встреча с представителями IT-компаний', tag: 'Мероприятие', desc: 'Студенты выпускных курсов встретились с представителями 15 IT-компаний.' },
+  { _id: '6', date: '15 апреля 2026', title: 'Экскурсия на Владимирский тракторный завод', tag: 'Практика', desc: 'Студенты специальности «Технология машиностроения» посетили ВТЗ.' },
+  { _id: '7', date: '10 апреля 2026', title: 'Студенческая научно-практическая конференция', tag: 'Наука', desc: 'В колледже прошла ежегодная конференция.' },
+  { _id: '8', date: '5 апреля 2026', title: 'Волонтёрская акция «Весенняя неделя добра»', tag: 'Волонтёрство', desc: 'Студенты-волонтёры ВПК провели уборку территории парка.' },
 ]
 
 const categories = ['Все', 'Мероприятие', 'Достижение', 'Анонс', 'Событие', 'Наука', 'Волонтёрство']
@@ -92,21 +93,25 @@ export default function News() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.05 }}
-                className="card-official rounded-xl p-6 hover:border-accent cursor-pointer"
               >
-                <div className="flex items-start justify-between mb-3">
-                  <span className="badge-official text-xs">{item.tag}</span>
-                  <span className="text-xs text-gray-400">{item.date}</span>
-                </div>
-                <h3 className="text-base font-bold text-official mb-2 hover:text-accent-dark transition-colors">
-                  {item.title}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed line-clamp-3">{item.desc}</p>
-                <div className="mt-3">
-                  <span className="text-accent-dark text-xs font-semibold inline-flex items-center gap-1 transition-all hover:gap-2">
-                    Читать далее →
-                  </span>
-                </div>
+                <Link
+                  to={`/news/${item._id || idx + 1}`}
+                  className="block card-official rounded-xl p-6 hover:border-accent cursor-pointer"
+                >
+                  <div className="flex items-start justify-between mb-3">
+                    <span className="badge-official text-xs">{item.tag}</span>
+                    <span className="text-xs text-gray-400">{item.date}</span>
+                  </div>
+                  <h3 className="text-base font-bold text-official mb-2 hover:text-accent-dark transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-gray-500 text-sm leading-relaxed line-clamp-3">{item.desc}</p>
+                  <div className="mt-3">
+                    <span className="text-accent-dark text-xs font-semibold inline-flex items-center gap-1 transition-all hover:gap-2">
+                      Читать далее &rarr;
+                    </span>
+                  </div>
+                </Link>
               </motion.div>
             ))}
           </div>
