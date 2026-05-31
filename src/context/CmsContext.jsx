@@ -15,8 +15,20 @@ export function CmsProvider({ children }) {
       const content = await api.getContent();
       setData(content);
     } catch (err) {
-      console.error('CMS load error:', err);
-      setError(err.message);
+      console.warn('CMS API недоступен, используем пустые данные');
+      setData({
+        pages: [],
+        navigation: [],
+        news: [],
+        employees: [],
+        specialties: [],
+        contacts: [],
+        settings: null,
+        documents: [],
+        events: [],
+        heroes: [],
+      });
+      setError(null);
     } finally {
       setLoading(false);
     }
