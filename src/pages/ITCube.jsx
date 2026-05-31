@@ -19,7 +19,7 @@ export default function ITCube() {
   return (
     <div>
       {/* ==================== HERO — ТЕХНОЛОГИЧНЫЙ С КОДОМ-ФОНОМ ==================== */}
-      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#0a0e27]">
+      <section className="relative min-h-[90vh] flex items-center overflow-hidden bg-[#0a0e27] w-full">
         {/* Фон с кодом */}
         <div className="absolute inset-0 opacity-[0.06]" style={{ backgroundImage: 'radial-gradient(circle at 1px 1px, #00ff88 1px, transparent 0)', backgroundSize: '24px 24px' }} />
         {/* Светящиеся линии */}
@@ -47,7 +47,7 @@ export default function ITCube() {
                 initial={{ opacity: 0, y: 30 }} 
                 animate={{ opacity: 1, y: 0 }} 
                 transition={{ delay: 0.15 }}
-                className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-[1] mb-6"
+                className="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-4 sm:mb-6 break-words"
               >
                 Центр<br/>
                 <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-blue-400 bg-clip-text text-transparent">

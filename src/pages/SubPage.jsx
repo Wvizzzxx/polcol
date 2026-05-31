@@ -258,7 +258,7 @@ export default function SubPage() {
 
   return (
     <div>
-      <section className="relative py-24 lg:py-28 overflow-hidden">
+      <section className="relative py-16 sm:py-24 lg:py-28 overflow-hidden w-full">
         <div className={`absolute inset-0 bg-gradient-to-br ${theme.heroStyle}`}>
           {theme.heroBgPattern && (
             <div className="absolute inset-0" style={{ backgroundImage: theme.heroBgPattern, backgroundSize: theme.heroBgSize || '40px 40px' }} />
@@ -280,7 +280,7 @@ export default function SubPage() {
                   {badge || 'Информация'}
                 </span>
               </motion.div>
-              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }} className={`text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3`}>
+              <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.15 }} className="text-2xl sm:text-3xl lg:text-5xl font-bold text-white mb-3 break-words">
                 {title}
               </motion.h1>
               <motion.p initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }} className={`text-base text-white/60 max-w-3xl`}>

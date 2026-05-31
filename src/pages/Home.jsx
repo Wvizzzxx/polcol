@@ -56,7 +56,7 @@ const Home = () => {
   return (
     <div className="bg-[var(--color-bg)]">
       {/* Hero-секция */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-official-900 via-official-800 to-official-900 min-h-[520px] flex items-center">
+      <section className="relative overflow-hidden bg-gradient-to-br from-official-900 via-official-800 to-official-900 min-h-[520px] flex items-center w-full">
         {hero.backgroundImage && (
           <div className="absolute inset-0">
             <img src={hero.backgroundImage} alt="" className="w-full h-full object-cover opacity-20" />
@@ -76,7 +76,7 @@ const Home = () => {
                 {heroBadge}
               </motion.span>
               <motion.h1 initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
-                className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight">
+                className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4 leading-tight break-words">
                 {heroTitle}<br />
                 <span className="text-gradient">{heroHighlight}</span>
               </motion.h1>

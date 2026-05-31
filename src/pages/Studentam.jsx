@@ -29,7 +29,7 @@ export default function Studentam() {
   return (
     <div>
       {/* ==================== HERO — МИНИМАЛИСТИЧНЫЙ С БОЛЬШОЙ ТИПОГРАФИКОЙ ==================== */}
-      <section className="relative py-24 lg:py-32 overflow-hidden bg-gradient-to-br from-teal-900 via-emerald-800 to-green-900">
+      <section className="relative py-16 sm:py-24 lg:py-32 overflow-hidden bg-gradient-to-br from-teal-900 via-emerald-800 to-green-900 w-full">
         {/* Сетка-фон */}
         <div className="absolute inset-0 opacity-20" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.05) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
         <motion.div animate={{ y: [0, -20, 0] }} transition={{ duration: 8, repeat: Infinity }} className="absolute -top-20 -right-20 w-96 h-96 bg-emerald-500/10 rounded-full blur-[120px]" />
@@ -54,7 +54,7 @@ export default function Studentam() {
                 initial={{ opacity: 0, y: 30 }} 
                 animate={{ opacity: 1, y: 0 }} 
                 transition={{ delay: 0.1 }}
-                className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-[1] mb-6"
+                className="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-4 sm:mb-6 break-words"
               >
                 Учись.<br/>
                 <span className="text-emerald-300">Соревнуйся.</span><br/>

@@ -21,7 +21,7 @@ export default function Sotrudnikam() {
   return (
     <div>
       {/* ==================== HERO — СТРОГИЙ ПРОФЕССИОНАЛЬНЫЙ ==================== */}
-      <section className="relative py-24 lg:py-32 overflow-hidden">
+      <section className="relative py-16 sm:py-24 lg:py-32 overflow-hidden w-full">
         <div className="absolute inset-0 bg-gradient-to-br from-slate-900 via-indigo-900 to-violet-950">
           {/* Горизонтальные линии — «офисный» паттерн */}
           <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'repeating-linear-gradient(0deg, transparent, transparent 30px, rgba(255,255,255,1) 30px, rgba(255,255,255,1) 31px)' }} />
@@ -45,7 +45,7 @@ export default function Sotrudnikam() {
                 initial={{ opacity: 0, y: 30 }} 
                 animate={{ opacity: 1, y: 0 }} 
                 transition={{ delay: 0.1 }}
-                className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-[1.05] mb-6"
+                className="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-4 sm:mb-6 break-words"
               >
                 Профессионалы<br/>
                 <span className="bg-gradient-to-r from-indigo-300 via-violet-300 to-purple-300 bg-clip-text text-transparent">

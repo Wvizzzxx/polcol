@@ -24,7 +24,7 @@ export default function Roditelyam() {
   return (
     <div>
       {/* ==================== HERO — ТЁПЛЫЙ СЕМЕЙНЫЙ СТИЛЬ ==================== */}
-      <section className="relative py-24 lg:py-32 overflow-hidden">
+      <section className="relative py-16 sm:py-24 lg:py-32 overflow-hidden w-full">
         {/* Тёплый градиент */}
         <div className="absolute inset-0 bg-gradient-to-br from-amber-800 via-orange-700 to-rose-800">
           <div className="absolute inset-0 opacity-10" style={{ backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(255,255,255,0.4) 1px, transparent 0)', backgroundSize: '24px 24px' }} />
@@ -50,7 +50,7 @@ export default function Roditelyam() {
                 initial={{ opacity: 0, y: 30 }} 
                 animate={{ opacity: 1, y: 0 }} 
                 transition={{ delay: 0.1 }}
-                className="text-5xl sm:text-6xl lg:text-7xl font-extrabold text-white leading-[1.05] mb-6"
+                className="text-3xl sm:text-5xl lg:text-7xl font-extrabold text-white leading-[1.1] mb-4 sm:mb-6 break-words"
               >
                 Забота о<br/>
                 <span className="bg-gradient-to-r from-amber-300 via-orange-300 to-rose-300 bg-clip-text text-transparent">
