@@ -177,7 +177,7 @@ export default function SpecialtyCard3D({ specialty, avgScore, index }) {
         {/* ===== FRONT ===== */}
         <div 
           className="w-full rounded-3xl overflow-hidden"
-          style={{ backfaceVisibility: 'hidden', position: isFlipped ? 'absolute' : 'relative', top: 0, left: 0, right: 0 }}
+          style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', position: 'relative', top: 0, left: 0, right: 0, zIndex: isFlipped ? 0 : 1 }}
         >
           <div className={`bg-gradient-to-br ${details.color} p-5 sm:p-8 text-white relative overflow-hidden min-h-[280px] sm:min-h-[340px] flex flex-col justify-between`}>
             {/* Декор */}
@@ -245,7 +245,7 @@ export default function SpecialtyCard3D({ specialty, avgScore, index }) {
         {/* ===== BACK ===== */}
         <div 
           className="w-full rounded-3xl overflow-hidden"
-          style={{ backfaceVisibility: 'hidden', transform: 'rotateY(180deg)', position: isFlipped ? 'relative' : 'absolute', top: 0, left: 0, right: 0 }}
+          style={{ backfaceVisibility: 'hidden', WebkitBackfaceVisibility: 'hidden', transform: 'rotateY(180deg)', position: 'absolute', top: 0, left: 0, right: 0, zIndex: isFlipped ? 1 : 0, pointerEvents: isFlipped ? 'auto' : 'none' }}
         >
           <div className="bg-white border border-gray-200 rounded-3xl p-5 sm:p-8 min-h-[280px] sm:min-h-[340px] flex flex-col justify-between shadow-xl">
             <div>

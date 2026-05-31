@@ -16,7 +16,7 @@ const isMobile = typeof window !== 'undefined' && window.innerWidth <= 768
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <MotionConfig reducedMotion={isMobile ? "always" : "never"}>
-      <BrowserRouter basename="/polcol">
+<BrowserRouter basename={import.meta.env.BASE_URL === '/' ? '' : import.meta.env.BASE_URL}>
         <QueryClientProvider client={queryClient}>
           <CmsProvider>
             <App />
