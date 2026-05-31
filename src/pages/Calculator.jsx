@@ -184,7 +184,7 @@ export default function Calculator() {
 
           {/* Live summary bar */}
           {validScores.length > 0 && (
-            <div className="sticky top-20 z-30 bg-white/95 backdrop-blur border border-gray-200 rounded-2xl p-3 sm:p-4 shadow-lg mb-6 sm:mb-8 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4">
+            <div className="bg-white/95 backdrop-blur border border-gray-200 rounded-2xl p-3 sm:p-4 shadow-lg mb-6 sm:mb-8 flex flex-col sm:flex-row items-center justify-between gap-2 sm:gap-4">
               <div className="flex items-center gap-3">
                 <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-gradient-to-br from-accent to-accent-dark flex items-center justify-center">
                   <IconStar className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
