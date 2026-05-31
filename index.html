@@ -26,8 +26,45 @@
         }
       })();
     </script>
-    <script type="module" crossorigin src="/polcol/assets/index-Bf1npAM3.js"></script>
-    <link rel="stylesheet" crossorigin href="/polcol/assets/index-BlgQLJ_u.css">
+
+    <!-- Mobile: force all elements visible before React loads to prevent flickering -->
+    <script>
+      (function() {
+        if (window.matchMedia && window.matchMedia('(max-width: 768px)').matches) {
+          var style = document.createElement('style');
+          style.textContent = [
+            'body { overflow-x: clip !important; scroll-behavior: auto !important; }',
+            '[style*="opacity:0"] { opacity: 1 !important; }',
+            '[style*="opacity: 0"] { opacity: 1 !important; }',
+            '[style*="transform: translateX"] { transform: none !important; }',
+            '[style*="transform: translateY"] { transform: none !important; }',
+            '.backdrop-blur, .backdrop-blur-md, .backdrop-blur-lg { backdrop-filter: none !important; -webkit-backdrop-filter: none !important; }',
+            '*, *::before, *::after { will-change: auto !important; animation-duration: 0ms !important; }',
+          ].join('\n');
+          document.head.appendChild(style);
+
+          // MutationObserver: force opacity:1 on any element framer-motion sets to 0
+          var observer = new MutationObserver(function(mutations) {
+            for (var i = 0; i < mutations.length; i++) {
+              var el = mutations[i].target;
+              if (el.style && el.style.opacity === '0') {
+                el.style.opacity = '1';
+              }
+              if (el.style && el.style.transform && el.style.transform !== 'none') {
+                el.style.transform = 'none';
+              }
+            }
+          });
+          observer.observe(document.documentElement, { 
+            attributes: true, 
+            subtree: true, 
+            attributeFilter: ['style'] 
+          });
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/polcol/assets/index-BBW1y_3f.js"></script>
+    <link rel="stylesheet" crossorigin href="/polcol/assets/index-BQbuWYoq.css">
   </head>
   <body>
     <div id="root"></div>
