@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Redirecting...</title>
+  <script>
+    // GitHub Pages SPA redirect
+    // /polcol/sveden → /polcol/?/sveden
+    var l = window.location;
+    var repo = '/polcol/';
+    var path = l.pathname.substring(1).split('/').slice(1).join('/'); // strip repo name
+    var hash = l.hash ? '&h=' + l.hash.slice(1) : '';
+    l.replace(repo + '?/' + path + l.search + hash);
+  </script>
+</head>
+<body>
+  <p>Перенаправление...</p>
+</body>
+</html>
