@@ -7,6 +7,7 @@
     "start": "node index.js",
     "dev": "node --watch index.js",
     "seed": "node seed.js",
+    "export-json": "node -e \"require('./config/db')().then(async()=>{const r=await fetch('http://localhost:5000/api/public/content.json');const d=await r.json();require('fs').writeFileSync(require('path').join(__dirname,'..','public','cms-data.json'),JSON.stringify(d,null,2));console.log('Exported to public/cms-data.json');process.exit(0)}).catch(e=>{console.error(e);process.exit(1)})\"",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],

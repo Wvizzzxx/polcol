@@ -17,19 +17,17 @@ export function CmsProvider({ children }) {
     } catch (err) {
       console.error('CMS load error:', err);
       setError(err.message);
-      // Fallback: пробуем загрузить из экспортированных JS-модулей
+      // Fallback: загружаем статический JSON (для GitHub Pages без API)
       try {
-        const script = document.createElement('script');
-        script.src = '/api/public/exports/cms-data.js';
-        script.onload = () => {
-          if (window.__CMS_DATA) {
-            setData(window.__CMS_DATA);
-            setError(null);
-          }
-        };
-        document.head.appendChild(script);
+        const base = import.meta.env.BASE_URL || '/';
+        const res = await fetch(base + 'cms-data.json');
+        if (res.ok) {
+          const staticData = await res.json();
+          setData(staticData);
+          setError(null);
+        }
       } catch {
-        // Игнорируем — данные недоступны
+        // Данные недоступны — оставляем ошибку
       }
     } finally {
       setLoading(false);

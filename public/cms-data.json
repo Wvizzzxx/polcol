@@ -1,0 +1,1312 @@
+{
+  "pages": [
+    {
+      "seo": {
+        "title": "",
+        "description": "",
+        "keywords": ""
+      },
+      "_id": "6a1ae5ee011bde0b406cd0e5",
+      "path": "/",
+      "title": "Р“Р»Р°РІРЅР°СЏ",
+      "subtitle": "",
+      "badge": "",
+      "hero": "",
+      "sections": [
+        {
+          "type": "text",
+          "title": "Р’Р»Р°РґРёРјРёСЂСЃРєРёР№ РїРѕР»РёС‚РµС…РЅРёС‡РµСЃРєРёР№ РєРѕР»Р»РµРґР¶",
+          "icon": "",
+          "image": "",
+          "images": [],
+          "content": "Р“РђРџРћРЈ Р’Рћ В«Р’РџРљВ». РљР°С‡РµСЃС‚РІРµРЅРЅРѕРµ РѕР±СЂР°Р·РѕРІР°РЅРёРµ Рё СѓСЃРїРµС€РЅРѕРµ Р±СѓРґСѓС‰РµРµ",
+          "order": 0,
+          "_id": "6a1ae5ee011bde0b406cd0e6",
+          "items": []
+        }
+      ],
+      "isActive": true,
+      "createdAt": "2026-05-30T13:28:14.983Z",
+      "updatedAt": "2026-05-30T13:28:14.983Z",
+      "__v": 0
+    },
+    {
+      "seo": {
+        "title": "",
+        "description": "",
+        "keywords": ""
+      },
+      "_id": "6a1ae5ee011bde0b406cd0e8",
+      "path": "/abiturientam",
+      "title": "РђР±РёС‚СѓСЂРёРµРЅС‚Р°Рј",
+      "subtitle": "",
+      "badge": "",
+      "hero": "",
+      "sections": [],
+      "isActive": true,
+      "createdAt": "2026-05-30T13:28:14.982Z",
+      "updatedAt": "2026-05-30T13:28:14.982Z",
+      "__v": 0
+    },
+    {
+      "seo": {
+        "title": "",
+        "description": "",
+        "keywords": ""
+      },
+      "_id": "6a1ae5ee011bde0b406cd0e7",
+      "path": "/about",
+      "title": "Рћ РєРѕР»Р»РµРґР¶Рµ",
+      "subtitle": "",
+      "badge": "",
+      "hero": "",
+      "sections": [],
+      "isActive": true,
+      "createdAt": "2026-05-30T13:28:14.982Z",
+      "updatedAt": "2026-05-30T13:28:14.982Z",
+      "__v": 0
+    },
+    {
+      "seo": {
+        "title": "",
+        "description": "",
+        "keywords": ""
+      },
+      "_id": "6a1ae5ee011bde0b406cd0ed",
+      "path": "/contacts",
+      "title": "РљРѕРЅС‚Р°РєС‚С‹",
+      "subtitle": "",
+      "badge": "",
+      "hero": "",
+      "sections": [],
+      "isActive": true,
+      "createdAt": "2026-05-30T13:28:14.982Z",
+      "updatedAt": "2026-05-30T13:28:14.982Z",
+      "__v": 0
+    },
+    {
+      "seo": {
+        "title": "",
+        "description": "",
+        "keywords": ""
+      },
+      "_id": "6a1ae5ee011bde0b406cd0ec",
+      "path": "/itcube",
+      "title": "IT-РљСѓР±",
+      "subtitle": "",
+      "badge": "",
+      "hero": "",
+      "sections": [],
+      "isActive": true,
+      "createdAt": "2026-05-30T13:28:14.982Z",
+      "updatedAt": "2026-05-30T13:28:14.982Z",
+      "__v": 0
+    },
+    {
+      "seo": {
+        "title": "",
+        "description": "",
+        "keywords": ""
+      },
+      "_id": "6a1ae5ee011bde0b406cd0ea",
+      "path": "/roditelyam",
+      "title": "Р РѕРґРёС‚РµР»СЏРј",
+      "subtitle": "",
+      "badge": "",
+      "hero": "",
+      "sections": [],
+      "isActive": true,
+      "createdAt": "2026-05-30T13:28:14.982Z",
+      "updatedAt": "2026-05-30T13:28:14.982Z",
+      "__v": 0
+    },
+    {
+      "seo": {
+        "title": "",
+        "description": "",
+        "keywords": ""
+      },
+      "_id": "6a1ae5ee011bde0b406cd0eb",
+      "path": "/sotrudnikam",
+      "title": "РЎРѕС‚СЂСѓРґРЅРёРєР°Рј",
+      "subtitle": "",
+      "badge": "",
+      "hero": "",
+      "sections": [],
+      "isActive": true,
+      "createdAt": "2026-05-30T13:28:14.982Z",
+      "updatedAt": "2026-05-30T13:28:14.982Z",
+      "__v": 0
+    },
+    {
+      "seo": {
+        "title": "",
+        "description": "",
+        "keywords": ""
+      },
+      "_id": "6a1ae5ee011bde0b406cd0e9",
+      "path": "/studentam",
+      "title": "РЎС‚СѓРґРµРЅС‚Р°Рј",
+      "subtitle": "",
+      "badge": "",
+      "hero": "",
+      "sections": [],
+      "isActive": true,
+      "createdAt": "2026-05-30T13:28:14.982Z",
+      "updatedAt": "2026-05-30T13:28:14.982Z",
+      "__v": 0
+    }
+  ],
+  "navigation": [
+    {
+      "_id": "6a1c3cc599713ee942dea8bb",
+      "title": "РЎРІРµРґРµРЅРёСЏ РѕР± РѕР±СЂР°Р·РѕРІР°С‚РµР»СЊРЅРѕР№ РѕСЂРіР°РЅРёР·Р°С†РёРё",
+      "path": "/sveden",
+      "icon": "info",
+      "order": 0,
+      "isActive": true,
+      "isMain": true,
+      "submenu": [
+        {
+          "title": "РћСЃРЅРѕРІРЅС‹Рµ СЃРІРµРґРµРЅРёСЏ",
+          "path": "/sveden/common",
+          "order": 0,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8bc"
+        },
+        {
+          "title": "РЎС‚СЂСѓРєС‚СѓСЂР° Рё РѕСЂРіР°РЅС‹ СѓРїСЂР°РІР»РµРЅРёСЏ",
+          "path": "/sveden/struct",
+          "order": 1,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8bd"
+        },
+        {
+          "title": "Р”РѕРєСѓРјРµРЅС‚С‹",
+          "path": "/sveden/document",
+          "order": 2,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8be"
+        },
+        {
+          "title": "РћР±СЂР°Р·РѕРІР°РЅРёРµ",
+          "path": "/sveden/education",
+          "order": 3,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8bf"
+        },
+        {
+          "title": "РћР±СЂР°Р·РѕРІР°С‚РµР»СЊРЅС‹Рµ СЃС‚Р°РЅРґР°СЂС‚С‹",
+          "path": "/sveden/eduStandarts",
+          "order": 4,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8c0"
+        },
+        {
+          "title": "Р СѓРєРѕРІРѕРґСЃС‚РІРѕ. РџРµРґР°РіРѕРіРёС‡РµСЃРєРёР№ СЃРѕСЃС‚Р°РІ",
+          "path": "/sveden/employees",
+          "order": 5,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8c1"
+        },
+        {
+          "title": "РњР°С‚РµСЂРёР°Р»СЊРЅРѕ-С‚РµС…РЅРёС‡РµСЃРєРѕРµ РѕР±РµСЃРїРµС‡РµРЅРёРµ",
+          "path": "/sveden/dsreda",
+          "order": 6,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8c2"
+        },
+        {
+          "title": "РЎС‚РёРїРµРЅРґРёРё Рё РјРµСЂС‹ РїРѕРґРґРµСЂР¶РєРё",
+          "path": "/sveden/grants",
+          "order": 7,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8c3"
+        },
+        {
+          "title": "РџР»Р°С‚РЅС‹Рµ РѕР±СЂР°Р·РѕРІР°С‚РµР»СЊРЅС‹Рµ СѓСЃР»СѓРіРё",
+          "path": "/sveden/paid_edu",
+          "order": 8,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8c4"
+        },
+        {
+          "title": "Р¤РёРЅР°РЅСЃРѕРІРѕ-С…РѕР·СЏР№СЃС‚РІРµРЅРЅР°СЏ РґРµСЏС‚РµР»СЊРЅРѕСЃС‚СЊ",
+          "path": "/sveden/budget",
+          "order": 9,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8c5"
+        },
+        {
+          "title": "Р’Р°РєР°РЅС‚РЅС‹Рµ РјРµСЃС‚Р° РґР»СЏ РїСЂРёРµРјР°",
+          "path": "/sveden/vacant",
+          "order": 10,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8c6"
+        },
+        {
+          "title": "РњРµР¶РґСѓРЅР°СЂРѕРґРЅРѕРµ СЃРѕС‚СЂСѓРґРЅРёС‡РµСЃС‚РІРѕ",
+          "path": "/sveden/cooperation",
+          "order": 12,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8c7"
+        }
+      ],
+      "createdAt": "2026-05-31T13:51:01.573Z",
+      "updatedAt": "2026-05-31T13:51:01.573Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1c3cc599713ee942dea8c8",
+      "title": "РђР±РёС‚СѓСЂРёРµРЅС‚Р°Рј",
+      "path": "/abiturientam",
+      "icon": "user",
+      "order": 1,
+      "isActive": true,
+      "isMain": false,
+      "submenu": [
+        {
+          "title": "РџСЂРёРµРјРЅР°СЏ РєРѕРјРёСЃСЃРёСЏ",
+          "path": "/abiturientam/priemnaya-komissiya",
+          "order": 0,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8c9"
+        },
+        {
+          "title": "Р”РµРЅСЊ РѕС‚РєСЂС‹С‚С‹С… РґРІРµСЂРµР№",
+          "path": "/abiturientam/den-otkrytykh-dverej",
+          "order": 1,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8ca"
+        },
+        {
+          "title": "РЎРїРµС†РёР°Р»СЊРЅРѕСЃС‚Рё",
+          "path": "/abiturientam/spetsialnosti",
+          "order": 2,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8cb"
+        },
+        {
+          "title": "РћР±С‰РµР¶РёС‚РёРµ",
+          "path": "/abiturientam/obshhezhitie-dlya-inogorodnikh-studentov",
+          "order": 3,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8cc"
+        },
+        {
+          "title": "РџСЂРѕС„РѕСЂРёРµРЅС‚Р°С†РёСЏ",
+          "path": "/abiturientam/proforientatsiya",
+          "order": 4,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8cd"
+        },
+        {
+          "title": "РўРµСЃС‚ РЅР° РїСЂРѕС„РѕРїСЂРµРґРµР»РµРЅРёРµ",
+          "path": "/abiturientam/test-na-professionalnoe-samoopredelenie",
+          "order": 5,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8ce"
+        }
+      ],
+      "createdAt": "2026-05-31T13:51:01.573Z",
+      "updatedAt": "2026-05-31T13:51:01.573Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1c3cc599713ee942dea8cf",
+      "title": "РЎС‚СѓРґРµРЅС‚Р°Рј",
+      "path": "/studentam",
+      "icon": "graduation",
+      "order": 2,
+      "isActive": true,
+      "isMain": false,
+      "submenu": [
+        {
+          "title": "Р Р°СЃРїРёСЃР°РЅРёРµ Р·Р°РЅСЏС‚РёР№",
+          "path": "/studentam/raspisanie-zanyatij",
+          "order": 0,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8d0"
+        },
+        {
+          "title": "Р Р°СЃРїРёСЃР°РЅРёРµ Р·РІРѕРЅРєРѕРІ",
+          "path": "/studentam/raspisanie-zvonkov",
+          "order": 1,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8d1"
+        },
+        {
+          "title": "Р”РѕРєСѓРјРµРЅС‚С‹",
+          "path": "/studentam/dokumenty",
+          "order": 2,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8d2"
+        },
+        {
+          "title": "РџСЂР°РєС‚РёРєР°",
+          "path": "/studentam/praktika",
+          "order": 3,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8d3"
+        },
+        {
+          "title": "РЎС‚СѓРґРµРЅС‡РµСЃРєР°СЏ Р¶РёР·РЅСЊ",
+          "path": "/studentam/studencheskaya-zhizn",
+          "order": 4,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8d4"
+        },
+        {
+          "title": "РЎС‚СѓРґРµРЅС‡РµСЃРєРёР№ СЃРѕРІРµС‚",
+          "path": "/studentam/studencheskiy-sovet",
+          "order": 5,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8d5"
+        },
+        {
+          "title": "РўСЂСѓРґРѕСѓСЃС‚СЂРѕР№СЃС‚РІРѕ",
+          "path": "/studentam/trudoustrojstvo-vypusknikov",
+          "order": 6,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8d6"
+        },
+        {
+          "title": "РћР»РёРјРїРёР°РґС‹ Рё РєРѕРЅРєСѓСЂСЃС‹",
+          "path": "/studentam/olimpiady-i-konkursy",
+          "order": 7,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8d7"
+        },
+        {
+          "title": "Р’РѕР»РѕРЅС‚РµСЂСЃРєРѕРµ РґРІРёР¶РµРЅРёРµ",
+          "path": "/studentam/volonterskoe-dvizhenie",
+          "order": 8,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8d8"
+        },
+        {
+          "title": "Р¦РµРЅС‚СЂ РєР°СЂСЊРµСЂС‹",
+          "path": "/studentam/tsentr-karery",
+          "order": 9,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8d9"
+        }
+      ],
+      "createdAt": "2026-05-31T13:51:01.573Z",
+      "updatedAt": "2026-05-31T13:51:01.573Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1c3cc599713ee942dea8da",
+      "title": "Р РѕРґРёС‚РµР»СЏРј",
+      "path": "/roditelyam",
+      "icon": "family",
+      "order": 3,
+      "isActive": true,
+      "isMain": false,
+      "submenu": [
+        {
+          "title": "РџРёС‚Р°РЅРёРµ Рё Р·РґРѕСЂРѕРІСЊРµ",
+          "path": "/roditelyam/pitanie-i-zdorovye",
+          "order": 0,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8db"
+        },
+        {
+          "title": "Р’РѕСЃРїРёС‚Р°С‚РµР»СЊРЅР°СЏ СЂР°Р±РѕС‚Р°",
+          "path": "/roditelyam/vospitatelynaya-rabota",
+          "order": 1,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8dc"
+        },
+        {
+          "title": "РљР»Р°СЃСЃРЅС‹Рµ СЂСѓРєРѕРІРѕРґРёС‚РµР»Рё",
+          "path": "/roditelyam/klassnye-rukovoditeli",
+          "order": 2,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8dd"
+        },
+        {
+          "title": "РћР±СЉСЏРІР»РµРЅРёСЏ",
+          "path": "/roditelyam/obyavleniya",
+          "order": 3,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8de"
+        },
+        {
+          "title": "Р”РѕРєСѓРјРµРЅС‚С‹",
+          "path": "/roditelyam/dokumenty",
+          "order": 4,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8df"
+        },
+        {
+          "title": "РњРµСЂРѕРїСЂРёСЏС‚РёСЏ",
+          "path": "/roditelyam/meropriyatiya",
+          "order": 5,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8e0"
+        }
+      ],
+      "createdAt": "2026-05-31T13:51:01.573Z",
+      "updatedAt": "2026-05-31T13:51:01.573Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1c3cc599713ee942dea8e1",
+      "title": "РЎРѕС‚СЂСѓРґРЅРёРєР°Рј",
+      "path": "/sotrudnikam",
+      "icon": "staff",
+      "order": 4,
+      "isActive": true,
+      "isMain": false,
+      "submenu": [
+        {
+          "title": "РђС‚С‚РµСЃС‚Р°С†РёСЏ",
+          "path": "/sotrudnikam/attestatsii",
+          "order": 0,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8e2"
+        },
+        {
+          "title": "Р”РѕРєСѓРјРµРЅС‚С‹",
+          "path": "/sotrudnikam/dokumenty",
+          "order": 1,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8e3"
+        },
+        {
+          "title": "РњРµС‚РѕРґРёС‡РµСЃРєРёРµ РјР°С‚РµСЂРёР°Р»С‹",
+          "path": "/sotrudnikam/metodicheskie-materialy",
+          "order": 2,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8e4"
+        },
+        {
+          "title": "РњРµСЂРѕРїСЂРёСЏС‚РёСЏ",
+          "path": "/sotrudnikam/meropriyatiya",
+          "order": 3,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8e5"
+        },
+        {
+          "title": "РљРѕРЅРєСѓСЂСЃ \"РњР°СЃС‚РµСЂ РіРѕРґР°\"",
+          "path": "/sotrudnikam/konkurs-master-goda",
+          "order": 4,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8e6"
+        },
+        {
+          "title": "РњСѓР·РµР№",
+          "path": "/sotrudnikam/muzey",
+          "order": 5,
+          "isActive": true,
+          "_id": "6a1c3cc599713ee942dea8e7"
+        }
+      ],
+      "createdAt": "2026-05-31T13:51:01.573Z",
+      "updatedAt": "2026-05-31T13:51:01.573Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1c3cc599713ee942dea8e8",
+      "title": "РќРѕРІРѕСЃС‚Рё",
+      "path": "/news",
+      "icon": "news",
+      "order": 5,
+      "isActive": true,
+      "isMain": false,
+      "submenu": [],
+      "createdAt": "2026-05-31T13:51:01.572Z",
+      "updatedAt": "2026-05-31T13:51:01.572Z",
+      "__v": 0
+    }
+  ],
+  "news": [
+    {
+      "seo": {
+        "title": "",
+        "description": ""
+      },
+      "_id": "6a1ae5ee011bde0b406cd0f5",
+      "title": "Р”РµРЅСЊ РѕС‚РєСЂС‹С‚С‹С… РґРІРµСЂРµР№",
+      "content": "РџСЂРёРіР»Р°С€Р°РµРј Р°Р±РёС‚СѓСЂРёРµРЅС‚РѕРІ Рё РёС… СЂРѕРґРёС‚РµР»РµР№ РЅР° Р”РµРЅСЊ РѕС‚РєСЂС‹С‚С‹С… РґРІРµСЂРµР№!",
+      "excerpt": "",
+      "category": "РќРѕРІРѕСЃС‚Рё",
+      "coverImage": "",
+      "gallery": [],
+      "status": "published",
+      "publishedAt": "2026-05-30T13:28:14.996Z",
+      "createdAt": "2026-05-30T13:28:14.997Z",
+      "updatedAt": "2026-05-30T15:59:21.049Z",
+      "slug": "РґРµРЅСЊ-РѕС‚РєСЂС‹С‚С‹С…-РґРІРµСЂРµР№",
+      "__v": 0
+    },
+    {
+      "seo": {
+        "title": "",
+        "description": ""
+      },
+      "_id": "6a1ae5ee011bde0b406cd0f6",
+      "title": "РќР°С‡Р°Р»Рѕ РїСЂРёРµРјРЅРѕР№ РєР°РјРїР°РЅРёРё",
+      "content": "РЎ 1 РёСЋРЅСЏ РЅР°С‡РёРЅР°РµС‚СЃСЏ РїСЂРёРµРј РґРѕРєСѓРјРµРЅС‚РѕРІ РѕС‚ Р°Р±РёС‚СѓСЂРёРµРЅС‚РѕРІ.",
+      "excerpt": "",
+      "category": "РќРѕРІРѕСЃС‚Рё",
+      "coverImage": "",
+      "gallery": [],
+      "status": "published",
+      "publishedAt": "2026-05-30T13:28:14.996Z",
+      "createdAt": "2026-05-30T13:28:14.997Z",
+      "updatedAt": "2026-05-30T13:28:14.997Z",
+      "slug": "РЅР°С‡Р°Р»Рѕ-РїСЂРёРµРјРЅРѕР№-РєР°РјРїР°РЅРёРё",
+      "__v": 0
+    }
+  ],
+  "employees": [
+    {
+      "_id": "6a1b0603b720d21fd60c0c88",
+      "fullName": "РРІР°РЅРѕРІ РЎРµСЂРіРµР№ РџРµС‚СЂРѕРІРёС‡",
+      "position": "Р”РёСЂРµРєС‚РѕСЂ",
+      "department": "Р СѓРєРѕРІРѕРґСЃС‚РІРѕ",
+      "education": "Р’С‹СЃС€РµРµ, Р’Р“РЈ",
+      "experience": 25,
+      "category": "Р’С‹СЃС€Р°СЏ",
+      "phone": "+7 (4922) 32-42-24",
+      "email": "ivanov@vpk.ru",
+      "photo": "",
+      "bio": "Р”РёСЂРµРєС‚РѕСЂ Р’Р»Р°РґРёРјРёСЂСЃРєРѕРіРѕ РїРѕР»РёС‚РµС…РЅРёС‡РµСЃРєРѕРіРѕ РєРѕР»Р»РµРґР¶Р°. РќР°РіСЂР°Р¶РґС‘РЅ РјРµРґР°Р»СЊСЋ В«Р—Р° Р·Р°СЃР»СѓРіРё РІ РѕР±СЂР°Р·РѕРІР°РЅРёРёВ».",
+      "achievements": [
+        "РњРµРґР°Р»СЊ В«Р—Р° Р·Р°СЃР»СѓРіРё РІ РѕР±СЂР°Р·РѕРІР°РЅРёРёВ»",
+        "РџРѕС‡С‘С‚РЅС‹Р№ СЂР°Р±РѕС‚РЅРёРє РѕР±С‰РµРіРѕ РѕР±СЂР°Р·РѕРІР°РЅРёСЏ Р Р¤"
+      ],
+      "order": 0,
+      "isActive": true,
+      "createdAt": "2026-05-30T15:45:07.082Z",
+      "updatedAt": "2026-05-30T15:45:07.082Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b0603b720d21fd60c0c89",
+      "fullName": "РџРµС‚СЂРѕРІР° Р•Р»РµРЅР° Р’РёРєС‚РѕСЂРѕРІРЅР°",
+      "position": "Р—Р°РјРµСЃС‚РёС‚РµР»СЊ РґРёСЂРµРєС‚РѕСЂР° РїРѕ СѓС‡РµР±РЅРѕР№ СЂР°Р±РѕС‚Рµ",
+      "department": "Р СѓРєРѕРІРѕРґСЃС‚РІРѕ",
+      "education": "Р’С‹СЃС€РµРµ, Р’Р“РЈ",
+      "experience": 18,
+      "category": "Р’С‹СЃС€Р°СЏ",
+      "phone": "+7 (4922) 32-42-25",
+      "email": "petrova@vpk.ru",
+      "photo": "",
+      "bio": "РљСѓСЂРёСЂСѓРµС‚ СѓС‡РµР±РЅСѓСЋ РґРµСЏС‚РµР»СЊРЅРѕСЃС‚СЊ РєРѕР»Р»РµРґР¶Р°.",
+      "achievements": [
+        "РџРѕС‡С‘С‚РЅС‹Р№ СЂР°Р±РѕС‚РЅРёРє СЃСЂРµРґРЅРµРіРѕ РїСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅРѕРіРѕ РѕР±СЂР°Р·РѕРІР°РЅРёСЏ"
+      ],
+      "order": 1,
+      "isActive": true,
+      "createdAt": "2026-05-30T15:45:07.082Z",
+      "updatedAt": "2026-05-30T15:45:07.082Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b0603b720d21fd60c0c8a",
+      "fullName": "РЎРёРґРѕСЂРѕРІ РђР»РµРєСЃРµР№ РќРёРєРѕР»Р°РµРІРёС‡",
+      "position": "Р—Р°РІРµРґСѓСЋС‰РёР№ РєР°С„РµРґСЂРѕР№ РёРЅС„РѕСЂРјР°С‚РёРєРё",
+      "department": "РРЅС„РѕСЂРјР°С‚РёРєР° Рё РІС‹С‡РёСЃР»РёС‚РµР»СЊРЅР°СЏ С‚РµС…РЅРёРєР°",
+      "education": "Р’С‹СЃС€РµРµ, РњР“РЈ",
+      "experience": 15,
+      "category": "Р’С‹СЃС€Р°СЏ",
+      "phone": "+7 (4922) 32-42-30",
+      "email": "sidorov@vpk.ru",
+      "photo": "",
+      "bio": "РџСЂРµРїРѕРґР°РІР°С‚РµР»СЊ РёРЅС„РѕСЂРјР°С‚РёРєРё Рё РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЏ. Р СѓРєРѕРІРѕРґРёС‚РµР»СЊ РєСЂСѓР¶РєР° СЂРѕР±РѕС‚РѕС‚РµС…РЅРёРєРё.",
+      "achievements": [
+        "РџРѕР±РµРґРёС‚РµР»СЊ РєРѕРЅРєСѓСЂСЃР° В«Р›СѓС‡С€РёР№ РїСЂРµРїРѕРґР°РІР°С‚РµР»СЊ РіРѕРґР°В»",
+        "Р СѓРєРѕРІРѕРґРёС‚РµР»СЊ IT-РєСЂСѓР¶РєР°"
+      ],
+      "order": 2,
+      "isActive": true,
+      "createdAt": "2026-05-30T15:45:07.082Z",
+      "updatedAt": "2026-05-30T15:45:07.082Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b0603b720d21fd60c0c8b",
+      "fullName": "РљРѕР·Р»РѕРІР° РњР°СЂРёСЏ РђРЅРґСЂРµРµРІРЅР°",
+      "position": "РџСЂРµРїРѕРґР°РІР°С‚РµР»СЊ РјР°С‚РµРјР°С‚РёРєРё",
+      "department": "РњР°С‚РµРјР°С‚РёРєР° Рё РµСЃС‚РµСЃС‚РІРµРЅРЅС‹Рµ РЅР°СѓРєРё",
+      "education": "Р’С‹СЃС€РµРµ, Р’Р“РџРЈ",
+      "experience": 12,
+      "category": "РџРµСЂРІР°СЏ",
+      "phone": "",
+      "email": "kozlova@vpk.ru",
+      "photo": "",
+      "bio": "РђРІС‚РѕСЂ РјРµС‚РѕРґРёС‡РµСЃРєРёС… РїРѕСЃРѕР±РёР№ РїРѕ РїСЂРµРїРѕРґР°РІР°РЅРёСЋ РјР°С‚РµРјР°С‚РёРєРё.",
+      "achievements": [
+        "РђРІС‚РѕСЂ РјРµС‚РѕРґРёС‡РµСЃРєРёС… РїРѕСЃРѕР±РёР№",
+        "РџРѕР±РµРґРёС‚РµР»СЊ РіРѕСЂРѕРґСЃРєРѕРіРѕ РєРѕРЅРєСѓСЂСЃР°"
+      ],
+      "order": 3,
+      "isActive": true,
+      "createdAt": "2026-05-30T15:45:07.082Z",
+      "updatedAt": "2026-05-30T15:45:07.082Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b0603b720d21fd60c0c8c",
+      "fullName": "РњРѕСЂРѕР·РѕРІ Р”РјРёС‚СЂРёР№ Р’Р»Р°РґРёРјРёСЂРѕРІРёС‡",
+      "position": "РџСЂРµРїРѕРґР°РІР°С‚РµР»СЊ РјР°С€РёРЅРѕСЃС‚СЂРѕРµРЅРёСЏ",
+      "department": "РњР°С€РёРЅРѕСЃС‚СЂРѕРµРЅРёРµ",
+      "education": "Р’С‹СЃС€РµРµ, РњРђР”Р",
+      "experience": 20,
+      "category": "Р’С‹СЃС€Р°СЏ",
+      "phone": "+7 (4922) 32-42-35",
+      "email": "morozov@vpk.ru",
+      "photo": "",
+      "bio": "РЎРїРµС†РёР°Р»РёСЃС‚ РїРѕ CAD-СЃРёСЃС‚РµРјР°Рј Рё 3D-РјРѕРґРµР»РёСЂРѕРІР°РЅРёСЋ.",
+      "achievements": [
+        "РќР°СѓС‡РЅС‹Р№ СЂСѓРєРѕРІРѕРґРёС‚РµР»СЊ СЃС‚СѓРґРµРЅС‡РµСЃРєРёС… РїСЂРѕРµРєС‚РѕРІ",
+        "РЎРµСЂС‚РёС„РёС†РёСЂРѕРІР°РЅРЅС‹Р№ СЃРїРµС†РёР°Р»РёСЃС‚ SolidWorks"
+      ],
+      "order": 4,
+      "isActive": true,
+      "createdAt": "2026-05-30T15:45:07.082Z",
+      "updatedAt": "2026-05-30T15:45:07.082Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b0603b720d21fd60c0c8d",
+      "fullName": "Р’РѕР»РєРѕРІР° РћР»СЊРіР° РРіРѕСЂРµРІРЅР°",
+      "position": "РџСЂРµРїРѕРґР°РІР°С‚РµР»СЊ Р°РЅРіР»РёР№СЃРєРѕРіРѕ СЏР·С‹РєР°",
+      "department": "РЇР·С‹РєРѕРІС‹Рµ РґРёСЃС†РёРїР»РёРЅС‹",
+      "education": "Р’С‹СЃС€РµРµ, Р’Р“РџРЈ",
+      "experience": 8,
+      "category": "Р’С‚РѕСЂР°СЏ",
+      "phone": "",
+      "email": "volkova@vpk.ru",
+      "photo": "",
+      "bio": "РџСЂРµРїРѕРґР°РІР°С‚РµР»СЊ Р°РЅРіР»РёР№СЃРєРѕРіРѕ СЏР·С‹РєР°. Р СѓРєРѕРІРѕРґРёС‚РµР»СЊ СЏР·С‹РєРѕРІРѕРіРѕ РєР»СѓР±Р°.",
+      "achievements": [
+        "РЎРµСЂС‚РёС„РёРєР°С‚ Cambridge English",
+        "Р СѓРєРѕРІРѕРґРёС‚РµР»СЊ СЏР·С‹РєРѕРІРѕРіРѕ РєР»СѓР±Р°"
+      ],
+      "order": 5,
+      "isActive": true,
+      "createdAt": "2026-05-30T15:45:07.082Z",
+      "updatedAt": "2026-05-30T15:45:07.082Z",
+      "__v": 0
+    }
+  ],
+  "specialties": [
+    {
+      "_id": "6a1b0603b720d21fd60c0c83",
+      "code": "09.02.01",
+      "name": "РљРѕРјРїСЊСЋС‚РµСЂРЅС‹Рµ СЃРµС‚Рё Рё СЃРёСЃС‚РµРјС‹ СЃРІСЏР·Рё",
+      "description": "РџРѕРґРіРѕС‚РѕРІРєР° СЃРїРµС†РёР°Р»РёСЃС‚РѕРІ РІ РѕР±Р»Р°СЃС‚Рё РїСЂРѕРµРєС‚РёСЂРѕРІР°РЅРёСЏ, РЅР°СЃС‚СЂРѕР№РєРё Рё Р°РґРјРёРЅРёСЃС‚СЂРёСЂРѕРІР°РЅРёСЏ РєРѕРјРїСЊСЋС‚РµСЂРЅС‹С… СЃРµС‚РµР№ Рё СЃРёСЃС‚РµРј СЃРІСЏР·Рё",
+      "fullDescription": "",
+      "forms": [],
+      "duration": "2 РіРѕРґР° 10 РјРµСЃСЏС†РµРІ",
+      "budgetPlaces": 30,
+      "paidPlaces": 10,
+      "costPerYear": 0,
+      "fgosCode": "",
+      "disciplines": [],
+      "image": "",
+      "emoji": "",
+      "color": "",
+      "isActive": true,
+      "order": 0,
+      "createdAt": "2026-05-30T15:45:07.063Z",
+      "updatedAt": "2026-05-30T15:45:07.063Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b0603744eed7b45d4f9a4",
+      "code": "09.02.01",
+      "name": "РљРѕРјРїСЊСЋС‚РµСЂРЅС‹Рµ СЃРµС‚Рё Рё СЃРёСЃС‚РµРјС‹ СЃРІСЏР·Рё",
+      "description": "РџРѕРґРіРѕС‚РѕРІРєР° СЃРїРµС†РёР°Р»РёСЃС‚РѕРІ РІ РѕР±Р»Р°СЃС‚Рё РїСЂРѕРµРєС‚РёСЂРѕРІР°РЅРёСЏ, РЅР°СЃС‚СЂРѕР№РєРё Рё Р°РґРјРёРЅРёСЃС‚СЂРёСЂРѕРІР°РЅРёСЏ РєРѕРјРїСЊСЋС‚РµСЂРЅС‹С… СЃРµС‚РµР№ Рё СЃРёСЃС‚РµРј СЃРІСЏР·Рё",
+      "fullDescription": "",
+      "forms": [],
+      "duration": "2 РіРѕРґР° 10 РјРµСЃСЏС†РµРІ",
+      "budgetPlaces": 30,
+      "paidPlaces": 10,
+      "costPerYear": 0,
+      "fgosCode": "",
+      "disciplines": [],
+      "image": "",
+      "emoji": "",
+      "color": "",
+      "isActive": true,
+      "order": 0,
+      "createdAt": "2026-05-30T15:45:07.069Z",
+      "updatedAt": "2026-05-30T15:45:07.069Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b0603862b295e4c107cdf",
+      "code": "09.02.01",
+      "name": "РљРѕРјРїСЊСЋС‚РµСЂРЅС‹Рµ СЃРµС‚Рё Рё СЃРёСЃС‚РµРјС‹ СЃРІСЏР·Рё",
+      "description": "РџРѕРґРіРѕС‚РѕРІРєР° СЃРїРµС†РёР°Р»РёСЃС‚РѕРІ РІ РѕР±Р»Р°СЃС‚Рё РїСЂРѕРµРєС‚РёСЂРѕРІР°РЅРёСЏ, РЅР°СЃС‚СЂРѕР№РєРё Рё Р°РґРјРёРЅРёСЃС‚СЂРёСЂРѕРІР°РЅРёСЏ РєРѕРјРїСЊСЋС‚РµСЂРЅС‹С… СЃРµС‚РµР№ Рё СЃРёСЃС‚РµРј СЃРІСЏР·Рё",
+      "fullDescription": "",
+      "forms": [],
+      "duration": "2 РіРѕРґР° 10 РјРµСЃСЏС†РµРІ",
+      "budgetPlaces": 30,
+      "paidPlaces": 10,
+      "costPerYear": 0,
+      "fgosCode": "",
+      "disciplines": [],
+      "image": "",
+      "emoji": "",
+      "color": "",
+      "isActive": true,
+      "order": 0,
+      "createdAt": "2026-05-30T15:45:07.087Z",
+      "updatedAt": "2026-05-30T15:45:07.087Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b0603b720d21fd60c0c84",
+      "code": "09.02.02",
+      "name": "РљРѕРјРїСЊСЋС‚РµСЂРЅС‹Рµ СЃРёСЃС‚РµРјС‹ Рё РєРѕРјРїР»РµРєСЃС‹",
+      "description": "РџРѕРґРіРѕС‚РѕРІРєР° СЃРїРµС†РёР°Р»РёСЃС‚РѕРІ РїРѕ СЃР±РѕСЂРєРµ, РЅР°СЃС‚СЂРѕР№РєРµ Рё СЂРµРјРѕРЅС‚Сѓ РєРѕРјРїСЊСЋС‚РµСЂРЅРѕР№ С‚РµС…РЅРёРєРё",
+      "fullDescription": "",
+      "forms": [],
+      "duration": "2 РіРѕРґР° 10 РјРµСЃСЏС†РµРІ",
+      "budgetPlaces": 25,
+      "paidPlaces": 10,
+      "costPerYear": 0,
+      "fgosCode": "",
+      "disciplines": [],
+      "image": "",
+      "emoji": "",
+      "color": "",
+      "isActive": true,
+      "order": 1,
+      "createdAt": "2026-05-30T15:45:07.063Z",
+      "updatedAt": "2026-05-30T15:45:07.063Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b0603744eed7b45d4f9a5",
+      "code": "09.02.02",
+      "name": "РљРѕРјРїСЊСЋС‚РµСЂРЅС‹Рµ СЃРёСЃС‚РµРјС‹ Рё РєРѕРјРїР»РµРєСЃС‹",
+      "description": "РџРѕРґРіРѕС‚РѕРІРєР° СЃРїРµС†РёР°Р»РёСЃС‚РѕРІ РїРѕ СЃР±РѕСЂРєРµ, РЅР°СЃС‚СЂРѕР№РєРµ Рё СЂРµРјРѕРЅС‚Сѓ РєРѕРјРїСЊСЋС‚РµСЂРЅРѕР№ С‚РµС…РЅРёРєРё",
+      "fullDescription": "",
+      "forms": [],
+      "duration": "2 РіРѕРґР° 10 РјРµСЃСЏС†РµРІ",
+      "budgetPlaces": 25,
+      "paidPlaces": 10,
+      "costPerYear": 0,
+      "fgosCode": "",
+      "disciplines": [],
+      "image": "",
+      "emoji": "",
+      "color": "",
+      "isActive": true,
+      "order": 1,
+      "createdAt": "2026-05-30T15:45:07.069Z",
+      "updatedAt": "2026-05-30T15:45:07.069Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b0603862b295e4c107ce0",
+      "code": "09.02.02",
+      "name": "РљРѕРјРїСЊСЋС‚РµСЂРЅС‹Рµ СЃРёСЃС‚РµРјС‹ Рё РєРѕРјРїР»РµРєСЃС‹",
+      "description": "РџРѕРґРіРѕС‚РѕРІРєР° СЃРїРµС†РёР°Р»РёСЃС‚РѕРІ РїРѕ СЃР±РѕСЂРєРµ, РЅР°СЃС‚СЂРѕР№РєРµ Рё СЂРµРјРѕРЅС‚Сѓ РєРѕРјРїСЊСЋС‚РµСЂРЅРѕР№ С‚РµС…РЅРёРєРё",
+      "fullDescription": "",
+      "forms": [],
+      "duration": "2 РіРѕРґР° 10 РјРµСЃСЏС†РµРІ",
+      "budgetPlaces": 25,
+      "paidPlaces": 10,
+      "costPerYear": 0,
+      "fgosCode": "",
+      "disciplines": [],
+      "image": "",
+      "emoji": "",
+      "color": "",
+      "isActive": true,
+      "order": 1,
+      "createdAt": "2026-05-30T15:45:07.088Z",
+      "updatedAt": "2026-05-30T15:45:07.088Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b0603b720d21fd60c0c85",
+      "code": "09.02.03",
+      "name": "РџСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёРµ РІ РєРѕРјРїСЊСЋС‚РµСЂРЅС‹С… СЃРёСЃС‚РµРјР°С…",
+      "description": "РџРѕРґРіРѕС‚РѕРІРєР° РїСЂРѕРіСЂР°РјРјРёСЃС‚РѕРІ РґР»СЏ СЂР°Р·СЂР°Р±РѕС‚РєРё РїСЂРѕРіСЂР°РјРјРЅРѕРіРѕ РѕР±РµСЃРїРµС‡РµРЅРёСЏ",
+      "fullDescription": "",
+      "forms": [],
+      "duration": "2 РіРѕРґР° 10 РјРµСЃСЏС†РµРІ",
+      "budgetPlaces": 35,
+      "paidPlaces": 15,
+      "costPerYear": 0,
+      "fgosCode": "",
+      "disciplines": [],
+      "image": "",
+      "emoji": "",
+      "color": "",
+      "isActive": true,
+      "order": 2,
+      "createdAt": "2026-05-30T15:45:07.063Z",
+      "updatedAt": "2026-05-30T15:45:07.063Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b0603744eed7b45d4f9a6",
+      "code": "09.02.03",
+      "name": "РџСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёРµ РІ РєРѕРјРїСЊСЋС‚РµСЂРЅС‹С… СЃРёСЃС‚РµРјР°С…",
+      "description": "РџРѕРґРіРѕС‚РѕРІРєР° РїСЂРѕРіСЂР°РјРјРёСЃС‚РѕРІ РґР»СЏ СЂР°Р·СЂР°Р±РѕС‚РєРё РїСЂРѕРіСЂР°РјРјРЅРѕРіРѕ РѕР±РµСЃРїРµС‡РµРЅРёСЏ",
+      "fullDescription": "",
+      "forms": [],
+      "duration": "2 РіРѕРґР° 10 РјРµСЃСЏС†РµРІ",
+      "budgetPlaces": 35,
+      "paidPlaces": 15,
+      "costPerYear": 0,
+      "fgosCode": "",
+      "disciplines": [],
+      "image": "",
+      "emoji": "",
+      "color": "",
+      "isActive": true,
+      "order": 2,
+      "createdAt": "2026-05-30T15:45:07.069Z",
+      "updatedAt": "2026-05-30T15:45:07.069Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b0603862b295e4c107ce1",
+      "code": "09.02.03",
+      "name": "РџСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёРµ РІ РєРѕРјРїСЊСЋС‚РµСЂРЅС‹С… СЃРёСЃС‚РµРјР°С…",
+      "description": "РџРѕРґРіРѕС‚РѕРІРєР° РїСЂРѕРіСЂР°РјРјРёСЃС‚РѕРІ РґР»СЏ СЂР°Р·СЂР°Р±РѕС‚РєРё РїСЂРѕРіСЂР°РјРјРЅРѕРіРѕ РѕР±РµСЃРїРµС‡РµРЅРёСЏ",
+      "fullDescription": "",
+      "forms": [],
+      "duration": "2 РіРѕРґР° 10 РјРµСЃСЏС†РµРІ",
+      "budgetPlaces": 35,
+      "paidPlaces": 15,
+      "costPerYear": 0,
+      "fgosCode": "",
+      "disciplines": [],
+      "image": "",
+      "emoji": "",
+      "color": "",
+      "isActive": true,
+      "order": 2,
+      "createdAt": "2026-05-30T15:45:07.088Z",
+      "updatedAt": "2026-05-30T15:45:07.088Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b0603b720d21fd60c0c86",
+      "code": "20.02.04",
+      "name": "РќР°Р·РµРјРЅС‹Рµ С‚СЂР°РЅСЃРїРѕСЂС‚РЅС‹Рµ СЃСЂРµРґСЃС‚РІР° (РјР°С€РёРЅРѕСЃС‚СЂРѕРµРЅРёРµ)",
+      "description": "РџРѕРґРіРѕС‚РѕРІРєР° СЃРїРµС†РёР°Р»РёСЃС‚РѕРІ РІ РѕР±Р»Р°СЃС‚Рё РєРѕРЅСЃС‚СЂСѓРёСЂРѕРІР°РЅРёСЏ Рё РїСЂРѕРёР·РІРѕРґСЃС‚РІР° С‚СЂР°РЅСЃРїРѕСЂС‚РЅС‹С… СЃСЂРµРґСЃС‚РІ",
+      "fullDescription": "",
+      "forms": [],
+      "duration": "2 РіРѕРґР° 10 РјРµСЃСЏС†РµРІ",
+      "budgetPlaces": 20,
+      "paidPlaces": 5,
+      "costPerYear": 0,
+      "fgosCode": "",
+      "disciplines": [],
+      "image": "",
+      "emoji": "",
+      "color": "",
+      "isActive": true,
+      "order": 3,
+      "createdAt": "2026-05-30T15:45:07.063Z",
+      "updatedAt": "2026-05-30T15:45:07.063Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b0603744eed7b45d4f9a7",
+      "code": "20.02.04",
+      "name": "РќР°Р·РµРјРЅС‹Рµ С‚СЂР°РЅСЃРїРѕСЂС‚РЅС‹Рµ СЃСЂРµРґСЃС‚РІР° (РјР°С€РёРЅРѕСЃС‚СЂРѕРµРЅРёРµ)",
+      "description": "РџРѕРґРіРѕС‚РѕРІРєР° СЃРїРµС†РёР°Р»РёСЃС‚РѕРІ РІ РѕР±Р»Р°СЃС‚Рё РєРѕРЅСЃС‚СЂСѓРёСЂРѕРІР°РЅРёСЏ Рё РїСЂРѕРёР·РІРѕРґСЃС‚РІР° С‚СЂР°РЅСЃРїРѕСЂС‚РЅС‹С… СЃСЂРµРґСЃС‚РІ",
+      "fullDescription": "",
+      "forms": [],
+      "duration": "2 РіРѕРґР° 10 РјРµСЃСЏС†РµРІ",
+      "budgetPlaces": 20,
+      "paidPlaces": 5,
+      "costPerYear": 0,
+      "fgosCode": "",
+      "disciplines": [],
+      "image": "",
+      "emoji": "",
+      "color": "",
+      "isActive": true,
+      "order": 3,
+      "createdAt": "2026-05-30T15:45:07.069Z",
+      "updatedAt": "2026-05-30T15:45:07.069Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b0603862b295e4c107ce2",
+      "code": "20.02.04",
+      "name": "РќР°Р·РµРјРЅС‹Рµ С‚СЂР°РЅСЃРїРѕСЂС‚РЅС‹Рµ СЃСЂРµРґСЃС‚РІР° (РјР°С€РёРЅРѕСЃС‚СЂРѕРµРЅРёРµ)",
+      "description": "РџРѕРґРіРѕС‚РѕРІРєР° СЃРїРµС†РёР°Р»РёСЃС‚РѕРІ РІ РѕР±Р»Р°СЃС‚Рё РєРѕРЅСЃС‚СЂСѓРёСЂРѕРІР°РЅРёСЏ Рё РїСЂРѕРёР·РІРѕРґСЃС‚РІР° С‚СЂР°РЅСЃРїРѕСЂС‚РЅС‹С… СЃСЂРµРґСЃС‚РІ",
+      "fullDescription": "",
+      "forms": [],
+      "duration": "2 РіРѕРґР° 10 РјРµСЃСЏС†РµРІ",
+      "budgetPlaces": 20,
+      "paidPlaces": 5,
+      "costPerYear": 0,
+      "fgosCode": "",
+      "disciplines": [],
+      "image": "",
+      "emoji": "",
+      "color": "",
+      "isActive": true,
+      "order": 3,
+      "createdAt": "2026-05-30T15:45:07.088Z",
+      "updatedAt": "2026-05-30T15:45:07.088Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b0603b720d21fd60c0c87",
+      "code": "22.02.01",
+      "name": "РњРѕРЅС‚Р°Р¶ Рё СЌРєСЃРїР»СѓР°С‚Р°С†РёСЏ РІРЅСѓС‚СЂРµРЅРЅРёС… СЃР°РЅС‚РµС…РЅРёС‡РµСЃРєРёС… СѓСЃС‚СЂРѕР№СЃС‚РІ",
+      "description": "РџРѕРґРіРѕС‚РѕРІРєР° СЃРїРµС†РёР°Р»РёСЃС‚РѕРІ РїРѕ РјРѕРЅС‚Р°Р¶Сѓ Рё РѕР±СЃР»СѓР¶РёРІР°РЅРёСЋ РёРЅР¶РµРЅРµСЂРЅС‹С… СЃРёСЃС‚РµРј Р·РґР°РЅРёР№",
+      "fullDescription": "",
+      "forms": [],
+      "duration": "2 РіРѕРґР° 10 РјРµСЃСЏС†РµРІ",
+      "budgetPlaces": 15,
+      "paidPlaces": 5,
+      "costPerYear": 0,
+      "fgosCode": "",
+      "disciplines": [],
+      "image": "",
+      "emoji": "",
+      "color": "",
+      "isActive": true,
+      "order": 4,
+      "createdAt": "2026-05-30T15:45:07.063Z",
+      "updatedAt": "2026-05-30T15:45:07.063Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b0603744eed7b45d4f9a8",
+      "code": "22.02.01",
+      "name": "РњРѕРЅС‚Р°Р¶ Рё СЌРєСЃРїР»СѓР°С‚Р°С†РёСЏ РІРЅСѓС‚СЂРµРЅРЅРёС… СЃР°РЅС‚РµС…РЅРёС‡РµСЃРєРёС… СѓСЃС‚СЂРѕР№СЃС‚РІ",
+      "description": "РџРѕРґРіРѕС‚РѕРІРєР° СЃРїРµС†РёР°Р»РёСЃС‚РѕРІ РїРѕ РјРѕРЅС‚Р°Р¶Сѓ Рё РѕР±СЃР»СѓР¶РёРІР°РЅРёСЋ РёРЅР¶РµРЅРµСЂРЅС‹С… СЃРёСЃС‚РµРј Р·РґР°РЅРёР№",
+      "fullDescription": "",
+      "forms": [],
+      "duration": "2 РіРѕРґР° 10 РјРµСЃСЏС†РµРІ",
+      "budgetPlaces": 15,
+      "paidPlaces": 5,
+      "costPerYear": 0,
+      "fgosCode": "",
+      "disciplines": [],
+      "image": "",
+      "emoji": "",
+      "color": "",
+      "isActive": true,
+      "order": 4,
+      "createdAt": "2026-05-30T15:45:07.069Z",
+      "updatedAt": "2026-05-30T15:45:07.069Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b0603862b295e4c107ce3",
+      "code": "22.02.01",
+      "name": "РњРѕРЅС‚Р°Р¶ Рё СЌРєСЃРїР»СѓР°С‚Р°С†РёСЏ РІРЅСѓС‚СЂРµРЅРЅРёС… СЃР°РЅС‚РµС…РЅРёС‡РµСЃРєРёС… СѓСЃС‚СЂРѕР№СЃС‚РІ",
+      "description": "РџРѕРґРіРѕС‚РѕРІРєР° СЃРїРµС†РёР°Р»РёСЃС‚РѕРІ РїРѕ РјРѕРЅС‚Р°Р¶Сѓ Рё РѕР±СЃР»СѓР¶РёРІР°РЅРёСЋ РёРЅР¶РµРЅРµСЂРЅС‹С… СЃРёСЃС‚РµРј Р·РґР°РЅРёР№",
+      "fullDescription": "",
+      "forms": [],
+      "duration": "2 РіРѕРґР° 10 РјРµСЃСЏС†РµРІ",
+      "budgetPlaces": 15,
+      "paidPlaces": 5,
+      "costPerYear": 0,
+      "fgosCode": "",
+      "disciplines": [],
+      "image": "",
+      "emoji": "",
+      "color": "",
+      "isActive": true,
+      "order": 4,
+      "createdAt": "2026-05-30T15:45:07.088Z",
+      "updatedAt": "2026-05-30T15:45:07.088Z",
+      "__v": 0
+    }
+  ],
+  "contacts": [
+    {
+      "_id": "6a1ae5ee011bde0b406cd0ee",
+      "type": "address",
+      "label": "РђРґСЂРµСЃ",
+      "value": "Рі. Р’Р»Р°РґРёРјРёСЂ, СѓР». Р”РёРєС‚РѕСЂР° Р›РµРІРёС‚Р°РЅР°, Рґ. 14",
+      "icon": "map-pin",
+      "link": "",
+      "order": 0,
+      "isActive": true,
+      "createdAt": "2026-05-30T13:28:14.988Z",
+      "updatedAt": "2026-05-30T13:28:14.988Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1ae5ee011bde0b406cd0ef",
+      "type": "phone",
+      "label": "РџСЂРёРµРјРЅР°СЏ РґРёСЂРµРєС‚РѕСЂР°",
+      "value": "+7 (4922) 32-42-24",
+      "icon": "phone",
+      "link": "tel:+74922324224",
+      "order": 1,
+      "isActive": true,
+      "createdAt": "2026-05-30T13:28:14.988Z",
+      "updatedAt": "2026-05-30T13:28:14.988Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1ae5ee011bde0b406cd0f0",
+      "type": "phone",
+      "label": "РџСЂРёРµРјРЅР°СЏ РєРѕРјРёСЃСЃРёСЏ",
+      "value": "+7 (4922) 53-12-21",
+      "icon": "phone",
+      "link": "tel:+74922531221",
+      "order": 2,
+      "isActive": true,
+      "createdAt": "2026-05-30T13:28:14.988Z",
+      "updatedAt": "2026-05-30T13:28:14.988Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1ae5ee011bde0b406cd0f1",
+      "type": "email",
+      "label": "Email",
+      "value": "vladpk@yandex.ru",
+      "icon": "mail",
+      "link": "mailto:vladpk@yandex.ru",
+      "order": 3,
+      "isActive": true,
+      "createdAt": "2026-05-30T13:28:14.988Z",
+      "updatedAt": "2026-05-30T13:28:14.988Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1ae5ee011bde0b406cd0f2",
+      "type": "social",
+      "label": "Р’РљРѕРЅС‚Р°РєС‚Рµ",
+      "value": "vk.com/vpk33",
+      "icon": "vk",
+      "link": "https://vk.com/vpk33",
+      "order": 4,
+      "isActive": true,
+      "createdAt": "2026-05-30T13:28:14.988Z",
+      "updatedAt": "2026-05-30T13:28:14.988Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1ae5ee011bde0b406cd0f3",
+      "type": "schedule",
+      "label": "Р“СЂР°С„РёРє СЂР°Р±РѕС‚С‹",
+      "value": "РџРЅ-РџС‚: 8:00 - 17:00, РЎР±: 8:00 - 15:00",
+      "icon": "clock",
+      "link": "",
+      "order": 5,
+      "isActive": true,
+      "createdAt": "2026-05-30T13:28:14.988Z",
+      "updatedAt": "2026-05-30T13:28:14.988Z",
+      "__v": 0
+    }
+  ],
+  "settings": {
+    "contacts": {
+      "mapCoordinates": {
+        "lat": 0,
+        "lng": 0
+      },
+      "address": "",
+      "phones": [],
+      "emails": [],
+      "workHours": ""
+    },
+    "socials": {
+      "vk": "",
+      "telegram": "",
+      "youtube": "",
+      "whatsapp": ""
+    },
+    "analytics": {
+      "yandexMetrikaId": "",
+      "googleAnalyticsId": ""
+    },
+    "seo": {
+      "defaultTitle": "",
+      "defaultDescription": "",
+      "defaultKeywords": ""
+    },
+    "_id": "6a1ae5ee011bde0b406cd0f4",
+    "siteName": "Р“РђРџРћРЈ Р’Рћ В«Р’Р»Р°РґРёРјРёСЂСЃРєРёР№ РїРѕР»РёС‚РµС…РЅРёС‡РµСЃРєРёР№ РєРѕР»Р»РµРґР¶В»",
+    "siteDescription": "",
+    "logo": "",
+    "favicon": "",
+    "createdAt": "2026-05-30T13:28:14.993Z",
+    "updatedAt": "2026-05-30T13:28:14.993Z",
+    "__v": 0
+  },
+  "documents": [
+    {
+      "_id": "6a1b1032caba36f69efe48a3",
+      "title": "Р“РѕСЃСѓРґР°СЂСЃС‚РІРµРЅРЅР°СЏ Р°РєРєСЂРµРґРёС‚Р°С†РёСЏ",
+      "category": "РђРєРєСЂРµРґРёС‚Р°С†РёСЏ",
+      "file": "",
+      "fileSize": 0,
+      "version": "1.0",
+      "description": "РЎРІРёРґРµС‚РµР»СЊСЃС‚РІРѕ Рѕ РіРѕСЃСѓРґР°СЂСЃС‚РІРµРЅРЅРѕР№ Р°РєРєСЂРµРґРёС‚Р°С†РёРё",
+      "page": "",
+      "isPublished": true,
+      "order": 2,
+      "createdAt": "2026-05-30T16:28:34.463Z",
+      "updatedAt": "2026-05-30T16:28:34.463Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b1032caba36f69efe48a2",
+      "title": "Р›РёС†РµРЅР·РёСЏ РЅР° РѕР±СЂР°Р·РѕРІР°С‚РµР»СЊРЅСѓСЋ РґРµСЏС‚РµР»СЊРЅРѕСЃС‚СЊ",
+      "category": "Р›РёС†РµРЅР·РёРё",
+      "file": "",
+      "fileSize": 0,
+      "version": "1.0",
+      "description": "Р›РёС†РµРЅР·РёСЏ РЅР° РѕСЃСѓС‰РµСЃС‚РІР»РµРЅРёРµ РѕР±СЂР°Р·РѕРІР°С‚РµР»СЊРЅРѕР№ РґРµСЏС‚РµР»СЊРЅРѕСЃС‚Рё",
+      "page": "",
+      "isPublished": true,
+      "order": 1,
+      "createdAt": "2026-05-30T16:28:34.463Z",
+      "updatedAt": "2026-05-30T16:28:34.463Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b1032caba36f69efe48a5",
+      "title": "РџР»Р°С‚РЅС‹Рµ РѕР±СЂР°Р·РѕРІР°С‚РµР»СЊРЅС‹Рµ СѓСЃР»СѓРіРё",
+      "category": "РћР±СЂР°Р·РѕРІР°РЅРёРµ",
+      "file": "",
+      "fileSize": 0,
+      "version": "1.0",
+      "description": "РЎС‚РѕРёРјРѕСЃС‚СЊ РѕР±СѓС‡РµРЅРёСЏ РїРѕ РѕР±СЂР°Р·РѕРІР°С‚РµР»СЊРЅС‹Рј РїСЂРѕРіСЂР°РјРјР°Рј",
+      "page": "",
+      "isPublished": true,
+      "order": 4,
+      "createdAt": "2026-05-30T16:28:34.463Z",
+      "updatedAt": "2026-05-30T16:28:34.463Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b1032caba36f69efe48a4",
+      "title": "РџСЂР°РІРёР»Р° РїСЂРёС‘РјР° РІ РєРѕР»Р»РµРґР¶",
+      "category": "РџСЂРёРєР°Р·С‹",
+      "file": "",
+      "fileSize": 0,
+      "version": "1.0",
+      "description": "РџСЂР°РІРёР»Р° РїСЂРёС‘РјР° РѕР±СѓС‡Р°СЋС‰РёС…СЃСЏ РЅР° С‚РµРєСѓС‰РёР№ СѓС‡РµР±РЅС‹Р№ РіРѕРґ",
+      "page": "",
+      "isPublished": true,
+      "order": 3,
+      "createdAt": "2026-05-30T16:28:34.463Z",
+      "updatedAt": "2026-05-30T16:28:34.463Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b1032caba36f69efe48a1",
+      "title": "РЈСЃС‚Р°РІ Р“РђРџРћРЈ Р’Рћ В«Р’РџРљВ»",
+      "category": "РЈСЃС‚Р°РІ",
+      "file": "",
+      "fileSize": 0,
+      "version": "3.0",
+      "description": "РћСЃРЅРѕРІРЅРѕР№ РґРѕРєСѓРјРµРЅС‚ РєРѕР»Р»РµРґР¶Р°",
+      "page": "",
+      "isPublished": true,
+      "order": 0,
+      "createdAt": "2026-05-30T16:28:34.462Z",
+      "updatedAt": "2026-05-30T16:28:34.462Z",
+      "__v": 0
+    }
+  ],
+  "events": [
+    {
+      "_id": "6a1b1032caba36f69efe48a9",
+      "title": "Р’С‹РїСѓСЃРєРЅРѕР№ СЌРєР·Р°РјРµРЅ",
+      "description": "Р“РѕСЃСѓРґР°СЂСЃС‚РІРµРЅРЅР°СЏ РёС‚РѕРіРѕРІР°СЏ Р°С‚С‚РµСЃС‚Р°С†РёСЏ",
+      "date": "2026-06-01T00:00:00.000Z",
+      "time": "",
+      "location": "РђРєС‚РѕРІС‹Р№ Р·Р°Р»",
+      "coverImage": "",
+      "images": [],
+      "category": "event",
+      "status": "published",
+      "isPublished": true,
+      "order": 0,
+      "createdAt": "2026-05-30T16:28:34.476Z",
+      "updatedAt": "2026-05-30T16:28:34.476Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b1032caba36f69efe48a8",
+      "title": "IT-С…Р°РєР°С‚РѕРЅ В«РљРѕРґ Р±СѓРґСѓС‰РµРіРѕВ»",
+      "description": "РЎРѕСЂРµРІРЅРѕРІР°РЅРёРµ РїРѕ РїСЂРѕРіСЂР°РјРјРёСЂРѕРІР°РЅРёСЋ",
+      "date": "2026-05-10T00:00:00.000Z",
+      "time": "",
+      "location": "Р›Р°Р±РѕСЂР°С‚РѕСЂРёСЏ IT-РљСѓР±",
+      "coverImage": "",
+      "images": [],
+      "category": "event",
+      "status": "published",
+      "isPublished": true,
+      "order": 0,
+      "createdAt": "2026-05-30T16:28:34.476Z",
+      "updatedAt": "2026-05-30T16:28:34.476Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b1032caba36f69efe48a7",
+      "title": "РќР°СѓС‡РЅРѕ-РїСЂР°РєС‚РёС‡РµСЃРєР°СЏ РєРѕРЅС„РµСЂРµРЅС†РёСЏ",
+      "description": "Р•Р¶РµРіРѕРґРЅР°СЏ РєРѕРЅС„РµСЂРµРЅС†РёСЏ РїРѕ РЎРџРћ",
+      "date": "2026-04-20T00:00:00.000Z",
+      "time": "",
+      "location": "РђРєС‚РѕРІС‹Р№ Р·Р°Р»",
+      "coverImage": "",
+      "images": [],
+      "category": "event",
+      "status": "published",
+      "isPublished": true,
+      "order": 0,
+      "createdAt": "2026-05-30T16:28:34.476Z",
+      "updatedAt": "2026-05-30T16:28:34.476Z",
+      "__v": 0
+    },
+    {
+      "_id": "6a1b1032caba36f69efe48a6",
+      "title": "Р”РµРЅСЊ РѕС‚РєСЂС‹С‚С‹С… РґРІРµСЂРµР№",
+      "description": "РџСЂРёРіР»Р°С€Р°РµРј Р°Р±РёС‚СѓСЂРёРµРЅС‚РѕРІ Рё РёС… СЂРѕРґРёС‚РµР»РµР№",
+      "date": "2026-03-15T00:00:00.000Z",
+      "time": "",
+      "location": "Р“Р»Р°РІРЅС‹Р№ РєРѕСЂРїСѓСЃ",
+      "coverImage": "",
+      "images": [],
+      "category": "event",
+      "status": "published",
+      "isPublished": true,
+      "order": 0,
+      "createdAt": "2026-05-30T16:28:34.476Z",
+      "updatedAt": "2026-05-30T16:28:34.476Z",
+      "__v": 0
+    }
+  ],
+  "heroes": [
+    {
+      "_id": "6a1ae5ef011bde0b406cd0f7",
+      "key": "main",
+      "badge": "Р“РђРџРћРЈ Р’Р»Р°РґРёРјРёСЂСЃРєРѕР№ РѕР±Р»Р°СЃС‚Рё",
+      "title": "Р’Р»Р°РґРёРјРёСЂСЃРєРёР№ РїРѕР»РёС‚РµС…РЅРёС‡РµСЃРєРёР№",
+      "titleHighlight": "РєРѕР»Р»РµРґР¶",
+      "subtitle": "РљР°С‡РµСЃС‚РІРµРЅРЅРѕРµ РѕР±СЂР°Р·РѕРІР°РЅРёРµ СЃРµРіРѕРґРЅСЏ вЂ” РїСЂРѕС„РµСЃСЃРёРѕРЅР°Р»СЊРЅС‹Р№ СѓСЃРїРµС… Р·Р°РІС‚СЂР°. Р РµРіРёРѕРЅР°Р»СЊРЅС‹Р№ С†РµРЅС‚СЂ РїРѕ РїРѕРґРіРѕС‚РѕРІРєРµ СЃРїРµС†РёР°Р»РёСЃС‚РѕРІ РРў-СЃС„РµСЂС‹ Рё РјР°С€РёРЅРѕСЃС‚СЂРѕРµРЅРёСЏ",
+      "backgroundImage": "",
+      "buttonText": "РџРѕСЃС‚СѓРїРёС‚СЊ Рє РЅР°Рј",
+      "buttonLink": "/abiturientam",
+      "secondaryButtonText": "Рћ РєРѕР»Р»РµРґР¶Рµ",
+      "secondaryButtonLink": "/about",
+      "isActive": true,
+      "order": 0,
+      "createdAt": "2026-05-30T13:28:15.006Z",
+      "updatedAt": "2026-05-30T13:28:15.006Z",
+      "__v": 0
+    }
+  ]
+}

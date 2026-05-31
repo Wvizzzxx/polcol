@@ -120,4 +120,25 @@ router.get('/export', async (req, res) => {
 // Статическая раздача JS-экспортов
 router.use('/exports', express.static(EXPORT_DIR));
 
+// JSON-экспорт для GitHub Pages (без сервера)
+router.get('/content.json', async (req, res) => {
+  try {
+    const [pages, navigation, news, employees, specialties, contacts, settings, documents, events, heroes] = await Promise.all([
+      Page.find({ isActive: true }).sort({ path: 1 }),
+      Navigation.find({ isActive: true }).sort({ order: 1 }),
+      News.find({ status: 'published' }).sort({ publishedAt: -1 }),
+      Employee.find({ isActive: true }).sort({ order: 1, lastName: 1 }),
+      Specialty.find({ isActive: true }).sort({ order: 1, code: 1 }),
+      Contact.find().sort({ order: 1 }),
+      Settings.findOne(),
+      Document.find({ isPublished: true }).sort({ category: 1, order: 1 }),
+      Event.find({ isPublished: true }).sort({ date: -1 }),
+      HeroSection.find({ isActive: true }).sort({ order: 1 }),
+    ]);
+    res.json({ pages, navigation, news, employees, specialties, contacts, settings, documents, events, heroes });
+  } catch (error) {
+    res.status(500).json({ message: 'Ошибка экспорта', error: error.message });
+  }
+});
+
 module.exports = router;
