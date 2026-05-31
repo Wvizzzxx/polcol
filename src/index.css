@@ -362,6 +362,15 @@
     html {
       scroll-behavior: auto;
     }
+    /* Disable framer-motion whileInView animations on mobile to prevent flickering */
+    [data-motion] {
+      transform: none !important;
+      opacity: 1 !important;
+    }
+    /* Remove will-change that causes repaints */
+    * {
+      will-change: auto !important;
+    }
   }
 
   /* Better touch targets on mobile */
