@@ -31,3 +31,6 @@ build/
 
 # OS files
 Thumbs.db
+
+# Generated exports
+server/exports/

@@ -29,16 +29,6 @@ jobs:
         env:
           VITE_BASE_URL: /polcol/
 
-      # Копируем cms-data.json в dist (Vite уже копирует public/, но на всякий случай)
-      - name: Copy CMS data
-        run: |
-          if [ -f public/cms-data.json ]; then
-            cp public/cms-data.json dist/cms-data.json
-            echo "✅ cms-data.json скопирован в dist"
-          else
-            echo "⚠️ cms-data.json не найден, пропускаем"
-          fi
-
       - uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}

@@ -17,18 +17,6 @@ export function CmsProvider({ children }) {
     } catch (err) {
       console.error('CMS load error:', err);
       setError(err.message);
-      // Fallback: загружаем статический JSON (для GitHub Pages без API)
-      try {
-        const base = import.meta.env.BASE_URL || '/';
-        const res = await fetch(base + 'cms-data.json');
-        if (res.ok) {
-          const staticData = await res.json();
-          setData(staticData);
-          setError(null);
-        }
-      } catch {
-        // Данные недоступны — оставляем ошибку
-      }
     } finally {
       setLoading(false);
     }
