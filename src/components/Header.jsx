@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import { img } from "../utils/imageUrl";
@@ -29,6 +29,26 @@ export default function Header() {
   const location = useLocation();
   const hoverTimeoutRef = useRef(null);
   const submenuRef = useRef(null);
+  const headerRef = useRef(null);
+  const [headerHeight, setHeaderHeight] = useState(120);
+
+  // Динамически измеряем высоту хедера
+  const updateHeaderHeight = useCallback(() => {
+    if (headerRef.current) {
+      setHeaderHeight(headerRef.current.offsetHeight);
+    }
+  }, []);
+
+  useEffect(() => {
+    updateHeaderHeight();
+    window.addEventListener("resize", updateHeaderHeight);
+    return () => window.removeEventListener("resize", updateHeaderHeight);
+  }, [updateHeaderHeight]);
+
+  // Обновляем высоту при открытии/закрытии мобильного меню
+  useEffect(() => {
+    setTimeout(updateHeaderHeight, 350);
+  }, [mobileOpen, updateHeaderHeight]);
 
   const openSubmenu = (path) => {
     if (hoverTimeoutRef.current) clearTimeout(hoverTimeoutRef.current);
@@ -119,7 +139,8 @@ export default function Header() {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        ref={headerRef}
+        className={`fixed top-0 left-0 right-0 z-50 transition-shadow duration-300 ${
           scrolled ? "bg-white shadow-md" : "bg-white/95"
         }`}
       >
@@ -361,8 +382,8 @@ export default function Header() {
           )}
         </AnimatePresence>
       </header>
-      {/* Spacer */}
-      <div className="h-[116px]" />
+      {/* Spacer — dynamic height */}
+      <div style={{ height: headerHeight }} />
       <SearchModal isOpen={searchOpen} onClose={() => setSearchOpen(false)} />
     </>
   );

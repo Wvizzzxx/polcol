@@ -63,8 +63,8 @@ const Home = () => {
           </div>
         )}
         <div className="absolute inset-0 official-pattern opacity-30" />
-        <motion.div animate={{ scale: [1, 1.15, 1], opacity: [0.08, 0.15, 0.08] }} transition={{ duration: 10, repeat: Infinity }} className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-accent/10 blur-3xl" />
-        <motion.div animate={{ y: [0, -20, 0] }} transition={{ duration: 8, repeat: Infinity }} className="absolute bottom-10 left-10 w-80 h-80 rounded-full bg-official-600/20 blur-3xl" />
+        <div className="absolute -top-20 -right-20 w-96 h-96 rounded-full bg-accent/10 blur-3xl" />
+        <div className="absolute bottom-10 left-10 w-80 h-80 rounded-full bg-official-600/20 blur-3xl" />
         
         <div className="container mx-auto px-4 py-16 md:py-24 relative z-10">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
