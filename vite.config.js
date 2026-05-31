@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/polcol/',
+  base: process.env.VITE_BASE_URL || '/',
   server: {
     proxy: {
       '/api': {

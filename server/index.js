@@ -63,6 +63,14 @@ app.use('/admin', (req, res) => {
   res.sendFile(path.join(adminDist, 'index.html'));
 });
 
+// Фронтенд (собранная SPA) — раздаётся на корневом пути
+const frontendDist = path.join(__dirname, '..', 'dist');
+app.use(express.static(frontendDist));
+// Все остальные GET-запросы → index.html (SPA routing)
+app.get('/{*splat}', (req, res) => {
+  res.sendFile(path.join(frontendDist, 'index.html'));
+});
+
 // Обработка ошибок
 app.use((err, req, res, next) => {
   console.error(err.stack);
