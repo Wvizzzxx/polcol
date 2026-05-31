@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const morgan = require('morgan');
 const path = require('path');
-require('dotenv').config();
+require('dotenv').config({ path: path.join(__dirname, '.env') });
 
 const connectDB = require('./config/db');
 const initializeData = require('./seedData');
@@ -53,6 +53,14 @@ app.use('/api/public', publicRoutes);
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', timestamp: new Date().toISOString() });
+});
+
+// Админ-панель (собранная SPA)
+const adminDist = path.join(__dirname, '..', 'admin-panel', 'dist');
+app.use('/admin', express.static(adminDist));
+// Express 5 — catch-all для SPA
+app.use('/admin', (req, res) => {
+  res.sendFile(path.join(adminDist, 'index.html'));
 });
 
 // Обработка ошибок
