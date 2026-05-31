@@ -380,6 +380,20 @@
     .transition-all {
       transition-duration: 0ms !important;
     }
+    /* Nuclear fix: override framer-motion inline styles on mobile */
+    [style*="opacity: 0"],
+    [style*="opacity:0"] {
+      opacity: 1 !important;
+    }
+    [style*="transform: none"],
+    [style*="transform:none"] {
+      transform: none !important;
+    }
+    /* Force visibility on all animated elements */
+    [data-framer-appear-id] {
+      opacity: 1 !important;
+      transform: none !important;
+    }
   }
 
   /* Better touch targets on mobile */
