@@ -58,7 +58,7 @@
     font-family: var(--font-sans);
     background: var(--color-bg);
     color: var(--color-text);
-    overflow-x: hidden;
+    overflow-x: clip;
     line-height: 1.6;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -346,30 +346,39 @@
   @media (max-width: 768px) {
     /* Disable hover effects on touch */
     .group:hover .group-hover\:scale-110 {
-      transform: none;
+      transform: none !important;
     }
     .group:hover .group-hover\:translate-x-1 {
-      transform: none;
+      transform: none !important;
     }
     .group:hover .group-hover\:text-accent-dark {
-      color: inherit;
+      color: inherit !important;
     }
     /* Prevent overscroll bounce */
     html, body {
       overscroll-behavior: none;
     }
-    /* Smooth scrolling only on desktop */
+    /* No smooth scroll on mobile — causes layout thrashing */
     html {
-      scroll-behavior: auto;
+      scroll-behavior: auto !important;
     }
-    /* Disable framer-motion whileInView animations on mobile to prevent flickering */
-    [data-motion] {
-      transform: none !important;
-      opacity: 1 !important;
-    }
-    /* Remove will-change that causes repaints */
+    /* Remove all will-change — causes GPU compositing flicker */
     * {
       will-change: auto !important;
+    }
+    /* Kill backdrop-blur on mobile — GPU killer */
+    .backdrop-blur,
+    .backdrop-blur-md,
+    .backdrop-blur-lg,
+    .backdrop-blur-sm {
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+    }
+    /* Disable all CSS transitions on mobile to prevent flicker */
+    .transition-opacity,
+    .transition-transform,
+    .transition-all {
+      transition-duration: 0ms !important;
     }
   }
 
