@@ -15,7 +15,7 @@ const sections = [
 ]
 
 const contacts = [
-  { Icon: IconPhone, label: 'Куратор', value: '8 (4922) 32-20-90' },
+  { Icon: IconPhone, label: 'Приёмная директора', value: '8 (4922) 32-20-90' },
   { Icon: IconClock, label: 'Приём', value: 'вт, чт 14:00–16:00' },
   { Icon: IconMail, label: 'Email', value: 'vosp@polcol.ru' },
 ]
@@ -75,7 +75,7 @@ export default function Roditelyam() {
                 className="flex flex-wrap gap-3"
               >
                 <Link to="/roditelyam/klassnye-rukovoditeli" className="inline-flex items-center gap-2 px-7 py-3.5 bg-white text-amber-800 font-bold rounded-xl hover:bg-amber-50 transition-all hover:-translate-y-0.5 hover:shadow-xl">
-                  Связаться с куратором
+                  Связаться с приемной директора
                   <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
                 </Link>
                 <Link to="/roditelyam/obyavleniya" className="inline-flex items-center gap-2 px-7 py-3.5 border-2 border-white/25 text-white font-semibold rounded-xl hover:bg-white/10 transition-all">

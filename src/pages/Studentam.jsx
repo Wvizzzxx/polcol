@@ -211,7 +211,7 @@ export default function Studentam() {
               <div>
                 <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/15 text-emerald-100 text-xs font-bold tracking-wider uppercase mb-4"><IconTrophy className="inline w-5 h-5 align-text-bottom" /> Чемпионатное движение
                 </span>
-                <h2 className="text-3xl font-extrabold mb-4">WorldSkills и «Профессионалы»</h2>
+                <h2 className="text-3xl font-extrabold mb-4">«Профессионалы»</h2>
                 <p className="text-emerald-100/70 mb-6 leading-relaxed">
                   Участвуй в чемпионатах профессионального мастерства, докажи свой уровень 
                   и получи признание работодателей. Наши студенты — постоянные призёры 
